@@ -20,7 +20,7 @@ library(doMC)
 set.seed(529342)
 
 # Read the data
-ebola <- read.csv("Ebola_outbreak_DRC_data.csv")
+ebola <- read.csv("data/Ebola_outbreak_DRC_data.csv")
 ebola$Date <- chron(as.character(ebola$Date), format=c(dates = "day mon year"))     
 ebola$Cases[1] <- 0
 data <- na.omit(ebola[c("Date","Cases")])
