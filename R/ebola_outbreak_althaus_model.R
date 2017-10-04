@@ -15,6 +15,7 @@ library(tidyverse)
 library(cowplot)
 library(foreach)
 library(doMC)
+library(doParallel)
 
 # Initialize random number generator
 set.seed(529342)
@@ -97,13 +98,17 @@ untrans <- Csnippet('
 
 pop <- 1e6      
 #init <- c(S = N - 1, E = 0, I = 1, R = 0, D = 0, C = 0)
-seir_parm <- c(S.0= pop-1, 
-               E.0 = 0.0,
-               I.0 = 1.0,
-               R.0 = 0.0,
-               D.0 = 0.0,
-               C.0 = 0.0,
-               sigma = 1/9.312799, 
+
+init <- Csnippet("
+          S= 999999; 
+          E = 0.0;
+          I = 1.0;
+          R = 0.0;
+          D = 0.0;
+          C = 0.0;
+                 ")
+
+seir_parm <- c(sigma = 1/9.312799, 
                gamma = 1/7.411374, 
                ff = plogis(49/69),
                tau1 = 14.0,
@@ -117,6 +122,7 @@ pomp(data = data,
   t0=0,
   skeleton = vectorfield(seir_skel), 
   params = seir_parm,
+  initializer=init,
   statenames= c("S","E","I","R", "D", "C"), 
   paramnames=c("tau1", "beta0","k", "sigma", "gamma", "ff","beta1"),
   zeronames = c("C"),
@@ -134,6 +140,8 @@ traj.match(seir_pomp,
            transform=TRUE) -> t_match
 
 t_match$params
+
+
 # Should match Althaus results
 #!beta0!      beta1          !k!          f       tau0       !tau1!      sigma      gamma 
 #-0.3634729       -Inf -2.0883390  0.8960880       -Inf 14.2890158  0.1073791  0.1349277
@@ -150,6 +158,43 @@ seir_parm["beta0"] = t_match$params["beta0"]
 
 pfilter(seir_pomp, params=seir_parm, Np=1000, filter.mean=TRUE) -> test
 logLik(test)
+
+#####
+# Log lik profile
+#####
+
+sliceDesign(
+  center=c(beta0 = .75, tau1 = 12.8, k=.12,sigma = 1/9.312799, 
+           gamma = 1/7.411374, ff = plogis(49/69), beta1 = 1),
+  beta0=rep(seq(from=0.7,to=.8,length=10),each=3),
+  tau1=rep(seq(from=12,to=13.5,length=10),each=3),
+  k=rep(seq(from=.09,to=.15,length=10),each=3)
+) -> p
+
+registerDoParallel()
+set.seed(108028909,kind="L'Ecuyer")
+
+foreach (theta=iter(p,"row"),.combine = rbind,
+         .inorder = FALSE,
+         .options.multicore=list(set.seed=TRUE)
+) %dopar% {
+           library (pomp)
+  pfilter(seir_pomp,params=unlist(theta),Np=5000) -> pf
+  theta$loglik <- logLik(pf)
+  theta
+  } -> p
+
+library(reshape2)
+p %>% melt(measure = c("beta0", "k", "tau1")) %>%
+  # subset(variable == "slice") %>%
+  ggplot(aes(x=value,y=loglik, color=variable))+
+  geom_point()+
+  facet_wrap(~variable, scales = "free_x")
+
+#########
+#End log lik profile
+########
+
 
 #################################################
 ## Pfilter tester
