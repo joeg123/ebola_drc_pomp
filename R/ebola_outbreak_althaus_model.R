@@ -60,9 +60,9 @@ seir_rprocess <- Csnippet('double beta, x, N;
                           }
                           N = S+E+I+R+D;
                           
-                          double new_exposed = rbinom(S, 1 - exp(-beta/N*S*I*dt));
-                          double new_infected = rbinom(E, 1 - exp(-sigma*E*dt));
-                          double new_not_infectious = rbinom(I, 1 - exp(-gamma*I*dt));       
+                          double new_exposed = rbinom(S, 1 - exp(-beta/N*I*dt));
+                          double new_infected = rbinom(E, 1 - exp(-sigma*dt));
+                          double new_not_infectious = rbinom(I, 1 - exp(-gamma*dt));       
                           double new_recovered = rbinom(new_not_infectious, (1 - ff) );
                           double new_dead = new_not_infectious - new_recovered;
 
@@ -167,7 +167,7 @@ sliceDesign(
   center=c(beta0 = .7454, tau1 = 12.8366, k=.1249,sigma = 1/9.312799, 
            gamma = 1/7.411374, ff = plogis(49/69), beta1 = 1),
   beta0=rep(seq(from=0.01,to=2.0,length=20),each=10),
-  tau1=rep(seq(from=9,to=30,length=20),each=10),
+  tau1=rep(seq(from=0,to=30,length=20),each=10),
   k=rep(seq(from=.01,to=.30,length=20),each=10)
 ) -> p
 
@@ -245,7 +245,12 @@ trajectory(seir_pomp_test, params=t_match_test$params, times=0:120, as.data.fram
 
 # Simulate using new rmeasure
 
-sim <- simulate(seir_pomp, params = c(t_match_test$params, seir.init.state), nsim = 10)
+sim <- simulate(seir_pomp, params = c(t_match_test$params, seir.init.state), nsim = 10, as.data.frame=TRUE)
+
+sim %>% 
+  ggplot(aes(x=time,y=C, group=sim))+
+  geom_line()
+
 
 # no clue how to graph this
 
@@ -260,8 +265,8 @@ sim <- simulate(seir_pomp, params = c(t_match_test$params, seir.init.state), nsi
 sliceDesign(
   center=c(beta0 = .7454, tau1 = 12.8366, k=.1249,sigma = 1/9.312799, 
            gamma = 1/7.411374, ff = plogis(49/69), beta1 = 1),
-  beta0=rep(seq(from=0.01,to=2.0,length=20),each=10),
-  tau1=rep(seq(from=9,to=30,length=20),each=10),
+  beta0=rep(seq(from=0,to=2.0,length=20),each=10),
+  tau1=rep(seq(from=0,to=50,length=20),each=10),
   k=rep(seq(from=.01,to=.30,length=20),each=10)
 ) -> p
 
