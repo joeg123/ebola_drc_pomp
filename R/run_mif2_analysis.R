@@ -2,7 +2,6 @@
 ## Run MIF2 Althaus model
 ## Runs MIF2 analysis
 ############################
-source()
 source("R/althaus_traj_match.R")
 
 
