@@ -2,7 +2,7 @@
 ## Run MIF2 Althaus model
 ## Runs MIF2 analysis
 ############################
-
+source()
 source("R/althaus_traj_match.R")
 
 
@@ -18,69 +18,11 @@ seir_parm["k"] = t_match$params["k"]
 seir_parm["tau1"] = t_match$params["tau1"]
 seir_parm["beta0"] = t_match$params["beta0"]
 
-trajectory(pomp(seir_pomp, params = seir_parm), as.data.frame=TRUE)
+trajectory(pomp(althaus_seir_pomp, params = seir_parm), as.data.frame=TRUE)
 
 
-pfilter(seir_pomp, params=seir_parm, Np=1000, filter.mean=TRUE) -> test
+pfilter(althaus_seir_pomp, params=seir_parm, Np=1000, filter.mean=TRUE) -> test
 logLik(test)
-
-#################################################
-## Pfilter tester
-## Can delete later
-#################################################
-stew(file="data_produced/like_seir.rda",{
-  t_test_eval <- system.time({
-    liks_test <- foreach(i=1:10,.packages='pomp',.combine=rbind) %dopar% {
-      evals <- replicate(10, logLik(pfilter(seir_pomp,params=seir_parm,Np=1000)))
-      test_mean<-logmeanexp(evals, se=TRUE)
-    }
-  })
-},seed=39048,kind="L'Ecuyer")
-
-results_test <- data.frame(logLik=liks_test[,1],logLik_se=liks_test[,2])
-summary(results_test$logLik,digits=8)
-
-#################################################
-## mif2 Local search
-#################################################
-registerDoMC(cores=2) 
-
-mcopts <- list(set.seed=TRUE)
-rw_sd <- 0.002
-
-stew(file="data_produced/local_mif_seir2.rda",{
-  t_local <- system.time({
-    mifs_local <- foreach(i=1:100,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
-      mif2(
-        seir_pomp,
-        start=seir_parm,
-        Np=1000,
-        Nmif=10,
-        cooling.type="geometric",
-        cooling.fraction.50=0.6,
-        transform=TRUE,
-        rw.sd=rw.sd(
-          beta0=rw_sd,
-          tau1=rw_sd,
-          k=rw_sd)
-      )
-    }
-  })
-},seed=808,kind="L'Ecuyer")
-
-
-stew(file="likes_mif_loca2l.rda",{
-  t_local_eval <- system.time({
-    liks_local <- foreach(i=1:100,.packages='pomp',.combine=rbind) %dopar% {
-      evals <- replicate(10, logLik(pfilter(seir_pomp,params=coef(mifs_local[[i]]),Np=1000)))
-      logmeanexp(evals, se=TRUE)
-    }
-  })
-},seed=900242057,kind="L'Ecuyer")
-results_local <- data.frame(logLik=liks_local[,1],logLik_se=liks_local[,2],t(sapply(mifs_local,coef)))
-summary(results_local$logLik,digits=7)
-#pairs(~logLik+beta_I+beta_W, data=results_local)
-pairs(~logLik+tau1+k+beta0, data=results_local)
 
 
 #################################################
@@ -107,7 +49,7 @@ stew(file="data_produced/global_mif_seir3.rda",{
   t_local <- system.time({
     mifs_global <- foreach(i=1:500,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
       mif2(
-        seir_pomp,
+        althaus_seir_pomp,
         start=get_parms(seir_parm),
         Np=100,
         Nmif=10,
@@ -127,7 +69,7 @@ stew(file="data_produced/global_mif_seir3.rda",{
 stew(file="likes_mif_global3.rda",{
   t_local_eval <- system.time({
     liks_local <- foreach(i=1:1000,.packages='pomp',.combine=rbind) %dopar% {
-      evals <- replicate(100, logLik(pfilter(seir_pomp,params=coef(mifs_local[[i]]),Np=1000)))
+      evals <- replicate(100, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_local[[i]]),Np=1000)))
       logmeanexp(evals, se=TRUE)
     }
   })
@@ -137,3 +79,65 @@ results_local <- data.frame(logLik=liks_local[,1],logLik_se=liks_local[,2],t(sap
 summary(results_local$logLik,digits=7)
 #pairs(~logLik+beta_I+beta_W, data=results_local)
 pairs(~logLik+tau1+k+beta0, data=results_local)
+
+
+
+
+# #################################################
+# ## Pfilter tester
+# ## Can delete later
+# #################################################
+# stew(file="data_produced/like_seir.rda",{
+#   t_test_eval <- system.time({
+#     liks_test <- foreach(i=1:10,.packages='pomp',.combine=rbind) %dopar% {
+#       evals <- replicate(10, logLik(pfilter(althaus_seir_pomp,params=seir_parm,Np=1000)))
+#       test_mean<-logmeanexp(evals, se=TRUE)
+#     }
+#   })
+# },seed=39048,kind="L'Ecuyer")
+# 
+# results_test <- data.frame(logLik=liks_test[,1],logLik_se=liks_test[,2])
+# summary(results_test$logLik,digits=8)
+# 
+# #################################################
+# ## mif2 Local search
+# #################################################
+# registerDoMC(cores=2) 
+# 
+# mcopts <- list(set.seed=TRUE)
+# rw_sd <- 0.002
+# 
+# stew(file="data_produced/local_mif_seir2.rda",{
+#   t_local <- system.time({
+#     mifs_local <- foreach(i=1:100,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
+#       mif2(
+#         althaus_seir_pomp,
+#         start=seir_parm,
+#         Np=1000,
+#         Nmif=10,
+#         cooling.type="geometric",
+#         cooling.fraction.50=0.6,
+#         transform=TRUE,
+#         rw.sd=rw.sd(
+#           beta0=rw_sd,
+#           tau1=rw_sd,
+#           k=rw_sd)
+#       )
+#     }
+#   })
+# },seed=808,kind="L'Ecuyer")
+# 
+# 
+# stew(file="likes_mif_loca2l.rda",{
+#   t_local_eval <- system.time({
+#     liks_local <- foreach(i=1:100,.packages='pomp',.combine=rbind) %dopar% {
+#       evals <- replicate(10, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_local[[i]]),Np=1000)))
+#       logmeanexp(evals, se=TRUE)
+#     }
+#   })
+# },seed=900242057,kind="L'Ecuyer")
+# results_local <- data.frame(logLik=liks_local[,1],logLik_se=liks_local[,2],t(sapply(mifs_local,coef)))
+# summary(results_local$logLik,digits=7)
+# #pairs(~logLik+beta_I+beta_W, data=results_local)
+# pairs(~logLik+tau1+k+beta0, data=results_local)
+# 

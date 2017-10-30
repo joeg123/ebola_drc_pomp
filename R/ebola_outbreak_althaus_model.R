@@ -467,12 +467,12 @@ get_parms <- function(ref_parms){
 
 stew(file="data_produced/global_mif_seir3.rda",{
   t_local <- system.time({
-    mifs_local <- foreach(i=1:1000,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
+    mifs_global <- foreach(i=1:500,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
       mif2(
         seir_pomp,
         start=get_parms(seir_parm),
-        Np=1000,
-        Nmif=100,
+        Np=100,
+        Nmif=10,
         cooling.type="geometric",
         cooling.fraction.50=0.6,
         transform=TRUE,
