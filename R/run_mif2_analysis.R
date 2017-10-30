@@ -45,9 +45,17 @@ get_parms <- function(ref_parms){
   sub_parms(rand_parms, ref_parms)
 }
 
-stew(file="data_produced/global_mif_seir3.rda",{
+date_time <- Sys.time()
+dir.create(paste0("data_produced/", date_time))
+
+registerDoMC(cores=2) 
+
+mcopts <- list(set.seed=TRUE)
+rw_sd <- 0.002
+
+stew(file=paste0("data_produced/", date_time, "/global_mif_seir.rda"),{
   t_local <- system.time({
-    mifs_global <- foreach(i=1:500,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
+    mifs_global <- foreach(i=1:50,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
       mif2(
         althaus_seir_pomp,
         start=get_parms(seir_parm),
@@ -66,19 +74,19 @@ stew(file="data_produced/global_mif_seir3.rda",{
 },seed=808,kind="L'Ecuyer")
 
 
-stew(file="likes_mif_global3.rda",{
+stew(file=paste0("data_produced/", date_time, "/global_mif_pf.rda"),{
   t_local_eval <- system.time({
-    liks_local <- foreach(i=1:1000,.packages='pomp',.combine=rbind) %dopar% {
-      evals <- replicate(100, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_local[[i]]),Np=1000)))
+    liks_global <- foreach(i=1:50,.packages='pomp',.combine=rbind) %dopar% {
+      evals <- replicate(50, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_global[[i]]),Np=500)))
       logmeanexp(evals, se=TRUE)
     }
   })
 },seed=900242057,kind="L'Ecuyer")
 
-results_local <- data.frame(logLik=liks_local[,1],logLik_se=liks_local[,2],t(sapply(mifs_local,coef)))
-summary(results_local$logLik,digits=7)
+results_global <- data.frame(logLik=liks_global[,1],logLik_se=liks_global[,2],t(sapply(mifs_global,coef)))
+summary(results_global$logLik,digits=7)
 #pairs(~logLik+beta_I+beta_W, data=results_local)
-pairs(~logLik+tau1+k+beta0, data=results_local)
+pairs(~logLik+tau1+k+beta0, data=results_global)
 
 
 
