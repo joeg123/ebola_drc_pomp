@@ -1,0 +1,997 @@
+Outbreak,Year_outbreak,Person_ID,Age,Sex,Date_of_onset_symp,Date_hospital_discharge,Outcome,Case_definition,Date_of_notification,Date_of_Hospitalisation,Date_disease_ended,Date_of_Death,Occupation,Fever,Diarrhea,Abdominal_pain,Headache,Vomiting,Haemorrhagic_symptoms,Hiccup,Info_one_clincal_symptom
+Yambuku,1976,Yam_1976_11,NA,Female,9/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_31,NA,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_49,NA,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_51,NA,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_54,NA,Male,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_57,NA,Male,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_58,NA,Male,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_71,NA,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_75,NA,Female,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_82,NA,Male,9/17/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_117,NA,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_131,NA,Female,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_132,NA,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_134,NA,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_143,NA,Male,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_157,NA,,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_169,NA,Female,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_171,NA,Female,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_181,NA,Female,9/28/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_233,NA,Male,10/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_242,NA,Female,10/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_245,NA,Male,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_261,NA,Male,NA,NA,Dead,Suspected/probable/confirmed,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_262,NA,Female,NA,NA,Dead,Suspected/probable/confirmed,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_32,NA,Male,3/13/95,3/27/95,Dead,Probable,5/17/95,3/20/95,NA,3/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_34,NA,Female,4/1/95,4/13/95,Dead,Probable,5/17/95,4/13/95,NA,4/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_42,NA,Male,NA,NA,Dead,Probable,5/22/95,NA,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_49,NA,Male,4/30/95,5/10/95,Dead,Probable,5/25/95,5/2/95,NA,5/10/95,HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_60,NA,Male,NA,NA,Dead,Probable,NA,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_97,NA,Male,NA,NA,Alive,Probable,5/21/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_99,NA,Female,5/4/95,5/19/95,Dead,Probable,5/20/95,5/18/95,NA,5/28/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_107,NA,Male,4/19/95,4/24/95,Dead,Probable,5/18/95,4/21/95,NA,4/24/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_154,NA,Female,4/10/95,4/10/95,Dead,Probable,5/13/95,4/10/95,NA,4/10/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_162,NA,Female,5/18/95,NA,Alive,Probable,5/15/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_243,NA,Male,NA,NA,Dead,Probable,6/5/95,NA,NA,6/1/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_285,NA,Female,NA,NA,Dead,Probable,6/14/95,NA,NA,5/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_313,NA,Female,NA,NA,Alive,Probable,6/12/96,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_314,NA,Female,NA,4/2/95,Dead,Probable,6/18/96,NA,NA,4/2/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_315,NA,Female,NA,3/15/95,Dead,Probable,6/18/95,NA,NA,3/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_316,NA,Female,NA,3/16/95,Dead,Probable,6/18/96,NA,NA,3/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_317,NA,Female,NA,3/27/95,Dead,Probable,6/18/96,NA,NA,3/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_28,77,Female,12/21/08,NA,Alive,Probable,NA,NA,NA,NA,NA,0,1,1,NA,1,0,NA,1
+Isiro,2012,Isi_2012_72,77,Male,8/27/12,9/10/12,Alive,Confirmed,9/1/12,9/2/12,NA,NA,Other,1,1,1,1,1,0,1,1
+Boende,2014,Boe_2014_88,77,Male,9/6/14,NA,Alive,Confirmed,9/12/14,9/12/14,NA,NA,Other,1,0,0,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_36,75,Female,NA,NA,Alive,Suspected/probable,9/1/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_163,75,Male,NA,NA,Dead,Suspected/probable,7/15/07,NA,NA,7/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_272,75,Male,NA,NA,Alive,Suspected/probable,8/31/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_187,72,Male,NA,NA,Dead,Suspected/probable,4/15/07,NA,NA,4/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_217,72,Female,8/29/07,NA,Alive,Suspected/probable,8/29/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Kikwit,1995,Kik_1995_2,71,Female,4/14/95,4/25/95,Dead,Probable,5/13/95,4/18/95,NA,4/25/95,HCW,1,1,NA,1,1,1,1,1
+Kikwit,1995,Kik_1995_93,70,Female,4/12/95,NA,Dead,Probable,5/18/95,NA,NA,4/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_82,70,Male,NA,NA,Dead,Suspected/probable,5/5/07,NA,NA,5/5/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_138,70,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_13,70,Female,12/17/08,NA,Dead,Probable,12/17/08,NA,NA,12/14/08,NA,1,1,1,NA,1,0,NA,1
+Mweka2007,2007,Mwe_2007_120,69,Female,NA,NA,Dead,Suspected/probable,7/11/07,NA,NA,7/11/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_40,68,Male,4/5/95,4/15/95,Dead,Probable,5/22/95,4/15/95,NA,4/15/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_204,68,Male,NA,NA,Dead,Suspected/probable,4/15/07,NA,NA,4/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_143,67,Male,NA,NA,Alive,Probable,5/24/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_235,67,Male,5/27/95,6/2/95,Dead,Probable,6/3/95,5/30/95,NA,6/2/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_91,67,Female,NA,NA,Dead,Suspected/probable,8/10/07,NA,NA,8/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_102,67,Female,NA,NA,Dead,Suspected/probable,8/8/07,NA,NA,8/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_386,67,Female,NA,NA,NA,Confirmed,9/6/07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_6,67,Female,12/21/08,NA,Alive,Probable,12/24/08,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_124,66,Female,NA,NA,Dead,Suspected/probable,7/9/07,NA,NA,7/9/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_226,65,Female,10/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_5,65,Female,4/29/95,5/5/95,Dead,Probable,5/17/95,5/1/95,NA,5/6/95,HCW,1,1,NA,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_267,65,Male,6/2/95,6/12/95,Dead,Probable,6/9/95,6/11/95,NA,6/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_272,65,Female,6/1/95,6/12/95,Dead,Probable,6/10/95,6/8/95,NA,6/12/95,no HCW,1,1,1,NA,1,1,NA,1
+Mweka2007,2007,Mwe_2007_43,65,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_44,65,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_80,65,Female,NA,NA,Dead,Suspected/probable,8/26/07,NA,NA,8/26/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_85,65,Male,NA,NA,Dead,Suspected/probable,6/13/07,NA,NA,6/13/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_122,65,Male,NA,NA,Dead,Suspected/probable,6/29/07,NA,NA,6/29/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_385,65,Female,NA,NA,NA,Confirmed,9/4/07,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_32,65,Female,12/27/08,NA,Alive,Confirmed,1/17/09,NA,NA,NA,NA,0,0,1,0,1,0,NA,1
+Boende,2014,Boe_2014_45,65,Female,8/18/14,NA,Dead,Confirmed,8/23/14,8/23/14,NA,8/29/14,Housewife,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_14,64,Female,12/20/08,NA,Alive,Probable,12/21/08,NA,NA,NA,NA,1,0,0,1,0,0,NA,1
+Isiro,2012,Isi_2012_17,64,Male,8/9/12,8/29/12,Alive,Confirmed,8/13/12,8/13/12,NA,NA,Other,1,0,1,1,0,0,0,1
+Isiro,2012,Isi_2012_76,64,Male,7/19/12,NA,Dead,Probable,9/10/12,NA,NA,7/29/12,Other,1,0,0,1,0,0,0,1
+Kikwit,1995,Kik_1995_106,63,Male,3/22/95,3/29/95,Dead,Probable,5/21/95,3/27/95,NA,3/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_206,63,Female,5/16/95,NA,Dead,Probable,5/31/95,NA,NA,5/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_136,62,Female,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_147,62,Male,3/8/95,NA,Dead,Probable,5/20/95,NA,NA,3/19/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_308,62,Male,NA,6/3/95,Dead,Probable,8/19/95,6/2/95,NA,6/3/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_34,62,Male,NA,NA,Alive,Suspected/probable,9/1/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_121,62,Female,NA,NA,Dead,Suspected/probable,6/22/07,NA,NA,6/22/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_125,62,Male,NA,NA,Dead,Suspected/probable,6/4/07,NA,NA,6/4/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_156,62,Male,NA,NA,Dead,Suspected/probable,7/6/07,NA,NA,7/6/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_7,62,Female,12/18/08,NA,Alive,Probable,12/19/08,NA,NA,NA,NA,1,1,0,0,0,0,NA,1
+Kikwit,1995,Kik_1995_94,61,Male,4/28/95,NA,Dead,Probable,5/23/95,NA,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_223,61,Female,8/28/07,NA,Alive,Suspected/probable,8/28/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_389,61,Female,NA,NA,Dead,Confirmed,9/6/07,NA,NA,9/9/07,NA,1,1,1,0,1,1,NA,1
+Yambuku,1976,Yam_1976_18,60,Male,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_85,60,Female,9/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_92,60,Male,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_100,60,Female,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_104,60,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_180,60,Male,9/28/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_197,60,Female,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_215,60,Female,10/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/12/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_56,60,Male,5/9/95,5/15/95,Dead,Probable,5/19/95,5/12/95,NA,5/15/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_98,60,Female,4/23/95,5/13/95,Dead,Probable,5/22/95,5/12/95,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_161,60,Female,2/7/95,2/14/95,Dead,Probable,5/26/95,2/11/95,NA,2/14/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_163,60,Female,3/22/95,4/1/95,Dead,Probable,5/22/95,3/25/95,NA,4/1/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_180,60,Female,5/19/95,NA,Dead,Probable,5/27/95,NA,NA,5/25/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_188,60,Female,4/20/95,4/29/95,Dead,Probable,5/27/95,NA,NA,4/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_230,60,Male,5/26/95,6/3/95,Dead,Probable,6/2/95,6/2/95,NA,6/3/95,no HCW,1,1,NA,NA,NA,1,1,1
+Kikwit,1995,Kik_1995_249,60,Male,NA,NA,Alive,Probable,6/7/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_276,60,Female,6/8/95,6/12/95,Dead,Probable,6/11/95,6/11/95,NA,6/12/95,no HCW,NA,NA,1,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_296,60,Female,4/16/95,NA,Dead,Probable,6/22/95,4/22/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_307,60,Female,NA,6/13/95,Dead,Probable,8/19/95,6/8/95,NA,6/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_62,60,Female,NA,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_66,60,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_83,60,Female,NA,NA,Dead,Suspected/probable,8/3/07,NA,NA,8/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_86,60,Female,NA,NA,Dead,Suspected/probable,8/3/07,NA,NA,8/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_393,60,Female,NA,NA,Dead,Confirmed,9/6/07,NA,NA,9/13/07,NA,1,NA,NA,1,NA,NA,NA,1
+Mweka2007,2007,Mwe_2007_398,60,Female,NA,NA,NA,Confirmed,9/17/07,NA,NA,NA,NA,1,1,1,1,1,NA,NA,1
+Mweka2007,2007,Mwe_2007_405,60,Female,NA,NA,NA,Confirmed,9/14/07,NA,NA,NA,NA,NA,1,NA,NA,NA,NA,NA,1
+Isiro,2012,Isi_2012_44,60,Female,8/5/12,NA,Dead,Probable,9/3/12,8/10/12,NA,8/18/12,Housewife,1,1,1,1,1,1,0,1
+Isiro,2012,Isi_2012_137,60,Male,9/21/12,NA,Alive,Confirmed,9/22/12,NA,NA,NA,possible HCW,1,1,0,0,1,NA,0,1
+Boende,2014,Boe_2014_31,60,Male,8/13/14,NA,Dead,Probable,8/24/14,8/24/14,NA,8/30/14,Other,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_6,59,Female,5/1/95,5/14/95,Dead,Probable,5/18/95,5/1/95,NA,5/14/95,HCW,1,1,NA,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_61,59,Male,5/18/95,5/25/95,Dead,Probable,5/25/95,5/18/95,NA,5/25/95,HCW,1,1,NA,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_132,59,Female,5/17/95,5/23/95,Dead,Probable,5/18/95,5/17/95,NA,5/23/95,HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_146,59,Female,2/26/95,3/2/95,Dead,Probable,5/17/95,2/26/95,NA,3/2/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_262,59,Male,5/14/95,NA,Dead,Probable,6/9/95,NA,NA,6/7/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_266,59,Female,6/3/95,6/13/95,Dead,Probable,6/9/95,6/10/95,NA,6/13/95,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_134,59,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_155,59,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_117,58,Female,5/14/95,5/21/95,Dead,Probable,5/20/95,5/20/95,NA,5/21/95,no HCW,1,1,NA,NA,NA,1,NA,1
+Kikwit,1995,Kik_1995_270,58,Female,6/3/95,6/10/95,Alive,Probable,6/9/95,6/7/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_108,58,Male,NA,NA,Dead,Suspected/probable,5/15/07,NA,NA,5/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_133,58,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_162,58,Male,NA,NA,Dead,Suspected/probable,4/15/07,NA,NA,4/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_176,58,Male,NA,NA,Dead,Suspected/probable,6/15/07,NA,NA,6/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Boende,2014,Boe_2014_3,58,Female,8/13/14,NA,Dead,Probable,8/21/14,NA,NA,8/19/14,HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_82,57,Male,5/8/95,5/18/95,Dead,Probable,5/27/95,5/14/95,NA,5/18/95,possible HCW,1,1,1,1,1,NA,1,1
+Kikwit,1995,Kik_1995_84,57,Female,5/2/95,5/13/95,Dead,Probable,5/15/95,NA,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_103,57,Female,5/2/95,5/19/95,Dead,Probable,5/17/95,5/14/95,NA,5/19/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_258,57,Male,5/31/95,6/13/95,Dead,Probable,6/8/95,6/9/95,NA,6/13/95,no HCW,1,1,1,1,NA,1,1,1
+Kikwit,1995,Kik_1995_290,57,Male,5/16/95,NA,Dead,Probable,6/16/95,NA,NA,5/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_161,57,Male,NA,NA,Dead,Suspected/probable,7/25/07,NA,NA,7/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_399,57,Female,NA,NA,Dead,Confirmed,10/2/07,NA,NA,10/2/07,NA,1,1,0,1,1,1,NA,1
+Yambuku,1976,Yam_1976_96,56,Male,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_97,56,Female,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_156,56,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_191,56,Male,9/30/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_116,56,Male,5/13/95,5/26/95,Dead,Probable,5/17/95,5/18/95,NA,5/26/95,HCW,1,1,1,NA,NA,1,1,1
+Kikwit,1995,Kik_1995_172,56,Female,5/23/95,6/3/95,Alive,Probable,5/27/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_153,56,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_374,56,Female,NA,NA,NA,Suspected/probable,8/20/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2008,2008,Mwe_2008_23,56,Male,12/18/08,NA,Alive,Confirmed,NA,NA,NA,NA,NA,1,0,0,0,0,0,NA,1
+Boende,2014,Boe_2014_56,56,Male,8/21/14,NA,Alive,Suspected,8/25/14,8/24/14,NA,,Other,1,1,0,0,1,1,NA,1
+Boende,2014,Boe_2014_59,56,Male,8/26/14,NA,Dead,Confirmed,9/3/14,9/3/14,NA,9/7/14,Other,1,1,0,1,0,1,NA,1
+Yambuku,1976,Yam_1976_2,55,Male,9/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_63,55,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_65,55,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_66,55,Male,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_76,55,Male,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/23/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_99,55,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_116,55,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_118,55,Female,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_150,55,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_159,55,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_196,55,Male,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_210,55,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_250,55,Female,10/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_255,55,Female,10/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_131,55,Female,5/16/95,5/25/95,Dead,Probable,5/13/95,5/24/95,NA,5/25/95,no HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_256,55,Male,5/29/95,NA,Dead,Probable,6/8/95,6/9/95,NA,6/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_278,55,Male,6/11/95,6/12/95,Alive,Probable,6/12/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_309,55,Female,NA,NA,Dead,Probable,8/21/95,NA,NA,5/14/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_64,55,Female,NA,NA,Dead,Suspected/probable,7/3/07,NA,NA,7/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_109,55,Male,NA,NA,Dead,Suspected/probable,5/16/07,NA,NA,5/16/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_123,55,Male,NA,NA,Dead,Suspected/probable,6/17/07,NA,NA,6/17/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_150,55,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_164,55,Female,NA,NA,Dead,Suspected/probable,8/3/07,NA,NA,8/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_188,55,Female,NA,NA,Dead,Suspected/probable,6/30/07,NA,NA,6/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_387,55,Male,NA,NA,Dead,Confirmed,9/6/07,NA,NA,9/22/07,NA,0,1,0,1,0,0,NA,1
+Isiro,2012,Isi_2012_106,55,Female,7/25/12,7/28/12,Alive,Probable,9/10/12,7/25/12,NA,NA,Housewife,1,1,0,0,1,0,0,1
+Boende,2014,Boe_2014_34,55,Female,8/18/14,NA,Alive,Confirmed,8/19/14,8/18/14,NA,,NA,1,0,1,0,0,0,NA,1
+Yambuku,1976,Yam_1976_83,54,Male,9/17/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_163,54,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_187,54,Male,9/29/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_239,54,Male,5/5/95,NA,Alive,Probable,6/4/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_10,54,Female,7/27/12,NA,Dead,Probable,NA,7/29/12,NA,7/31/12,Housewife,1,1,1,1,1,1,0,1
+Boende,2014,Boe_2014_40,54,Male,8/22/14,NA,Dead,Probable,8/28/14,8/27/14,NA,9/1/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_67,54,Female,8/30/14,NA,Dead,Confirmed,9/7/14,NA,NA,9/6/14,Housewife,1,1,1,0,1,0,NA,1
+Kikwit,1995,Kik_1995_26,53,Male,4/30/95,5/9/95,Dead,Probable,5/23/95,5/7/95,NA,5/9/95,HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_44,53,Female,4/27/95,5/9/95,Dead,Probable,5/15/95,5/6/95,NA,5/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_166,53,Male,5/23/95,5/30/95,Dead,Probable,5/27/95,5/25/95,NA,5/30/95,no HCW,1,1,NA,NA,NA,1,NA,1
+Kikwit,1995,Kik_1995_211,53,Female,NA,NA,Dead,Probable,6/1/95,NA,NA,2/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_67,53,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Boende,2014,Boe_2014_46,53,Male,8/26/14,NA,Dead,Confirmed,8/28/14,8/30/14,NA,9/2/14,Other,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_235,52,Female,10/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_17,52,Female,5/2/95,5/13/95,Dead,Probable,5/24/95,5/3/95,NA,5/13/95,HCW,1,1,NA,1,1,1,NA,1
+Kikwit,1995,Kik_1995_36,52,Male,4/9/95,4/16/95,Dead,Probable,5/23/95,4/14/95,NA,4/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_124,52,Female,5/8/95,5/21/95,Dead,Probable,5/21/95,5/20/95,NA,5/21/95,no HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_138,52,Female,5/5/95,5/22/95,Alive,Probable,5/19/95,5/8/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_250,52,Male,6/3/95,6/12/95,Dead,Probable,6/7/95,6/8/95,NA,6/12/95,no HCW,1,1,1,1,1,1,1,1
+Mweka2007,2007,Mwe_2007_39,52,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_48,52,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_89,52,Male,NA,NA,Dead,Suspected/probable,8/12/07,NA,NA,8/12/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_146,52,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_235,52,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_375,52,Female,NA,NA,NA,Suspected/probable,8/22/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_27,52,Female,12/27/08,NA,Dead,Probable,12/28/08,NA,NA,12/28/08,NA,1,1,NA,1,1,0,NA,1
+Isiro,2012,Isi_2012_108,52,Female,8/19/12,NA,Dead,Probable,9/11/12,8/24/12,NA,8/28/12,Housewife,1,1,1,1,1,0,1,1
+Isiro,2012,Isi_2012_129,52,Female,9/1/12,NA,Dead,Probable,9/16/12,NA,NA,9/8/12,Housewife,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_126,51,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_90,51,Male,5/3/95,5/12/95,Dead,Probable,5/18/95,NA,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_133,51,Female,5/17/95,5/28/95,Dead,Probable,5/24/95,5/17/95,NA,5/28/95,HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_193,51,Female,5/2/95,NA,Dead,Probable,5/28/95,5/13/95,NA,5/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_241,51,Female,5/22/95,NA,Dead,Probable,5/28/95,NA,NA,5/28/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_242,51,Female,5/12/95,5/20/95,Dead,Probable,6/5/95,5/12/95,NA,5/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_288,51,Female,5/28/95,6/4/95,Dead,Probable,6/16/95,5/31/95,NA,6/5/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_319,51,Male,NA,NA,Alive,Suspected/probable,8/26/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Yambuku,1976,Yam_1976_10,50,Male,9/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_29,50,Male,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_30,50,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_88,50,Male,9/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_102,50,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_174,50,Male,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_214,50,Female,10/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_246,50,Male,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_69,50,Male,5/7/95,NA,Dead,Probable,5/11/95,NA,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_78,50,Female,5/10/95,5/16/95,Dead,Probable,NA,5/15/95,NA,5/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_156,50,Female,5/5/95,5/12/95,Dead,Probable,5/17/95,NA,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_157,50,Male,4/16/95,4/22/95,Dead,Probable,5/21/95,4/17/95,NA,4/22/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_160,50,Male,4/16/95,4/26/95,Dead,Probable,5/20/95,4/23/95,NA,4/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_165,50,Female,5/26/95,NA,Alive,Probable,NA,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_190,50,Female,5/18/95,5/28/95,Dead,Probable,5/28/95,5/27/95,NA,5/28/95,no HCW,0,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_196,50,Female,4/26/95,NA,Dead,Probable,5/29/95,NA,NA,4/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_280,50,Female,6/5/95,NA,Alive,Probable,6/12/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_282,50,Female,6/5/95,6/30/95,Alive,Probable,6/13/95,6/11/95,NA,NA,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_107,50,Female,NA,NA,Dead,Suspected/probable,8/1/07,NA,NA,8/1/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_208,50,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_382,50,Female,NA,NA,Dead,Confirmed,9/24/07,NA,NA,10/4/07,NA,1,1,1,0,0,0,NA,1
+Mweka2008,2008,Mwe_2008_3,50,Female,12/3/08,NA,Alive,Confirmed,12/17/08,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Isiro,2012,Isi_2012_113,50,Female,9/2/12,NA,Alive,Confirmed,9/12/12,9/12/12,NA,NA,Other,1,0,1,1,0,0,0,1
+Boende,2014,Boe_2014_44,50,Female,8/24/14,NA,Dead,Probable,8/29/14,NA,NA,8/28/14,Other,1,1,0,0,1,1,NA,1
+Yambuku,1976,Yam_1976_67,49,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_18,49,Male,5/3/95,5/11/95,Dead,Probable,5/15/95,5/6/95,NA,5/11/95,possible HCW,1,1,1,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_126,49,Male,5/16/95,NA,Dead,Probable,5/23/95,NA,NA,5/23/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_115,49,Male,NA,NA,Dead,Suspected/probable,7/15/07,NA,NA,7/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_119,49,Female,NA,NA,Dead,Suspected/probable,9/1/07,NA,NA,9/1/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_142,49,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_205,49,Male,NA,NA,Dead,Suspected/probable,4/16/07,NA,NA,4/16/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_150,49,Female,9/12/12,NA,Dead,Confirmed,9/27/12,9/24/12,NA,9/28/12,Other,0,0,1,0,1,0,0,1
+Yambuku,1976,Yam_1976_225,48,Male,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_7,48,Female,4/28/95,5/5/95,Dead,Probable,5/18/95,4/30/95,NA,5/11/95,HCW,1,1,NA,1,1,1,NA,1
+Kikwit,1995,Kik_1995_136,48,Female,4/17/95,4/23/95,Dead,Probable,NA,4/17/95,NA,4/23/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_191,48,Female,5/22/95,NA,Dead,Probable,5/28/95,NA,NA,5/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_200,48,Female,5/8/95,NA,Dead,Probable,5/30/95,NA,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_215,48,Male,5/18/95,5/25/95,Dead,Probable,6/1/95,5/21/95,NA,5/25/95,no HCW,1,1,1,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_264,48,Female,6/5/95,NA,Dead,Probable,6/9/95,6/9/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_295,48,Female,6/18/95,NA,Dead,Probable,6/22/95,6/21/95,NA,6/24/95,no HCW,1,1,NA,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_65,48,Female,NA,NA,Dead,Suspected/probable,7/5/07,NA,NA,7/5/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_95,48,Female,NA,NA,Dead,Suspected/probable,8/1/07,NA,NA,8/1/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_230,48,Female,NA,NA,Dead,Suspected/probable,8/10/07,NA,NA,8/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_8,48,Female,12/8/08,NA,Dead,Probable,12/17/08,11/27/08,NA,12/16/08,NA,1,1,NA,1,0,1,NA,1
+Mweka2008,2008,Mwe_2008_16,48,Female,12/1/08,NA,Alive,Confirmed,1/12/09,NA,NA,NA,NA,1,0,0,1,0,0,NA,1
+Mweka2008,2008,Mwe_2008_19,48,Female,12/4/08,NA,Dead,Probable,12/17/08,NA,NA,12/16/08,NA,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_26,48,Male,12/20/08,NA,Dead,Probable,NA,NA,NA,12/22/08,NA,1,NA,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_45,47,Male,4/8/95,4/13/95,Dead,Probable,5/21/95,4/10/95,NA,4/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_93,47,Female,NA,NA,Dead,Suspected/probable,8/18/07,NA,NA,8/18/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_131,47,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_263,47,Male,NA,NA,Alive,Suspected/probable,8/27/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Isiro,2012,Isi_2012_9,47,Female,7/18/12,NA,Dead,Probable,NA,7/21/12,NA,8/8/12,Housewife,1,1,1,1,1,0,0,1
+Boende,2014,Boe_2014_30,47,Female,8/14/14,NA,Dead,Probable,8/23/14,NA,NA,8/30/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_61,47,Male,9/5/14,NA,Alive,Confirmed,9/5/14,9/5/14,NA,,NA,1,1,0,1,1,1,NA,1
+Kikwit,1995,Kik_1995_15,46,Male,5/1/95,5/14/95,Dead,Probable,5/19/95,5/4/95,NA,5/14/95,HCW,1,1,NA,1,1,1,NA,1
+Kikwit,1995,Kik_1995_91,46,Male,5/1/95,NA,Dead,Probable,5/20/95,NA,NA,5/11/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_118,46,Female,5/11/95,5/30/95,Dead,Probable,5/20/95,5/20/95,NA,5/25/95,no HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_158,46,Female,4/23/95,5/11/95,Dead,Probable,5/15/95,5/2/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_164,46,Male,5/24/95,5/26/95,Dead,Probable,5/13/95,5/26/95,NA,5/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_219,46,Male,5/26/95,6/4/95,Dead,Probable,6/1/95,5/26/95,NA,6/4/95,no HCW,0,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_271,46,Female,6/4/95,6/9/95,Dead,Probable,6/10/95,6/9/95,NA,6/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_301,46,Female,6/17/95,NA,Dead,Probable,6/26/95,NA,NA,6/24/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_144,46,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_165,46,Female,NA,NA,Dead,Suspected/probable,7/10/07,NA,NA,7/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_2,46,Female,12/3/08,NA,Dead,Probable,12/17/08,NA,NA,12/15/08,NA,1,1,1,NA,1,0,NA,1
+Isiro,2012,Isi_2012_68,46,Female,6/19/12,NA,Alive,Confirmed,9/2/12,6/15/12,NA,NA,HCW,1,1,1,1,1,0,1,1
+Isiro,2012,Isi_2012_69,46,Female,7/15/12,NA,Dead,Probable,9/3/12,7/22/12,NA,7/28/12,HCW,1,1,1,0,1,0,1,1
+Boende,2014,Boe_2014_16,46,Male,8/13/14,NA,Dead,Confirmed,8/20/14,NA,NA,NA,HCW,1,1,1,0,1,1,NA,1
+Boende,2014,Boe_2014_42,46,Female,8/20/14,NA,Dead,Probable,8/28/14,8/28/14,NA,NA,Other,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_21,45,Female,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_60,45,Female,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_70,45,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_144,45,Male,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_155,45,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_172,45,Female,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_182,45,Male,9/28/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_200,45,Female,10/2/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_206,45,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_211,45,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_224,45,Female,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_230,45,Female,10/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_254,45,Female,10/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_256,45,Female,10/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_257,45,Female,10/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,11/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_48,45,Female,4/24/95,5/21/95,Alive,Probable,5/13/95,4/24/95,NA,NA,no HCW,1,NA,NA,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_89,45,Female,4/30/95,5/8/95,Dead,Probable,5/25/95,5/1/95,NA,5/8/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_120,45,Female,5/12/95,5/20/95,Dead,Probable,5/14/95,5/20/95,NA,5/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_123,45,Female,5/17/95,5/24/95,Dead,Probable,5/20/95,5/20/95,NA,5/24/95,no HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_144,45,Male,5/5/95,5/13/95,Dead,Probable,5/22/95,5/12/95,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_155,45,Female,5/23/95,5/29/95,Dead,Probable,5/17/95,5/25/95,NA,5/28/95,no HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_212,45,Male,1/20/95,1/29/95,Dead,Probable,6/1/95,1/28/95,NA,1/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_229,45,Female,5/7/95,NA,Dead,Probable,6/2/95,NA,NA,5/14/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_268,45,Male,6/3/95,6/11/95,Dead,Probable,6/9/95,6/10/95,NA,6/11/95,no HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_284,45,Female,NA,5/22/95,Dead,Probable,NA,5/20/95,NA,5/22/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_299,45,Female,5/21/95,5/26/95,Dead,Probable,6/24/95,5/25/95,NA,5/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_20,45,Female,NA,NA,Dead,Suspected/probable,8/22/07,NA,NA,NA,NA,1,0,0,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_70,45,Female,NA,NA,Dead,Suspected/probable,7/17/07,NA,NA,7/17/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_117,45,Male,NA,NA,Dead,Suspected/probable,8/11/07,NA,NA,8/11/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_118,45,Female,NA,NA,Dead,Suspected/probable,8/13/07,NA,NA,8/13/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_126,45,Male,NA,NA,Dead,Suspected/probable,5/12/07,NA,NA,5/12/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_143,45,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_172,45,Female,NA,NA,Dead,Suspected/probable,6/10/07,NA,NA,6/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_396,45,Female,NA,NA,Dead,Confirmed,9/12/07,NA,NA,9/14/07,NA,1,1,NA,1,1,NA,NA,1
+Isiro,2012,Isi_2012_59,45,Female,6/24/12,7/10/12,Alive,Confirmed,NA,6/24/12,NA,NA,Other,NA,1,0,0,0,0,0,1
+Isiro,2012,Isi_2012_118,45,Female,9/5/12,NA,Alive,Confirmed,9/13/12,9/8/12,NA,NA,Other,1,1,0,0,1,1,0,1
+Isiro,2012,Isi_2012_142,45,Female,9/17/12,NA,Dead,Confirmed,9/23/12,9/19/12,NA,9/28/12,Housewife,1,1,0,0,1,0,0,1
+Isiro,2012,Isi_2012_178,45,Female,9/22/12,NA,Dead,Confirmed,10/10/12,NA,NA,9/27/12,Housewife,1,0,0,1,1,0,0,1
+Yambuku,1976,Yam_1976_45,44,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_8,44,Male,5/1/95,5/18/95,Alive,Probable,5/24/95,5/5/95,NA,NA,HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_9,44,Male,5/2/95,5/13/95,Alive,Probable,5/17/95,5/5/95,NA,NA,HCW,1,1,1,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_28,44,Female,4/30/95,5/12/95,Dead,Probable,5/17/95,5/10/95,NA,5/12/95,HCW,1,NA,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_55,44,Female,5/10/95,6/15/95,Alive,Probable,5/17/95,5/12/95,NA,NA,HCW,1,1,1,1,1,1,1,1
+Kikwit,1995,Kik_1995_286,44,Female,6/7/95,7/10/95,Alive,Probable,6/15/95,6/14/95,NA,NA,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_182,44,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_215,44,Male,9/1/07,NA,Alive,Suspected/probable,9/1/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_394,44,Male,NA,NA,Dead,Confirmed,9/20/07,NA,NA,9/21/07,NA,0,0,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_20,44,Male,12/20/08,NA,Alive,Probable,12/22/08,NA,NA,NA,NA,1,0,0,0,0,0,NA,1
+Isiro,2012,Isi_2012_7,44,Male,6/13/12,NA,Dead,Probable,NA,6/16/12,NA,6/24/12,Other,1,1,1,1,1,1,0,1
+Isiro,2012,Isi_2012_13,44,Female,8/5/12,NA,Dead,Confirmed,9/9/12,8/11/12,NA,8/13/12,Housewife,1,1,1,1,1,1,1,1
+Yambuku,1976,Yam_1976_113,43,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_213,43,Male,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_29,43,Male,5/4/95,5/11/95,Dead,Probable,5/15/95,5/10/95,NA,5/11/95,no HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_39,43,Male,4/30/95,NA,Dead,Probable,NA,NA,NA,5/4/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_119,43,Female,5/14/95,5/23/95,Dead,Probable,5/26/95,5/20/95,NA,5/23/95,no HCW,1,1,1,1,1,1,1,1
+Kikwit,1995,Kik_1995_175,43,Male,4/11/95,4/28/95,Dead,Probable,5/27/95,4/25/95,NA,4/28/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_199,43,Male,5/16/95,5/28/95,Dead,Probable,5/28/95,5/28/95,NA,5/28/95,no HCW,0,1,NA,1,NA,NA,NA,1
+Kikwit,1995,Kik_1995_253,43,Female,5/30/95,NA,Alive,Probable,6/8/95,5/30/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_136,43,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_368,43,Female,NA,NA,NA,Suspected/probable,7/18/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_381,43,Male,NA,NA,NA,Confirmed,9/23/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_391,43,Male,NA,NA,Dead,Confirmed,9/5/07,NA,NA,9/13/07,NA,1,1,1,1,NA,0,NA,1
+Isiro,2012,Isi_2012_134,43,Female,9/12/12,9/20/12,Dead,Confirmed,9/20/12,9/19/12,NA,9/28/12,Housewife,1,1,1,1,1,0,1,1
+Boende,2014,Boe_2014_21,43,Female,8/19/14,NA,Dead,Probable,8/21/14,NA,NA,8/22/14,Other,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_36,43,Male,8/14/14,NA,Dead,Probable,8/26/14,8/26/14,NA,9/1/14,possible HCW,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_48,42,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_137,42,Female,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_14,42,Male,4/28/95,5/8/95,Dead,Probable,5/22/95,5/2/95,NA,5/8/95,HCW,1,1,1,1,NA,NA,NA,1
+Kikwit,1995,Kik_1995_145,42,Male,5/3/95,5/12/95,Dead,Probable,5/17/95,5/11/95,NA,5/12/95,HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_220,42,Male,1/6/95,1/13/95,Dead,Probable,6/1/95,1/9/95,NA,1/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_273,42,Female,6/1/95,6/11/95,Dead,Probable,6/10/95,6/9/95,NA,6/11/95,no HCW,1,1,1,NA,1,1,NA,1
+Mweka2007,2007,Mwe_2007_69,42,Female,NA,NA,Dead,Suspected/probable,7/13/07,NA,NA,7/13/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_132,42,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_227,42,Male,NA,NA,Dead,Suspected/probable,8/30/07,NA,NA,8/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_332,42,Female,NA,NA,Alive,Confirmed,9/1/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_30,42,Female,12/14/08,12/17/08,Dead,Confirmed,NA,12/14/08,NA,12/28/08,NA,1,1,1,1,1,1,NA,1
+Isiro,2012,Isi_2012_6,42,Male,6/14/12,7/5/12,Alive,Confirmed,8/13/12,6/21/12,NA,NA,NA,1,1,1,1,1,1,1,1
+Isiro,2012,Isi_2012_56,42,Female,6/14/12,NA,Alive,Confirmed,NA,6/13/12,NA,NA,HCW,1,0,0,1,1,0,0,1
+Isiro,2012,Isi_2012_57,42,Female,6/18/12,6/20/12,Alive,Confirmed,NA,6/18/12,NA,NA,HCW,1,0,0,1,1,0,0,1
+Boende,2014,Boe_2014_17,42,Female,8/13/14,NA,Dead,Probable,8/22/14,NA,NA,8/17/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_32,42,Female,8/20/14,NA,Dead,Probable,8/25/14,NA,NA,8/25/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_49,42,Male,8/29/14,NA,Dead,Probable,8/30/14,NA,NA,8/30/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_60,42,Female,9/2/14,NA,Dead,Confirmed,9/5/14,9/5/14,NA,9/9/14,NA,1,1,1,0,1,0,NA,1
+Boende,2014,Boe_2014_108,42,Female,9/11/14,NA,Dead,Confirmed,9/16/14,NA,NA,10/28/14,Housewife,1,1,0,0,1,0,NA,1
+Kikwit,1995,Kik_1995_33,41,Male,4/5/95,4/11/95,Dead,Probable,5/20/95,4/11/95,NA,4/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_52,41,Male,5/1/95,5/22/95,Alive,Probable,5/17/95,5/12/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_85,41,Male,5/2/95,5/8/95,Dead,Probable,5/19/95,5/5/95,NA,5/9/95,HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_101,41,Male,5/2/95,5/9/95,Dead,Probable,5/17/95,5/5/95,NA,5/9/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_102,41,Female,5/8/95,5/15/95,Dead,Probable,5/13/95,5/11/95,NA,5/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_174,41,Female,5/20/95,NA,Dead,Probable,5/27/95,NA,NA,5/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_213,41,Male,5/19/95,5/23/95,Dead,Probable,6/1/95,5/20/95,NA,5/23/95,no HCW,1,1,NA,NA,1,1,1,1
+Mweka2007,2007,Mwe_2007_236,41,Male,NA,NA,Dead,Suspected/probable,8/14/07,NA,NA,8/14/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_322,41,Male,NA,NA,Alive,Suspected/probable,8/28/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_333,41,Male,NA,NA,Alive,Suspected/probable,9/1/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_384,41,Male,NA,NA,Dead,Confirmed,8/31/07,NA,NA,NA,NA,1,1,0,1,1,1,NA,1
+Isiro,2012,Isi_2012_5,41,Female,6/14/12,7/5/12,Alive,Confirmed,9/8/12,6/18/12,NA,NA,HCW,1,1,0,1,1,0,0,1
+Yambuku,1976,Yam_1976_47,40,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_68,40,Male,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_89,40,Female,9/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_151,40,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_160,40,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_177,40,Female,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_183,40,Female,9/28/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/6/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_204,40,Male,10/3/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/12/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_216,40,Male,10/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_217,40,Female,10/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_240,40,Female,10/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_247,40,Male,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_249,40,Male,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_54,40,Male,5/2/95,5/14/95,Dead,Probable,5/24/95,5/5/95,NA,5/14/95,HCW,1,NA,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_74,40,Female,NA,NA,Dead,Probable,5/16/95,NA,NA,5/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_109,40,Female,4/25/95,5/12/95,Dead,Probable,5/18/95,5/9/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_110,40,Female,4/24/95,5/5/95,Dead,Probable,5/18/95,4/30/95,NA,5/5/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_112,40,Female,5/10/95,5/21/95,Dead,Probable,5/24/95,5/17/95,NA,5/21/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_129,40,Male,NA,5/7/95,Dead,Probable,5/7/95,4/25/95,NA,5/7/95,no HCW,0,NA,NA,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_167,40,Female,5/20/95,6/2/95,Dead,Probable,5/14/95,5/27/95,NA,6/2/95,no HCW,1,1,1,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_171,40,Male,5/21/95,NA,Alive,Probable,5/27/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_203,40,Female,5/21/95,NA,Dead,Probable,5/30/95,NA,NA,5/24/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_208,40,Male,5/18/95,5/24/95,Dead,Probable,6/1/95,5/21/95,NA,5/24/95,no HCW,0,1,NA,NA,NA,NA,1,1
+Kikwit,1995,Kik_1995_234,40,Male,5/13/95,5/23/95,Dead,Probable,6/2/95,5/21/95,NA,5/23/95,no HCW,1,1,1,1,NA,NA,NA,1
+Kikwit,1995,Kik_1995_281,40,Female,3/17/95,3/30/95,Dead,Probable,6/13/95,3/25/95,NA,3/30/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_283,40,Male,6/6/95,NA,Alive,Probable,6/14/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_17,40,Male,NA,NA,Dead,Suspected/probable,8/16/07,NA,NA,NA,NA,1,1,1,0,0,0,NA,1
+Mweka2007,2007,Mwe_2007_59,40,Female,NA,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_76,40,Male,NA,NA,Dead,Suspected/probable,8/12/07,NA,NA,8/12/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_157,40,Male,NA,NA,Dead,Suspected/probable,7/6/07,NA,NA,7/6/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_189,40,Female,NA,NA,Dead,Suspected/probable,7/30/07,NA,NA,7/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_314,40,Female,NA,NA,Alive,Suspected/probable,8/28/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Isiro,2012,Isi_2012_3,40,Female,6/28/12,7/17/12,Dead,Probable,6/28/12,7/4/12,NA,7/17/12,HCW,1,1,1,1,1,1,1,1
+Isiro,2012,Isi_2012_177,40,Female,10/10/12,NA,Dead,Confirmed,10/12/12,NA,NA,NA,NA,1,0,0,0,0,0,0,1
+Boende,2014,Boe_2014_9,40,Female,8/13/14,NA,Dead,Probable,8/13/14,NA,NA,8/20/14,NA,1,0,0,0,0,1,NA,1
+Boende,2014,Boe_2014_14,40,Male,8/11/14,NA,Dead,Probable,8/22/14,NA,NA,8/15/14,Other,1,1,0,0,0,1,NA,1
+Boende,2014,Boe_2014_39,40,Female,8/22/14,NA,Dead,Confirmed,8/27/14,8/23/14,NA,NA,Other,1,1,1,1,1,0,NA,1
+Kikwit,1995,Kik_1995_25,39,Female,4/30/95,5/11/95,Dead,Probable,5/26/95,4/30/95,NA,5/11/95,HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_38,39,Male,4/23/95,4/30/95,Dead,Probable,6/12/95,4/26/95,NA,4/30/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_141,39,Male,5/2/95,5/11/95,Dead,Probable,NA,5/5/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_265,39,Female,6/5/95,6/11/95,Dead,Probable,6/9/95,6/8/95,NA,6/11/95,no HCW,1,1,1,1,1,NA,NA,1
+Mweka2007,2007,Mwe_2007_141,39,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_206,39,Female,NA,NA,Dead,Suspected/probable,8/20/07,NA,NA,8/20/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_207,39,Male,NA,NA,Dead,Suspected/probable,8/28/07,NA,NA,8/28/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_234,39,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_309,39,Male,NA,NA,Alive,Suspected/probable,8/22/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Boende,2014,Boe_2014_5,39,Male,8/4/14,NA,Dead,Probable,8/18/14,NA,NA,8/19/14,HCW,1,1,1,0,1,1,NA,1
+Boende,2014,Boe_2014_69,39,Female,8/26/14,NA,Dead,Confirmed,9/8/14,9/8/14,NA,9/15/14,Housewife,1,1,1,1,1,0,NA,1
+Yambuku,1976,Yam_1976_5,38,Male,9/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_120,38,Female,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_193,38,Female,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_218,38,Male,10/5/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_229,38,Female,10/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_53,38,Female,4/19/95,NA,Dead,Probable,NA,NA,NA,4/22/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_76,38,Female,5/2/95,5/15/95,Dead,Probable,5/24/95,5/5/95,NA,5/15/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_113,38,Male,5/7/95,5/21/95,Dead,Probable,5/14/95,5/9/95,NA,5/21/95,no HCW,1,1,NA,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_179,38,Male,4/25/95,5/11/95,Dead,Probable,5/27/95,4/30/95,NA,5/11/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_214,38,Female,5/21/95,5/30/95,Dead,Probable,6/1/95,5/22/95,NA,5/30/95,HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_251,38,Male,4/30/95,5/3/95,Alive,Probable,6/7/95,4/30/95,NA,NA,no HCW,1,1,NA,1,1,1,NA,1
+Kikwit,1995,Kik_1995_260,38,Male,5/27/95,6/11/95,Alive,Probable,6/9/95,6/9/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_293,38,Female,6/13/95,7/10/95,Alive,Probable,6/17/95,6/15/95,NA,NA,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_241,38,Female,NA,NA,Dead,Suspected/probable,8/26/07,NA,NA,8/26/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_4,38,Female,6/28/12,7/7/12,Alive,Confirmed,9/1/12,6/29/12,NA,NA,HCW,1,1,1,1,1,0,0,1
+Boende,2014,Boe_2014_114,38,Female,9/13/14,NA,Dead,Confirmed,9/20/14,9/20/14,NA,NA,Housewife,NA,1,1,1,1,0,NA,1
+Yambuku,1976,Yam_1976_42,37,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_43,37,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_62,37,Male,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_133,37,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_185,37,Male,9/29/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_23,37,Male,5/3/95,5/9/95,Dead,Probable,5/26/95,5/5/95,NA,5/9/95,HCW,1,NA,1,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_72,37,Male,4/23/95,4/30/95,Dead,Probable,5/22/95,4/26/95,NA,4/30/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_77,37,Female,5/1/95,7/10/95,Alive,Probable,5/17/95,5/15/95,NA,NA,no HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_125,37,Male,5/2/95,5/23/95,Dead,Probable,5/25/95,5/14/95,NA,5/23/95,no HCW,1,NA,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_127,37,Female,5/14/95,5/19/95,Dead,Probable,5/15/95,5/16/95,NA,5/19/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_176,37,Male,5/14/95,5/23/95,Dead,Probable,5/27/95,5/22/95,NA,5/23/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_56,37,Female,NA,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_127,37,Male,NA,NA,Dead,Confirmed,7/9/07,NA,NA,9/1/07,NA,1,0,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_323,37,Female,NA,NA,Alive,Suspected/probable,8/28/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_9,37,Female,12/9/08,NA,Alive,Probable,12/17/08,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Isiro,2012,Isi_2012_60,37,Female,6/25/12,NA,Alive,Confirmed,NA,7/7/12,NA,NA,Housewife,1,1,1,0,1,1,0,1
+Yambuku,1976,Yam_1976_32,36,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_77,36,Female,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_121,36,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_140,36,Female,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_198,36,Male,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_231,36,Male,10/8/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_237,36,Male,10/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_252,36,Male,10/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_1,36,Male,4/6/95,4/14/95,Dead,Probable,5/17/95,4/8/95,NA,4/14/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_30,36,Male,4/26/95,5/11/95,Dead,Probable,5/24/95,5/8/95,NA,5/11/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_41,36,Female,4/23/95,5/11/95,Dead,Probable,5/7/95,4/28/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_50,36,Male,4/3/95,4/7/95,Dead,Probable,5/13/95,4/7/95,NA,4/14/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_134,36,Male,5/14/95,5/23/95,Dead,Probable,5/22/95,5/22/95,NA,5/23/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_159,36,Female,4/23/95,5/11/95,Dead,Probable,5/15/95,4/28/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_169,36,Female,4/21/95,5/10/95,Alive,Probable,5/27/95,4/21/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_178,36,Male,4/28/95,5/12/95,Dead,Probable,5/27/95,5/2/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_207,36,Male,5/19/95,NA,Dead,Probable,5/31/95,NA,NA,5/31/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_77,36,Male,NA,NA,Dead,Suspected/probable,9/2/07,NA,NA,9/2/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_173,36,Male,NA,NA,Dead,Suspected/probable,7/10/07,NA,NA,7/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_192,36,Female,NA,NA,Dead,Suspected/probable,7/30/07,NA,NA,7/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_400,36,Female,NA,NA,Dead,Confirmed,10/4/07,NA,NA,10/10/07,NA,1,0,0,1,0,0,NA,1
+Mweka2008,2008,Mwe_2008_1,36,Female,12/10/08,NA,Dead,Probable,12/17/08,NA,NA,12/16/08,NA,1,1,1,NA,1,0,NA,1
+Isiro,2012,Isi_2012_21,36,Male,8/16/12,NA,Dead,Confirmed,8/20/12,8/19/12,NA,8/28/12,Other,1,1,1,1,0,1,NA,1
+Isiro,2012,Isi_2012_73,36,Female,11/8/12,NA,Alive,Confirmed,9/7/12,8/11/12,NA,NA,HCW,1,0,0,1,0,0,0,1
+Boende,2014,Boe_2014_4,36,Male,8/3/14,NA,Dead,Probable,8/21/14,NA,NA,8/17/14,HCW,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_12,36,Male,8/11/14,NA,Alive,Confirmed,8/20/14,8/20/14,NA,,Other,1,1,0,0,1,1,NA,1
+Boende,2014,Boe_2014_13,36,Female,8/11/14,NA,Alive,Confirmed,8/21/14,NA,NA,NA,Other,1,1,1,1,1,1,NA,1
+Yambuku,1976,Yam_1976_36,35,Male,9/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_72,35,Male,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_90,35,Male,9/19/76,NA,Alive,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_129,35,Female,9/22/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/6/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_135,35,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_138,35,Female,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_139,35,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_141,35,Female,9/23/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_170,35,Male,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_179,35,Female,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_219,35,Female,10/6/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/10/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_220,35,Male,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_223,35,Female,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_241,35,Male,10/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_244,35,Female,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_46,35,Female,4/23/95,5/11/95,Dead,Probable,5/24/95,4/24/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_47,35,Female,4/17/95,5/12/95,Dead,Probable,5/22/95,4/30/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_57,35,Male,5/11/95,5/16/95,Dead,Probable,5/25/95,5/9/95,NA,5/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_86,35,Male,5/7/95,5/12/95,Dead,Probable,5/20/95,5/7/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_111,35,Female,5/12/95,5/21/95,Dead,Probable,5/18/95,5/12/95,NA,5/21/95,no HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_122,35,Male,5/10/95,5/22/95,Dead,Probable,5/17/95,5/19/95,NA,5/22/95,no HCW,1,NA,NA,1,1,1,1,1
+Kikwit,1995,Kik_1995_197,35,Male,5/13/95,NA,Dead,Probable,5/29/95,NA,NA,5/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_222,35,Female,2/16/95,2/20/95,Dead,Probable,6/1/95,NA,NA,2/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_227,35,Female,2/21/95,3/8/95,Dead,Probable,6/1/95,NA,NA,3/8/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_228,35,Male,2/21/95,3/9/95,Dead,Probable,6/1/95,NA,NA,3/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_232,35,Male,4/30/95,5/10/95,Dead,Probable,6/2/95,5/3/95,NA,5/10/95,no HCW,1,NA,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_236,35,Female,NA,NA,Dead,Probable,6/3/95,NA,NA,5/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_237,35,Female,3/13/95,5/20/95,Dead,Probable,6/4/95,5/17/95,NA,5/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_310,35,Female,NA,NA,Dead,Probable,8/21/95,NA,NA,5/14/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_112,35,Female,NA,NA,Dead,Suspected/probable,5/20/07,NA,NA,5/20/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_154,35,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_198,35,Female,NA,NA,Dead,Suspected/probable,8/2/07,NA,NA,8/2/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_200,35,Female,NA,NA,Dead,Suspected/probable,7/16/07,NA,NA,7/16/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_238,35,Male,NA,NA,Dead,Suspected/probable,8/29/07,NA,NA,8/29/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_277,35,Male,NA,NA,Alive,Suspected/probable,6/2/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_283,35,Female,NA,NA,Alive,Suspected/probable,6/13/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_291,35,Female,NA,NA,Alive,Suspected/probable,7/11/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_293,35,Female,NA,NA,Alive,Suspected/probable,7/13/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_296,35,Female,NA,NA,Alive,Suspected/probable,7/17/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_304,35,Female,NA,NA,Alive,Suspected/probable,8/2/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_392,35,Male,NA,NA,Dead,Confirmed,9/6/07,NA,NA,9/10/07,NA,1,1,NA,1,1,NA,NA,1
+Mweka2007,2007,Mwe_2007_397,35,Male,NA,NA,Dead,Confirmed,9/15/07,NA,NA,9/22/07,NA,0,0,0,1,0,1,NA,1
+Mweka2008,2008,Mwe_2008_4,35,Male,12/3/08,NA,Alive,Confirmed,12/17/08,11/27/08,NA,NA,NA,1,1,1,1,1,1,NA,1
+Mweka2008,2008,Mwe_2008_22,35,Female,12/14/08,NA,Alive,Confirmed,NA,NA,NA,NA,NA,1,0,0,0,0,0,NA,1
+Isiro,2012,Isi_2012_172,35,Female,9/30/12,NA,Dead,Confirmed,10/11/12,NA,NA,10/9/12,Housewife,0,0,1,1,1,NA,1,1
+Boende,2014,Boe_2014_2,35,Male,8/3/14,NA,Dead,Probable,8/21/14,NA,NA,8/17/14,HCW,1,1,0,0,0,0,NA,1
+Boende,2014,Boe_2014_10,35,Female,8/14/14,NA,Dead,Probable,8/14/14,NA,NA,8/14/14,NA,1,0,0,0,0,1,NA,1
+Boende,2014,Boe_2014_122,35,Female,9/18/14,NA,Dead,Confirmed,9/23/14,9/23/14,NA,9/24/14,Housewife,1,1,0,1,1,1,NA,1
+Yambuku,1976,Yam_1976_4,34,Female,9/3/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_22,34,Male,4/27/95,5/10/95,Dead,Probable,5/20/95,5/1/95,NA,5/10/95,HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_114,34,Male,5/14/95,5/27/95,Dead,Probable,5/20/95,5/20/95,NA,5/27/95,no HCW,1,NA,NA,NA,NA,1,1,1
+Kikwit,1995,Kik_1995_170,34,Male,NA,NA,Dead,Probable,5/27/95,NA,NA,5/17/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_204,34,Male,4/25/95,5/8/95,Dead,Probable,5/31/95,4/27/95,NA,5/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_78,34,Male,NA,NA,Dead,Suspected/probable,8/28/07,NA,NA,8/28/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_195,34,Female,NA,NA,Dead,Suspected/probable,6/15/07,NA,NA,6/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_390,34,Male,NA,NA,Dead,Confirmed,9/6/07,NA,NA,9/8/07,NA,1,1,0,0,1,0,NA,1
+Isiro,2012,Isi_2012_85,34,Female,8/13/12,8/16/12,Alive,Confirmed,9/3/12,8/13/12,NA,NA,HCW,1,1,1,1,1,0,0,1
+Boende,2014,Boe_2014_18,34,Male,8/15/14,NA,Dead,Probable,8/18/14,NA,NA,8/20/14,Other,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_38,34,Male,8/24/14,NA,Dead,Probable,8/27/14,8/27/14,NA,8/28/14,Other,1,1,0,0,1,1,NA,1
+Boende,2014,Boe_2014_48,34,Male,8/23/14,NA,Dead,Probable,8/30/14,8/30/14,NA,9/1/14,Other,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_58,34,Female,8/20/14,NA,Dead,Probable,8/22/14,8/22/14,NA,8/25/14,NA,1,1,0,0,1,0,NA,1
+Boende,2014,Boe_2014_115,34,Female,9/20/14,NA,Alive,Confirmed,9/23/14,9/24/14,NA,NA,Housewife,1,1,1,1,0,0,NA,1
+Yambuku,1976,Yam_1976_7,33,Male,9/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_166,33,Female,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_4,33,Male,4/14/95,4/26/95,Dead,Probable,5/17/95,4/25/95,NA,4/26/95,HCW,1,1,1,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_11,33,Male,4/28/95,5/24/95,Alive,Probable,5/20/95,5/1/95,NA,NA,HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_13,33,Male,5/3/95,5/13/95,Dead,Probable,5/20/95,5/9/95,NA,5/13/95,HCW,1,NA,NA,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_24,33,Female,4/30/95,5/13/95,Dead,Probable,5/24/95,5/4/95,NA,5/13/95,HCW,1,1,NA,1,1,1,NA,1
+Kikwit,1995,Kik_1995_92,33,Female,4/24/95,5/7/95,Dead,Probable,NA,5/4/95,NA,5/7/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_184,33,Female,5/11/95,5/24/95,Dead,Probable,5/27/95,5/11/95,NA,5/24/95,HCW,1,1,1,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_263,33,Female,6/1/95,6/8/95,Dead,Probable,6/9/95,6/8/95,NA,6/8/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_101,33,Male,NA,NA,Dead,Suspected/probable,8/20/07,NA,NA,8/20/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_103,33,Female,NA,NA,Dead,Suspected/probable,8/9/07,NA,NA,8/9/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_240,33,Male,NA,NA,Dead,Suspected/probable,8/25/07,NA,NA,8/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_359,33,Male,NA,NA,NA,Suspected/probable,6/22/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Boende,2014,Boe_2014_24,33,Male,8/16/14,NA,Dead,Probable,8/16/14,8/20/14,NA,8/23/14,Other,1,1,0,1,1,1,NA,1
+Boende,2014,Boe_2014_47,33,Male,8/19/14,NA,Alive,Confirmed,8/26/14,8/26/14,NA,,HCW,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_15,32,Female,9/8/76,NA,Alive,Suspected/probable/confirmed,NA,NA,9/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_44,32,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_130,32,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/6/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_227,32,Female,10/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/12/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_16,32,Female,5/1/95,5/21/95,Alive,Probable,5/13/95,5/2/95,NA,NA,HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_67,32,Male,5/12/95,NA,Alive,Probable,5/15/95,5/24/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_121,32,Male,5/1/95,5/10/95,Dead,Probable,5/17/95,5/8/95,NA,5/10/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_148,32,Female,3/20/95,3/26/95,Dead,Probable,5/19/95,3/25/95,NA,3/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_182,32,Male,5/4/95,NA,Alive,Probable,5/27/95,NA,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_183,32,Male,5/9/95,5/20/95,Alive,Probable,5/27/95,5/16/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_205,32,Female,5/22/95,5/29/95,Dead,Probable,5/31/95,5/26/95,NA,5/29/95,no HCW,1,1,1,NA,NA,1,NA,1
+Kikwit,1995,Kik_1995_306,32,Female,4/20/95,NA,Alive,Probable,8/18/95,4/29/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_311,32,Male,5/10/95,5/18/95,Alive,Probable,6/12/96,5/13/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_71,32,Female,NA,NA,Dead,Suspected/probable,7/30/07,NA,NA,7/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_79,32,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_110,32,Male,NA,NA,Dead,Suspected/probable,5/17/07,NA,NA,5/17/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_167,32,Female,NA,NA,Dead,Suspected/probable,8/2/07,NA,NA,8/2/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_233,32,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_360,32,Male,NA,NA,NA,Suspected/probable,6/22/07,NA,NA,NA,NA,1,1,1,1,1,1,NA,1
+Isiro,2012,Isi_2012_128,32,Female,9/15/12,10/10/12,Alive,Confirmed,9/17/12,NA,NA,NA,Other,1,0,1,0,1,0,0,1
+Boende,2014,Boe_2014_6,32,Male,8/7/14,NA,Alive,Confirmed,8/21/14,NA,NA,NA,possible HCW,1,1,1,0,1,1,NA,1
+Boende,2014,Boe_2014_20,32,Male,8/17/14,NA,Dead,Confirmed,8/20/14,8/20/14,NA,9/2/14,HCW,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_68,32,Female,8/31/14,NA,Dead,Confirmed,NA,NA,NA,9/9/14,Housewife,1,NA,0,0,NA,0,NA,1
+Boende,2014,Boe_2014_85,32,Female,9/8/14,NA,Dead,Confirmed,9/10/14,9/9/14,NA,9/10/14,Housewife,1,0,0,1,1,1,NA,1
+Kikwit,1995,Kik_1995_43,31,Male,4/25/95,5/7/95,Dead,Probable,5/20/95,5/6/95,NA,5/7/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_87,31,Male,5/3/95,5/11/95,Dead,Probable,5/18/95,5/9/95,NA,5/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_246,31,Female,5/25/95,NA,Alive,Probable,6/6/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_22,31,Female,NA,NA,Alive,Suspected/probable,8/26/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_116,31,Female,NA,NA,Dead,Suspected/probable,7/26/07,NA,NA,7/26/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_209,31,Male,NA,NA,Dead,Suspected/probable,8/25/07,NA,NA,8/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_6,30,Male,9/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_22,30,Female,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_26,30,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_40,30,Female,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_111,30,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_112,30,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_114,30,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_128,30,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_154,30,Male,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_165,30,Male,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_188,30,Female,9/29/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_239,30,Male,10/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_251,30,Male,10/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_12,30,Male,4/27/95,5/7/95,Dead,Probable,5/20/95,4/30/95,NA,5/7/95,HCW,1,1,1,NA,1,1,1,1
+Kikwit,1995,Kik_1995_31,30,Male,5/4/95,5/15/95,Dead,Probable,5/25/95,5/8/95,NA,5/15/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_35,30,Male,4/1/95,4/14/95,Dead,Probable,5/16/95,NA,NA,4/14/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_62,30,Male,NA,NA,Dead,Probable,NA,NA,NA,5/13/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_181,30,Male,5/13/95,NA,Dead,Probable,5/27/95,NA,NA,5/20/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_238,30,Female,5/30/95,6/3/95,Dead,Probable,6/4/95,NA,NA,6/3/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_240,30,Female,5/26/95,6/12/95,Alive,Probable,6/4/95,6/4/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_275,30,Female,6/7/95,6/15/95,Alive,Probable,6/11/95,6/14/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_303,30,Female,5/5/95,5/22/95,Alive,Probable,8/15/95,5/5/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_304,30,Female,5/8/95,5/29/95,Alive,Probable,8/15/95,5/8/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_87,30,Female,NA,NA,Dead,Suspected/probable,8/10/07,NA,NA,8/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_239,30,Male,NA,NA,Dead,Suspected/probable,9/4/07,NA,NA,9/4/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_306,30,Male,NA,NA,Alive,Suspected/probable,8/11/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_325,30,Male,NA,NA,Alive,Suspected/probable,8/29/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Isiro,2012,Isi_2012_79,30,Female,7/24/12,8/6/12,Dead,Probable,8/4/12,8/4/12,NA,8/6/12,Housewife,1,1,1,0,1,1,0,1
+Isiro,2012,Isi_2012_91,30,Female,8/22/12,9/4/12,Alive,Confirmed,9/3/12,8/17/12,NA,NA,Housewife,NA,1,1,1,1,1,0,1
+Isiro,2012,Isi_2012_114,30,Male,9/10/12,NA,Alive,Confirmed,9/12/12,9/12/12,NA,NA,NA,1,0,0,0,0,0,0,1
+Boende,2014,Boe_2014_1,30,Female,7/26/14,NA,Dead,Probable,8/21/14,NA,NA,8/11/14,Other,1,0,1,0,1,1,NA,1
+Boende,2014,Boe_2014_7,30,Male,8/7/14,NA,Dead,Confirmed,8/21/14,NA,NA,8/23/14,HCW,1,1,1,1,1,1,NA,1
+Yambuku,1976,Yam_1976_142,29,Male,9/23/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_148,29,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_178,29,Female,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_3,29,Male,4/13/95,4/26/95,Dead,Probable,5/22/95,4/18/95,NA,4/26/95,HCW,1,NA,NA,1,NA,NA,NA,1
+Kikwit,1995,Kik_1995_21,29,Female,5/2/95,5/8/95,Dead,Probable,5/20/95,5/3/95,NA,5/10/95,HCW,1,1,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_79,29,Male,5/5/95,5/16/95,Alive,Probable,NA,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_209,29,Female,1/23/95,2/11/95,Dead,Probable,6/1/95,2/7/95,NA,2/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_23,29,Female,NA,NA,Alive,Suspected/probable,8/26/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_74,29,Female,NA,NA,Dead,Suspected/probable,7/12/07,NA,NA,7/12/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_107,29,Female,9/7/12,NA,Dead,Confirmed,9/11/12,9/9/12,NA,9/15/12,Housewife,1,1,1,1,1,0,0,1
+Boende,2014,Boe_2014_8,29,Female,8/10/14,NA,Dead,Probable,8/22/14,NA,NA,8/15/14,Other,1,1,0,1,1,1,NA,1
+Yambuku,1976,Yam_1976_23,28,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_78,28,Female,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_79,28,Female,9/17/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_68,28,Female,5/5/95,5/10/95,Dead,Probable,5/17/95,5/9/95,NA,5/10/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_128,28,Female,5/16/95,5/27/95,Dead,Probable,5/15/95,5/22/95,NA,5/27/95,no HCW,1,1,1,NA,1,1,1,1
+Kikwit,1995,Kik_1995_137,28,Male,5/16/95,5/25/95,Dead,Probable,5/13/95,5/24/95,NA,5/25/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_142,28,Male,NA,NA,Dead,Probable,NA,NA,NA,4/25/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_185,28,Female,5/10/95,5/16/95,Dead,Probable,5/27/95,5/14/95,NA,5/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_195,28,Female,5/22/95,NA,Alive,Probable,5/28/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_221,28,Female,1/21/95,NA,Dead,Probable,6/1/95,NA,NA,2/2/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_224,28,Male,1/20/95,2/3/95,Dead,Probable,6/1/95,1/30/95,NA,2/3/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_245,28,Male,4/24/95,4/30/95,Dead,Probable,5/23/95,4/27/95,NA,4/30/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_254,28,Female,NA,5/6/95,Dead,Probable,6/8/95,NA,NA,5/6/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_237,28,Male,NA,NA,Dead,Suspected/probable,8/28/07,NA,NA,8/28/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_1,28,Female,6/1/12,NA,Dead,Probable,NA,6/3/12,NA,6/7/12,HCW,1,1,1,1,1,1,1,1
+Boende,2014,Boe_2014_35,28,Female,8/12/14,NA,Dead,Confirmed,8/22/14,8/18/14,NA,8/26/14,Other,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_50,28,Male,8/25/14,NA,Dead,Confirmed,8/30/14,8/30/14,NA,9/17/14,NA,1,1,0,0,0,1,NA,1
+Yambuku,1976,Yam_1976_13,27,Male,9/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/14/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_94,27,Male,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_10,27,Female,4/14/95,5/3/95,Alive,Probable,5/23/95,4/19/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_27,27,Female,4/30/95,5/7/95,Dead,Probable,5/20/95,5/2/95,NA,5/7/95,HCW,1,1,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_59,27,Male,5/1/95,5/12/95,Dead,Probable,5/20/95,5/9/95,NA,5/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_64,27,Male,5/9/95,5/13/95,Dead,Probable,5/18/95,5/11/95,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_75,27,Female,5/14/95,5/15/95,Alive,Probable,NA,5/15/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_135,27,Male,5/9/95,5/21/95,Alive,Probable,5/17/95,5/9/95,NA,NA,no HCW,1,1,NA,NA,NA,1,NA,1
+Kikwit,1995,Kik_1995_140,27,Male,5/15/95,5/24/95,Dead,Probable,5/19/95,5/21/95,NA,5/24/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_192,27,Female,3/13/95,3/20/95,Alive,Probable,5/28/95,3/15/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_248,27,Female,5/30/95,7/4/95,Alive,Probable,6/7/95,6/6/95,NA,NA,HCW,1,NA,1,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_252,27,Male,5/18/95,5/26/95,Dead,Probable,6/7/95,5/20/95,NA,5/26/95,no HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_312,27,Female,NA,7/16/95,Dead,Probable,6/12/96,7/16/95,NA,7/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_9,27,Female,NA,NA,Alive,Suspected/probable,7/10/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_197,27,Female,NA,NA,Dead,Suspected/probable,8/29/07,NA,NA,8/29/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_2,27,Female,6/12/12,6/22/12,Dead,Probable,NA,6/18/12,NA,6/22/12,HCW,1,1,1,1,1,1,1,1
+Isiro,2012,Isi_2012_22,27,Female,8/20/12,NA,Dead,Confirmed,NA,8/27/12,NA,9/10/12,Housewife,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_51,27,Male,9/4/14,NA,Alive,Suspected,9/4/14,9/4/14,NA,NA,NA,1,0,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_12,26,Female,9/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_64,26,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_146,26,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_186,26,Male,9/29/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_19,26,Female,5/1/95,5/21/95,Alive,Probable,5/26/95,5/1/95,NA,NA,HCW,1,1,NA,1,NA,1,NA,1
+Kikwit,1995,Kik_1995_37,26,Male,4/17/95,4/27/95,Dead,Probable,5/25/95,4/25/95,NA,4/27/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_81,26,Male,5/13/95,5/16/95,Alive,Probable,5/20/95,5/16/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_83,26,Female,5/15/95,5/16/95,Dead,Probable,5/17/95,5/15/95,NA,5/16/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_149,26,Male,5/9/95,5/24/95,Dead,Probable,5/16/95,5/20/95,NA,5/24/95,no HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_150,26,Female,5/9/95,5/22/95,Alive,Probable,5/13/95,5/9/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_186,26,Female,5/1/95,5/16/95,Dead,Probable,5/27/95,5/15/95,NA,5/16/95,HCW,1,1,NA,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_194,26,Male,5/21/95,NA,Alive,Probable,5/28/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_68,26,Female,NA,NA,Dead,Suspected/probable,7/9/07,NA,NA,7/9/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_45,26,Male,8/8/12,NA,Dead,Probable,NA,8/11/12,NA,8/18/12,Other,1,1,NA,1,1,1,1,1
+Isiro,2012,Isi_2012_133,26,Female,9/14/12,NA,Alive,Confirmed,9/20/12,9/17/12,NA,NA,HCW,1,0,0,1,0,0,0,1
+Yambuku,1976,Yam_1976_3,25,Female,9/2/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_8,25,Female,9/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_19,25,Male,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/23/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_28,25,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_34,25,Female,9/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_38,25,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_41,25,Female,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_52,25,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_73,25,Male,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_81,25,Female,9/17/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_84,25,Female,9/17/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_86,25,Female,9/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_110,25,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_123,25,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_194,25,Female,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_195,25,Male,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_221,25,Female,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/12/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_228,25,Female,10/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_232,25,Female,10/8/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_243,25,Female,10/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_248,25,Male,10/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/20/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_258,25,Female,NA,NA,Dead,Suspected/probable/confirmed,NA,NA,9/8/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_20,25,Male,4/29/95,5/11/95,Dead,Probable,NA,5/6/95,NA,5/11/95,no HCW,1,1,1,1,NA,NA,NA,1
+Kikwit,1995,Kik_1995_51,25,Male,5/2/95,5/10/95,Dead,Probable,NA,5/4/95,NA,5/10/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_63,25,Female,5/8/95,5/13/95,Dead,Probable,5/15/95,5/8/95,NA,5/13/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_65,25,Female,5/4/95,5/15/95,Alive,Probable,6/23/95,5/7/95,NA,NA,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_73,25,Female,5/10/95,5/15/95,Dead,Probable,5/27/95,5/13/95,NA,5/15/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_80,25,Female,5/8/95,NA,Alive,Probable,NA,5/16/95,NA,NA,no HCW,1,0,NA,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_108,25,Male,5/14/95,7/7/95,Alive,Probable,5/17/95,5/17/95,NA,NA,HCW,1,1,NA,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_187,25,Male,4/17/95,NA,Dead,Probable,5/27/95,NA,NA,4/30/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_198,25,Female,5/13/95,NA,Alive,Probable,5/29/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_287,25,Female,6/7/95,6/20/95,Alive,Probable,6/15/95,6/15/95,NA,NA,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_7,25,Female,NA,NA,Alive,Suspected/probable,6/1/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_16,25,Female,NA,NA,Dead,Suspected/probable,8/14/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_42,25,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_75,25,Male,NA,NA,Dead,Suspected/probable,6/30/07,NA,NA,6/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_97,25,Female,NA,NA,Dead,Suspected/probable,4/1/07,NA,NA,4/1/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_98,25,Male,NA,NA,Dead,Suspected/probable,4/2/07,NA,NA,4/2/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_129,25,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_395,25,Male,NA,NA,Dead,Confirmed,9/9/07,NA,NA,9/17/07,NA,1,1,1,1,1,1,NA,1
+Isiro,2012,Isi_2012_75,25,Male,8/7/12,8/11/12,Alive,Confirmed,9/4/12,8/8/12,NA,NA,HCW,1,0,0,0,0,0,0,1
+Boende,2014,Boe_2014_62,25,Female,9/3/14,NA,Alive,Confirmed,9/4/14,NA,NA,NA,Housewife,0,0,0,0,0,0,NA,1
+Boende,2014,Boe_2014_117,25,Male,9/24/14,NA,Alive,Confirmed,9/25/14,9/25/14,NA,NA,Other,1,1,1,0,1,0,NA,1
+Yambuku,1976,Yam_1976_35,24,Female,9/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_122,24,Male,9/22/76,NA,Alive,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_202,24,Male,10/2/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_212,24,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_177,24,Male,5/18/95,5/24/95,Dead,Probable,5/27/95,5/21/95,NA,5/24/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_217,24,Female,5/14/95,5/30/95,Dead,Probable,6/1/95,5/30/95,NA,5/30/95,no HCW,1,NA,NA,NA,NA,NA,NA,1
+Kikwit,1995,Kik_1995_233,24,Female,5/21/95,5/29/95,Dead,Probable,6/2/95,5/22/95,NA,5/29/95,HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_302,24,Female,NA,NA,Dead,Probable,6/26/95,NA,NA,6/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_45,24,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_55,24,Male,NA,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_99,24,Male,NA,NA,Dead,Suspected/probable,5/1/07,NA,NA,5/1/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_201,24,Female,NA,NA,Dead,Suspected/probable,7/30/07,NA,NA,7/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_388,24,Male,NA,NA,Dead,Confirmed,9/4/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2008,2008,Mwe_2008_10,24,Female,12/5/08,NA,Alive,Confirmed,12/17/08,NA,NA,NA,NA,1,1,NA,NA,1,0,NA,1
+Yambuku,1976,Yam_1976_80,23,Female,9/17/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/23/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_153,23,Male,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_201,23,Female,10/2/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_253,23,Male,10/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_58,23,Female,5/1/95,5/12/95,Dead,Probable,5/17/95,5/8/95,NA,5/12/95,no HCW,1,NA,1,NA,1,NA,NA,1
+Kikwit,1995,Kik_1995_66,23,Female,5/2/95,5/16/95,Dead,Probable,5/24/95,5/15/95,NA,5/16/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_261,23,Male,6/10/95,6/17/95,Dead,Probable,6/9/95,6/10/95,NA,6/16/95,no HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_297,23,Male,6/18/95,NA,Dead,Probable,6/23/95,NA,NA,6/24/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_2,23,Female,NA,NA,Alive,Suspected/probable,4/6/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_51,23,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_54,23,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_100,23,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_232,23,Male,NA,NA,Dead,Suspected/probable,8/10/07,NA,NA,8/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_310,23,Male,NA,NA,Alive,Suspected/probable,8/23/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_380,23,Male,NA,NA,Dead,Suspected/probable,9/9/07,NA,NA,NA,NA,1,1,1,1,1,1,NA,1
+Boende,2014,Boe_2014_54,23,Male,8/20/14,NA,Dead,Probable,8/22/14,NA,NA,NA,Other,1,0,0,0,0,0,NA,1
+Yambuku,1976,Yam_1976_9,22,Female,9/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_115,22,Female,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_190,22,Male,9/30/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/11/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_234,22,Female,10/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_104,22,Female,5/2/95,5/13/95,Dead,Probable,5/15/95,5/11/95,NA,5/13/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_300,22,Male,6/20/95,7/10/95,Alive,Probable,6/25/95,6/24/95,NA,NA,no HCW,1,NA,NA,1,NA,1,NA,1
+Mweka2007,2007,Mwe_2007_29,22,Male,NA,NA,Alive,Suspected/probable,8/29/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_40,22,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_52,22,Male,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_226,22,Female,NA,NA,Dead,Suspected/probable,8/31/07,NA,NA,8/31/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_320,22,Male,NA,NA,Alive,Suspected/probable,8/28/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_383,22,Female,NA,NA,Dead,Confirmed,8/31/07,NA,NA,9/1/07,NA,1,1,0,1,1,0,NA,1
+Isiro,2012,Isi_2012_8,22,Female,7/4/12,NA,Dead,Probable,NA,7/6/12,NA,7/12/12,Student,1,1,1,1,1,1,1,1
+Boende,2014,Boe_2014_37,22,Male,8/23/14,NA,Dead,Probable,8/27/14,8/27/14,NA,8/27/14,Student,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_103,21,Female,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_108,21,Female,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_145,21,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_210,21,Female,NA,NA,Dead,Probable,6/1/95,NA,NA,2/17/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_244,21,Female,4/22/95,4/28/95,Dead,Probable,6/5/95,4/22/95,NA,4/28/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_12,21,Female,NA,NA,Alive,Suspected/probable,7/20/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_31,21,Female,NA,NA,Alive,Suspected/probable,8/30/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_139,21,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_147,21,Female,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_372,21,Male,NA,NA,NA,Suspected/probable,8/2/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Boende,2014,Boe_2014_19,21,Female,8/15/14,NA,Dead,Confirmed,8/20/14,NA,NA,8/31/14,Other,1,1,1,1,1,1,NA,1
+Yambuku,1976,Yam_1976_17,20,Female,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_37,20,Female,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_46,20,Male,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_105,20,Female,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_125,20,Female,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_173,20,Male,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_176,20,Female,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_205,20,Male,10/3/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_238,20,Female,10/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_70,20,Male,5/16/95,5/30/95,Alive,Probable,5/16/95,5/16/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_71,20,Female,5/8/95,5/12/95,Dead,Probable,5/16/95,5/8/95,NA,5/12/95,HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_100,20,Female,5/17/95,5/17/95,Dead,Probable,5/16/95,5/17/95,NA,5/17/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_130,20,Female,5/4/95,5/9/95,Dead,Probable,5/13/95,5/9/95,NA,5/9/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_189,20,Female,5/21/95,6/1/95,Dead,Probable,5/28/95,5/27/95,NA,6/1/95,no HCW,1,1,1,NA,1,1,NA,1
+Kikwit,1995,Kik_1995_216,20,Female,5/15/95,7/3/95,Alive,Probable,6/1/95,5/18/95,NA,NA,no HCW,NA,1,1,1,1,NA,NA,1
+Kikwit,1995,Kik_1995_257,20,Male,6/4/95,6/14/95,Dead,Probable,6/8/95,6/9/95,NA,6/14/95,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_135,20,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_184,20,Male,NA,NA,Dead,Suspected/probable,7/21/07,NA,NA,7/21/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_330,20,Female,NA,NA,Alive,Suspected/probable,8/31/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Yambuku,1976,Yam_1976_50,19,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_61,19,Female,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_69,19,Female,9/15/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/22/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_119,19,Female,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/27/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_199,19,Female,10/1/76,NA,Alive,Suspected/probable/confirmed,NA,NA,10/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_153,19,Female,4/29/95,NA,Alive,Probable,5/20/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_18,19,Female,NA,NA,Dead,Suspected/probable,8/17/07,NA,NA,NA,NA,1,1,0,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_169,19,Female,NA,NA,Dead,Suspected/probable,7/22/07,NA,NA,7/22/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_170,19,Female,NA,NA,Dead,Suspected/probable,8/15/07,NA,NA,8/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_190,19,Female,NA,NA,Dead,Suspected/probable,7/14/07,NA,NA,7/14/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_15,19,Male,12/27/08,NA,Alive,Probable,NA,NA,NA,NA,NA,1,1,1,NA,1,1,NA,1
+Isiro,2012,Isi_2012_112,19,Male,9/8/12,NA,Alive,Confirmed,9/12/12,9/11/12,NA,NA,Student,1,1,1,0,1,1,0,1
+Boende,2014,Boe_2014_33,19,Female,8/18/14,NA,Alive,Confirmed,8/25/14,8/24/14,NA,,Other,1,1,1,1,1,0,NA,1
+Yambuku,1976,Yam_1976_1,18,Male,8/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/10/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_16,18,Female,9/8/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/12/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_24,18,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_56,18,Female,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_106,18,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_124,18,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_149,18,Male,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/1/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_161,18,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_167,18,Female,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_168,18,Female,4/4/95,4/12/95,Dead,Probable,5/18/95,4/8/95,NA,4/12/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_17,18,Female,11/18/08,NA,Dead,Probable,12/17/08,NA,NA,11/27/08,NA,1,0,1,0,0,1,NA,1
+Isiro,2012,Isi_2012_18,18,Female,8/8/12,NA,Dead,Confirmed,8/10/12,8/10/12,NA,9/3/12,Student,1,1,1,1,1,0,NA,1
+Isiro,2012,Isi_2012_36,18,Female,8/23/12,NA,Dead,Confirmed,8/28/12,8/28/12,NA,8/31/12,Student,1,0,1,0,1,1,0,1
+Boende,2014,Boe_2014_66,18,Female,9/4/14,NA,Dead,Confirmed,9/8/14,9/8/14,NA,9/11/14,Other,1,0,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_53,17,Female,9/13/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_74,17,Female,9/16/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/19/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_139,17,Male,5/16/95,5/26/95,Dead,Probable,5/17/95,5/20/95,NA,5/26/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_231,17,Male,5/10/95,NA,Dead,Probable,6/2/95,NA,NA,5/19/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_279,17,Male,6/6/95,6/16/95,Dead,Probable,6/12/95,6/12/95,NA,6/16/95,no HCW,1,1,1,1,1,1,NA,1
+Mweka2007,2007,Mwe_2007_104,17,Female,NA,NA,Dead,Suspected/probable,6/15/07,NA,NA,6/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_183,17,Female,NA,NA,Dead,Suspected/probable,7/20/07,NA,NA,7/20/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_324,17,Male,NA,NA,Alive,Confirmed,9/6/07,NA,NA,NA,NA,1,1,1,1,0,1,NA,1
+Yambuku,1976,Yam_1976_152,16,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_164,16,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_209,16,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/10/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_222,16,Female,10/6/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/13/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_269,16,Female,5/18/95,NA,Alive,Probable,6/9/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_179,16,Female,NA,NA,Dead,Suspected/probable,7/28/07,NA,NA,7/28/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_95,15,Male,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_151,15,Male,5/16/95,5/25/95,Dead,Probable,5/25/95,5/24/95,NA,5/27/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_259,15,Female,6/2/95,7/4/95,Alive,Probable,6/9/95,6/9/95,NA,NA,no HCW,1,NA,1,1,1,1,NA,1
+Kikwit,1995,Kik_1995_289,15,Female,5/27/95,6/1/95,Dead,Probable,6/16/95,5/30/95,NA,6/1/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_37,15,Female,NA,NA,Alive,Suspected/probable,9/2/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_128,15,Female,NA,NA,Dead,Suspected/probable,7/5/07,NA,NA,7/5/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_130,15,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_175,15,Male,NA,NA,Dead,Suspected/probable,6/15/07,NA,NA,6/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_33,14,Female,9/11/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_109,14,Female,9/21/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_236,14,Female,10/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/23/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_96,14,Female,NA,NA,Dead,Suspected/probable,6/15/07,NA,NA,6/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_276,14,Female,NA,NA,Alive,Suspected/probable,5/30/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Isiro,2012,Isi_2012_99,14,Female,7/23/12,7/26/12,Alive,Confirmed,9/8/12,7/26/12,NA,NA,Child,1,0,1,1,1,0,0,1
+Mweka2007,2007,Mwe_2007_24,13,Female,NA,NA,Alive,Suspected/probable,8/27/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_27,13,Male,NA,NA,Alive,Suspected/probable,8/29/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_113,13,Male,NA,NA,Dead,Suspected/probable,5/21/07,NA,NA,5/21/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_326,13,Male,NA,NA,Alive,Suspected/probable,8/29/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2008,2008,Mwe_2008_12,13,Female,12/6/08,NA,Dead,Probable,12/17/08,NA,NA,12/14/08,NA,1,1,1,1,1,1,NA,1
+Mweka2008,2008,Mwe_2008_24,13,Female,12/25/08,NA,Dead,Confirmed,12/28/08,NA,NA,1/1/09,NA,1,1,0,0,0,1,NA,1
+Boende,2014,Boe_2014_113,13,Female,9/12/14,NA,Alive,Confirmed,9/20/14,9/20/14,NA,NA,Child,1,0,1,1,0,0,NA,1
+Yambuku,1976,Yam_1976_20,12,Female,9/9/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_127,12,Male,9/22/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_208,12,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/10/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_291,12,Male,6/10/95,NA,Alive,Probable,6/17/95,6/12/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_292,12,Female,6/5/95,7/4/95,Alive,Probable,6/17/95,6/10/95,NA,NA,no HCW,1,1,1,1,NA,NA,NA,1
+Mweka2007,2007,Mwe_2007_94,12,Male,NA,NA,Dead,Suspected/probable,6/8/07,NA,NA,6/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_174,12,Male,NA,NA,Dead,Suspected/probable,8/15/07,NA,NA,8/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Boende,2014,Boe_2014_92,12,Male,9/4/14,NA,Alive,Confirmed,9/13/14,NA,NA,NA,Student,1,0,0,0,0,0,NA,1
+Mweka2007,2007,Mwe_2007_231,11,Male,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_311,11,Female,NA,NA,Alive,Suspected/probable,7/26/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_25,11,Female,12/21/08,NA,Alive,Probable,NA,NA,NA,NA,NA,1,0,0,1,0,0,NA,1
+Boende,2014,Boe_2014_133,11,Male,10/4/14,NA,Alive,Confirmed,10/4/14,10/4/14,NA,NA,Child,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_203,10,Female,10/3/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_218,10,Female,5/23/95,5/28/95,Dead,Probable,6/1/95,5/24/95,NA,5/28/95,no HCW,1,1,1,NA,NA,1,NA,1
+Kikwit,1995,Kik_1995_294,10,Male,6/13/95,NA,Dead,Probable,6/19/95,NA,NA,6/19/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_90,10,Male,NA,NA,Dead,Suspected/probable,8/14/07,NA,NA,8/14/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_202,10,Female,NA,NA,Dead,Suspected/probable,7/30/07,NA,NA,7/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_203,10,Female,NA,NA,Dead,Suspected/probable,8/30/07,NA,NA,8/30/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_222,10,Male,9/4/07,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,1,0,1,NA,1
+Kikwit,1995,Kik_1995_88,9,Male,5/7/95,5/13/95,Dead,Probable,5/13/95,5/13/95,NA,5/14/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_201,9,Female,5/21/95,NA,Dead,Probable,5/30/95,NA,NA,5/29/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_255,9,Female,6/6/95,6/11/95,Alive,Probable,6/8/95,6/7/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_277,9,Female,6/2/95,6/11/95,Dead,Probable,6/11/95,6/10/95,NA,6/11/95,no HCW,1,1,NA,1,1,1,NA,1
+Tandala,1977,Tan_1977_1,9,Female,NA,NA,Dead,Confirmed,NA,NA,NA,NA,Child,1,NA,1,NA,NA,1,NA,1
+Mweka2007,2007,Mwe_2007_225,9,Male,NA,NA,Dead,Suspected/probable,8/25/07,NA,NA,8/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_282,9,Female,NA,NA,Alive,Suspected/probable,6/13/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Yambuku,1976,Yam_1976_25,8,Female,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/16/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_162,8,Female,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/2/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_189,8,Female,9/30/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/5/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_152,8,Female,4/15/95,NA,Alive,Probable,5/25/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_173,8,Male,5/25/95,6/3/95,Alive,Probable,5/27/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_298,8,Female,5/25/95,NA,Dead,Probable,6/23/95,NA,NA,6/3/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_26,8,Female,NA,NA,Alive,Suspected/probable,8/18/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_31,8,Female,12/10/08,NA,Dead,Probable,1/6/09,NA,NA,12/22/08,NA,1,1,0,0,1,1,NA,1
+Boende,2014,Boe_2014_71,8,Female,9/6/14,NA,Alive,Confirmed,9/8/14,9/10/14,NA,NA,Student,1,0,1,0,1,0,NA,1
+Kikwit,1995,Kik_1995_96,7,Female,5/16/95,NA,Alive,Probable,5/16/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_226,7,Male,2/13/95,2/16/95,Dead,Probable,6/1/95,NA,NA,2/16/95,no HCW,1,1,NA,NA,1,1,NA,1
+Mweka2007,2007,Mwe_2007_6,7,Male,NA,NA,Alive,Suspected/probable,4/18/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_53,7,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,1,0,NA,1
+Mweka2007,2007,Mwe_2007_61,7,Female,NA,NA,Alive,Suspected/probable,9/4/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_193,7,Male,NA,NA,Dead,Suspected/probable,7/6/07,NA,NA,7/6/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_308,7,Female,NA,NA,Alive,Suspected/probable,8/22/07,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Boende,2014,Boe_2014_70,7,Male,9/5/14,NA,Alive,Confirmed,9/8/14,9/11/14,NA,,Child,1,0,0,0,0,0,NA,1
+Yambuku,1976,Yam_1976_14,6,Female,9/7/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_27,6,Male,9/10/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/18/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_46,6,Female,NA,NA,Alive,Suspected/probable,9/3/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Mweka2007,2007,Mwe_2007_145,6,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_151,6,Female,NA,NA,Dead,Suspected/probable,7/9/07,NA,NA,7/9/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_152,6,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_177,6,Female,NA,NA,Dead,Suspected/probable,6/12/07,NA,NA,6/12/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_346,6,Female,NA,NA,Alive,Suspected/probable,8/19/07,NA,NA,NA,NA,1,1,1,1,0,0,NA,1
+Yambuku,1976,Yam_1976_55,5,Male,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/15/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_147,5,Female,9/24/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_5,5,Female,NA,NA,Alive,Suspected/probable,4/10/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2007,2007,Mwe_2007_149,5,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_160,5,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_166,5,Male,NA,NA,Dead,Suspected/probable,8/14/07,NA,NA,8/14/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_194,5,Female,NA,NA,Dead,Suspected/probable,4/4/07,NA,NA,4/4/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_290,5,Male,NA,NA,Alive,Suspected/probable,7/8/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Mweka2008,2008,Mwe_2008_29,5,Male,12/20/08,NA,Alive,Probable,NA,NA,NA,NA,NA,1,1,NA,1,1,NA,NA,1
+Boende,2014,Boe_2014_41,5,Male,8/20/14,NA,Dead,Probable,8/28/14,8/28/14,NA,8/30/14,NA,1,1,0,0,1,1,NA,1
+Yambuku,1976,Yam_1976_87,4,Female,9/18/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/25/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_93,4,Female,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_92,4,Female,NA,NA,Dead,Suspected/probable,8/17/07,NA,NA,8/17/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_105,4,Female,NA,NA,Dead,Suspected/probable,6/16/07,NA,NA,6/16/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_114,4,Female,NA,NA,Dead,Suspected/probable,8/25/07,NA,NA,8/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_137,4,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_168,4,Male,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_186,4,Male,NA,NA,Dead,Suspected/probable,7/21/07,NA,NA,7/21/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_211,4,Female,NA,NA,Dead,Suspected/probable,4/10/07,NA,NA,4/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_5,4,Female,12/14/08,NA,Alive,Confirmed,12/21/08,NA,NA,NA,NA,1,1,0,1,1,0,NA,1
+Mweka2008,2008,Mwe_2008_21,4,Male,12/21/08,NA,Alive,Probable,12/21/08,NA,NA,NA,NA,1,0,0,0,0,0,NA,1
+Isiro,2012,Isi_2012_175,4,Female,10/12/12,NA,Alive,Confirmed,10/12/12,10/12/12,NA,NA,Child,1,0,1,0,0,0,0,1
+Yambuku,1976,Yam_1976_101,3,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/26/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_107,3,Female,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/30/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_158,3,Male,9/25/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/29/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_175,3,Male,9/27/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/4/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_305,3,Male,5/5/95,5/12/95,Alive,Probable,8/15/95,5/5/95,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_88,3,Male,NA,NA,Dead,Suspected/probable,7/15/07,NA,NA,7/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_106,3,Female,NA,NA,Dead,Suspected/probable,6/4/07,NA,NA,6/4/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_171,3,Female,NA,NA,Dead,Suspected/probable,6/27/07,NA,NA,6/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_181,3,Female,NA,NA,Dead,Suspected/probable,6/5/07,NA,NA,6/5/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_210,3,Female,NA,NA,Dead,Suspected/probable,4/10/07,NA,NA,4/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_242,3,Female,NA,NA,Dead,Suspected/probable,8/27/07,NA,NA,8/27/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Boende,2014,Boe_2014_89,3,Female,9/9/14,NA,Dead,Confirmed,9/12/14,9/12/14,NA,9/18/14,Student,0,0,0,0,0,0,NA,1
+Boende,2014,Boe_2014_109,3,Female,9/14/14,NA,Dead,Confirmed,9/17/14,NA,NA,NA,Child,1,1,0,0,1,0,NA,1
+Yambuku,1976,Yam_1976_59,2,Male,9/14/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/21/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_184,2,Male,9/29/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/3/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_259,2,Female,NA,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_225,2,Male,2/8/95,2/11/95,Dead,Probable,6/1/95,NA,NA,2/11/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_247,2,Male,5/26/95,5/29/95,Alive,Probable,6/6/95,NA,NA,NA,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_73,2,Female,NA,NA,Dead,Suspected/probable,7/16/07,NA,NA,7/16/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_81,2,Female,NA,NA,Dead,Suspected/probable,9/3/07,NA,NA,9/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_84,2,Female,NA,NA,Dead,Suspected/probable,9/25/07,NA,NA,9/25/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_111,2,Male,NA,NA,Dead,Suspected/probable,9/3/07,NA,NA,9/3/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_196,2,Female,NA,NA,Dead,Suspected/probable,6/29/07,NA,NA,6/29/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_228,2,Male,NA,NA,Dead,Suspected/probable,8/18/07,NA,NA,8/18/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_285,2,Female,NA,NA,Alive,Suspected/probable,6/24/07,NA,NA,NA,NA,1,1,1,0,1,0,NA,1
+Boende,2014,Boe_2014_123,2,Male,9/19/14,NA,Alive,Confirmed,9/22/14,9/19/14,NA,NA,Child,1,0,0,0,0,0,NA,1
+Yambuku,1976,Yam_1976_260,1.5,Male,NA,NA,Dead,Suspected/probable/confirmed,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_223,1.5,Female,2/20/95,2/23/95,Dead,Probable,6/1/95,NA,NA,2/23/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_39,1,Male,9/12/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/17/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_91,1,Female,9/19/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/24/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_98,1,Male,9/20/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/23/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_168,1,Male,9/26/76,NA,Dead,Suspected/probable/confirmed,NA,NA,9/28/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_192,1,Male,10/1/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/7/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Yambuku,1976,Yam_1976_207,1,Female,10/4/76,NA,Dead,Suspected/probable/confirmed,NA,NA,10/9/76,NA,NA,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_115,1,Female,5/17/95,5/23/95,Dead,Probable,5/17/95,5/20/95,NA,5/23/95,no HCW,1,1,1,NA,NA,NA,NA,1
+Mweka2007,2007,Mwe_2007_72,1,Male,NA,NA,Dead,Suspected/probable,8/4/07,NA,NA,8/4/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_140,1,Female,NA,NA,Dead,Suspected/probable,7/7/07,NA,NA,7/7/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_148,1,Male,NA,NA,Dead,Suspected/probable,7/8/07,NA,NA,7/8/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_158,1,Male,NA,NA,Dead,Suspected/probable,7/6/07,NA,NA,7/6/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_159,1,Female,NA,NA,Dead,Suspected/probable,7/6/07,NA,NA,7/6/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_178,1,Female,NA,NA,Dead,Suspected/probable,6/28/07,NA,NA,6/28/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_180,1,Female,NA,NA,Dead,Suspected/probable,6/18/07,NA,NA,6/18/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_185,1,Male,NA,NA,Dead,Suspected/probable,7/21/07,NA,NA,7/21/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_191,1,Male,NA,NA,Dead,Suspected/probable,7/20/07,NA,NA,7/20/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_199,1,Female,NA,NA,Dead,Suspected/probable,8/10/07,NA,NA,8/10/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2007,2007,Mwe_2007_229,1,Female,NA,NA,Dead,Suspected/probable,8/15/07,NA,NA,8/15/07,NA,NA,NA,NA,NA,NA,NA,NA,0
+Mweka2008,2008,Mwe_2008_11,1,Male,12/3/08,NA,Dead,Probable,12/17/08,NA,NA,12/11/08,NA,1,1,0,0,1,0,NA,1
+Kikwit,1995,Kik_1995_105,0.8,Male,4/20/95,4/30/95,Dead,Probable,5/28/95,4/30/95,NA,4/30/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_274,0.5,Male,NA,5/23/95,Dead,Probable,6/10/95,NA,NA,5/23/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Kikwit,1995,Kik_1995_95,0.25,Male,5/13/95,NA,Dead,Probable,5/15/95,NA,NA,5/16/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Isiro,2012,Isi_2012_16,0.25,Female,6/7/12,NA,Dead,Probable,NA,6/9/12,NA,6/13/12,Child,1,1,0,0,1,1,1,1
+Kikwit,1995,Kik_1995_202,0.16,Female,5/6/95,NA,Dead,Probable,5/30/95,NA,NA,5/20/95,no HCW,NA,NA,NA,NA,NA,NA,NA,0
+Boende,2014,Boe_2014_11,0.1,Female,8/16/14,NA,Dead,Probable,8/16/14,NA,NA,8/15/14,NA,1,0,0,0,0,1,NA,1
+Mweka2008,2008,Mwe_2008_18,0,Male,11/27/08,11/27/08,Dead,Probable,12/17/08,11/27/08,NA,11/27/08,NA,0,0,0,0,0,0,NA,1
+Isiro,2012,Isi_2012_116,0,Male,9/13/12,NA,Dead,Confirmed,9/13/12,9/13/12,NA,9/20/12,Child,0,0,0,0,0,0,0,1

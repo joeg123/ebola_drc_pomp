@@ -54,12 +54,12 @@ rw_sd <- 0.002
 
 stew(file=paste0("data_produced/", date_time, "/global_mif_seir.rda"),{
   t_local <- system.time({
-    mifs_global <- foreach(i=1:50,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
+    mifs_global <- foreach(i=1:100,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
       mif2(
         althaus_seir_pomp,
         start=get_parms(seir_parm),
-        Np=100,
-        Nmif=10,
+        Np=2000,
+        Nmif=300,
         cooling.type="geometric",
         cooling.fraction.50=0.6,
         transform=TRUE,
@@ -75,8 +75,8 @@ stew(file=paste0("data_produced/", date_time, "/global_mif_seir.rda"),{
 
 stew(file=paste0("data_produced/", date_time, "/global_mif_pf.rda"),{
   t_local_eval <- system.time({
-    liks_global <- foreach(i=1:50,.packages='pomp',.combine=rbind) %dopar% {
-      evals <- replicate(50, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_global[[i]]),Np=500)))
+    liks_global <- foreach(i=1:100,.packages='pomp',.combine=rbind) %dopar% {
+      evals <- replicate(10, logLik(pfilter(althaus_seir_pomp,params=coef(mifs_global[[i]]),Np=1000)))
       logmeanexp(evals, se=TRUE)
     }
   })
@@ -84,8 +84,8 @@ stew(file=paste0("data_produced/", date_time, "/global_mif_pf.rda"),{
 
 results_global <- data.frame(logLik=liks_global[,1],logLik_se=liks_global[,2],t(sapply(mifs_global,coef)))
 summary(results_global$logLik,digits=7)
-#pairs(~logLik+beta_I+beta_W, data=results_local)
-pairs(~logLik+tau1+k+beta0, data=results_global)
+pairs(~logLik+beta0+tau1+k, data=results_global)
+
 
 
 

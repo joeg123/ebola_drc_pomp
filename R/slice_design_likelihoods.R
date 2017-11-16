@@ -7,14 +7,18 @@
 
 #####
 # Log lik profile
-#####
+
+
+source("R/althaus_traj_match.R")
+
+t_match
 
 sliceDesign(
-  center=c(beta0 = .7454, tau1 = 12.8366, k=.1249,sigma = 1/9.312799, 
+  center=c(beta0 = .824, tau1 = 12.82, k=.133,sigma = 1/9.312799, 
            gamma = 1/7.411374, ff = plogis(49/69), beta1 = 1),
-  beta0=rep(seq(from=0.01,to=2.0,length=20),each=10),
-  tau1=rep(seq(from=0,to=30,length=20),each=10),
-  k=rep(seq(from=.01,to=.30,length=20),each=10)
+  beta0=rep(seq(from=0.01,to=1.5,length=50),each=10),
+  tau1=rep(seq(from=0,to=30,length=50),each=10),
+  k=rep(seq(from=.01,to=.30,length=50),each=10)
 ) -> p
 
 registerDoParallel()
@@ -24,8 +28,7 @@ foreach (theta=iter(p,"row"),.combine = rbind,
          .inorder = FALSE,
          .options.multicore=list(set.seed=TRUE)
 ) %dopar% {
-  library (pomp)
-  pfilter(seir_pomp,params=unlist(theta),Np=500) -> pf
+  pfilter(althaus_seir_pomp,params=unlist(theta),Np=1000) -> pf
   theta$loglik <- logLik(pf)
   theta
 } -> p
@@ -38,6 +41,19 @@ p %>%
   geom_point()+
   facet_wrap(~parm, scales = "free_x") +
   geom_smooth()
+
+
+p %>% group_by(beta0, tau1, k, slice)  %>%
+  summarize(loglik = mean(loglik)) %>%
+  ungroup() %>%
+  mutate(loglik = loglik - max(loglik)) %>%
+  gather(key, value, beta0:k) %>%
+  filter(slice == key, loglik > -10) %>%
+  ggplot(aes(x=value,y=loglik))+
+    geom_point()+
+    facet_wrap(~key, scales = "free_x") +
+    geom_hline(yintercept = -1.92, lty=2)
+
 
 #########
 #End log lik profile
