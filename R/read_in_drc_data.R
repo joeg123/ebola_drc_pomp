@@ -27,5 +27,7 @@ drc <- drc %>%
   summarize(cases = n()) %>% 
   mutate(times = as.numeric(date_infection - min(date_infection)))
 
+
+
 # drc %>%
 #   ggplot(aes(times, cases)) + facet_wrap(~outbreak, scales="free_y", nrow=6) + geom_bar(stat="identity")

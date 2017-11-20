@@ -2,6 +2,8 @@
 ## superspreading POMP Model Code
 ## Creates various functions that will be put into the POMP Model
 ############################
+
+
 seir_skel <- Csnippet('
                       double N;
                       
@@ -64,10 +66,38 @@ untrans <- Csnippet('
                     ')
 
 
-pop <- 1e6      
+
+
+ebola_ss_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
+                        data = NULL) {
+
+  populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)
+  outbrk <- match.arg(outbreak)
+  pop <- unname(populations[outbrk])
+
+data %>%
+  filter(outbreak==outbrk) %>%
+    group_by(times) %>%
+    select(times,cases) -> data
+
+
+## This script includes potential susceptible populations specified by 'Ebola Virus... 1976-2014'
+pop <- pop - 2
+s_init <- paste0("S = ", pop)
+init_script <- "; 
+E = 0.0;
+Il = 1.0;
+Ih = 1.0;
+R = 0.0;
+D = 0.0;
+C = 0.0;
+"
+init_script <<- paste0(s_init,init_script)
+
+#init <- Csnippet(init_script)
 
 init <- Csnippet("
-                 S= 999998; 
+                 S = 999998;
                  E = 0.0;
                  Il = 1.0;
                  Ih = 1.0;
@@ -77,7 +107,8 @@ init <- Csnippet("
                  ")
 
 
-seir_parm <- c(sigma = 1/9.312799, 
+seir_parm <<- c(
+               sigma = 1/9.312799, 
                gamma = 1/7.411374, 
                ff = plogis(49/69),
                beta0 = 0.4,
@@ -98,4 +129,6 @@ pomp(data = data,
      rmeasure = seir_rmeasure,
      rprocess = euler.sim(step.fun = seir_rprocess, delta.t = 1)) -> ss_seir_pomp
 
+return(ss_seir_pomp)
+  }
 

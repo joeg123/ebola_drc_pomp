@@ -2,37 +2,32 @@
 ## Testing superspreading model
 ###################################
 
+#rm(list=ls())
+#sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R"), source)
 
-rm(list=ls())
-
-library(deSolve)
-library(mvtnorm)
-library(pomp)
-library(chron)
-library(lubridate)
-library(tidyverse)
-library(cowplot)
-library(foreach)
-library(doMC)
-library(doParallel)
-
-sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R"), source)
-
+t_match_func <- function(ss_seir_pomp, graph_traj_sim = FALSE) {
 
 traj.match(ss_seir_pomp, 
            start=seir_parm,
            method = c("Nelder-Mead"),
            est=c("beta0","p0"),
-           transform=TRUE) -> t_match
+           transform=TRUE) ->> t_match
 
-t_match$params
 
-trajectory(pomp(ss_seir_pomp, params = t_match@params), as.data.frame=T) %>%
+
+if (graph_traj_sim == TRUE) {
+  t_match$params
+  logLik(pfilter(pomp(ss_seir_pomp, params = t_match@params), Np=1000))
+  trajectory(pomp(ss_seir_pomp, params = t_match@params), as.data.frame=T) %>%
   ggplot(aes(time, C)) + geom_line()
+}
 
-logLik(pfilter(pomp(ss_seir_pomp, params = t_match@params), Np=1000))
+if (graph_traj_sim == TRUE) {
 simulate(pomp(ss_seir_pomp, params = t_match@params), nsim = 100, as.data.frame=T) %>%
   ggplot(aes(time, C, group = sim)) + geom_line()
+}
+
+}
 
 calc_rnot <- function(fit_parms){
   unname(fit_parms["beta0"] * fit_parms["p0"] / fit_parms["gamma"])
@@ -45,6 +40,11 @@ calc_cv <- function(fit_parms){
 }
 
 # MIF2 Analysis -----------------------------------------------------------
+
+mif2_run <- function(ss_seir_pomp, graph_mif2 = FALSE) {
+
+t_match_func(ss_seir_pomp)
+  
 
 sub_parms <- function(sub_parms=NULL,
                       ref_parms) {
@@ -83,7 +83,10 @@ registerDoMC(cores=2)
 mcopts <- list(set.seed=TRUE)
 seir_parm <- sub_parms(ref_parms = t_match@params)
 
-stew(file=paste0("data_produced/", date_time, "/global_mif_seir.rda"),{
+
+dest <- paste0("/", outbrk, "_mif_seir.rda")
+
+stew(file=paste0("data_produced/", date_time, dest),{
   t_local <- system.time({
     mifs_global <- foreach(i=1:10,.packages='pomp', .combine=c, .options.multicore=mcopts) %dopar%  {
       mif2(
@@ -102,10 +105,12 @@ stew(file=paste0("data_produced/", date_time, "/global_mif_seir.rda"),{
   })
 },seed=80101,kind="L'Ecuyer")
 
+if (graph_mif2 == TRUE) {
+  plot(mifs_global)
+  }
+dest <- paste0("/", outbrk, "_mif_pf.rda")
 
-plot(mifs_global)
-
-stew(file=paste0("data_produced/", date_time, "/global_mif_pf.rda"),{
+stew(file=paste0("data_produced/", date_time, dest),{
   t_local_eval <- system.time({
     liks_global <- foreach(i=1:10,.packages='pomp',.combine=rbind) %dopar% {
       evals <- replicate(10, logLik(pfilter(ss_seir_pomp,params=coef(mifs_global[[i]]),Np=2000)))
@@ -115,22 +120,26 @@ stew(file=paste0("data_produced/", date_time, "/global_mif_pf.rda"),{
 },seed=900242057,kind="L'Ecuyer")
 
 
-
+if (graph_mif2 == TRUE) {
 data.frame(logLik=liks_global[,1], logLik_se=liks_global[,2], t(sapply(mifs_global,coef))) %>%
   filter(logLik > -100) %>%
   gather(key,value, beta0, p0) %>%
   ggplot(aes(value, logLik)) + geom_point() + facet_wrap(~key, scales="free_x")
+  }
 
+mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
 
+calc_rnot(mif2_best_match$params)
+calc_cv(mif2_best_match$params)
 
-best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
-
-calc_rnot(best_match$params)
-calc_cv(best_match$params)
-
+return(mif2_best_match)
+}
 
 
 ## Slice design
+
+prof_lik_run <- function(ss_seir_pomp, graph_slice = FALSE) {
+
 
 sliceDesign(
   center=c(beta0 = 1.464, p0=.0642080, sigma = 1/9.312799, 
@@ -149,19 +158,19 @@ foreach (theta=iter(p,"row"),.combine = rbind,
   pfilter(ss_seir_pomp,params=unlist(theta),Np=1000) -> pf
   theta$loglik <- logLik(pf)
   theta
-} -> p
+} -> prof_lik
 
 
-p %>% group_by(beta0, p0, slice) %>%
-  summarize(mll = mean(loglik)) %>%
-  gather(parm, value, beta0, p0) %>%
-  filter(slice == parm) %>%
-  ggplot(aes(x=value,y=mll, color=parm))+
-  geom_point()+
-  facet_wrap(~parm, scales = "free_x") +
-  coord_cartesian(ylim = c(-100, -92))
-
-
-
+if (graph_slice == TRUE) {
+  prof_lik %>% group_by(beta0, p0, slice) %>%
+    summarize(mll = mean(loglik)) %>%
+    gather(parm, value, beta0, p0) %>%
+    filter(slice == parm) %>%
+    ggplot(aes(x=value,y=mll, color=parm))+
+    geom_point()+
+      facet_wrap(~parm, scales = "free_x") +
+      coord_cartesian(ylim = c(-100, -92))
+    }
+}
 
 
