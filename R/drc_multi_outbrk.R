@@ -13,6 +13,7 @@ library(cowplot)
 library(foreach)
 library(doMC)
 library(doParallel)
+library(padr)
 
 sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/ss_test_script.R"), source)
 
@@ -32,7 +33,6 @@ for (outbreak in outbrk_list) {
   return(t_match)
 }
 }
-
 
 
 multi_drc(outbrk_list,drc,mif2 = TRUE)

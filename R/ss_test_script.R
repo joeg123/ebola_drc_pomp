@@ -6,9 +6,8 @@
 #sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R"), source)
 
 t_match_func <- function(ss_seir_pomp, graph_traj_sim = FALSE) {
-
+  # browser()
 traj.match(ss_seir_pomp, 
-           start=seir_parm,
            method = c("Nelder-Mead"),
            est=c("beta0","p0"),
            transform=TRUE) ->> t_match

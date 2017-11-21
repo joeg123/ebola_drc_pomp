@@ -71,28 +71,29 @@ untrans <- Csnippet('
 ebola_ss_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
                         data = NULL) {
 
-  populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)
+  # populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)
   outbrk <- match.arg(outbreak)
-  pop <- unname(populations[outbrk])
+  # pop <- unname(populations[outbrk])
 
-data %>%
-  filter(outbreak==outbrk) %>%
-    group_by(times) %>%
+  # browser()
+  data %>%
+    ungroup() %>%
+    filter(outbreak==outbrk) %>%
     select(times,cases) -> data
 
-
-## This script includes potential susceptible populations specified by 'Ebola Virus... 1976-2014'
-pop <- pop - 2
-s_init <- paste0("S = ", pop)
-init_script <- "; 
-E = 0.0;
-Il = 1.0;
-Ih = 1.0;
-R = 0.0;
-D = 0.0;
-C = 0.0;
-"
-init_script <<- paste0(s_init,init_script)
+data <- as.data.frame(data)
+# ## This script includes potential susceptible populations specified by 'Ebola Virus... 1976-2014'
+# pop <- pop - 2
+# s_init <- paste0("S = ", pop)
+# init_script <- "; 
+# E = 0.0;
+# Il = 1.0;
+# Ih = 1.0;
+# R = 0.0;
+# D = 0.0;
+# C = 0.0;
+# "
+# init_script <<- paste0(s_init,init_script)
 
 #init <- Csnippet(init_script)
 
@@ -103,7 +104,7 @@ init <- Csnippet("
                  Ih = 1.0;
                  R = 0.0;
                  D = 0.0;
-                 C = 0.0;
+                 C = 1.0;
                  ")
 
 
@@ -111,12 +112,12 @@ seir_parm <<- c(
                sigma = 1/9.312799, 
                gamma = 1/7.411374, 
                ff = plogis(49/69),
-               beta0 = 0.4,
-               p0 = 1e-4)
+               beta0 = 2,
+               p0 = .05)
 
 pomp(data = data,
      times="times",
-     t0=0,
+     t0=-1,
      skeleton = vectorfield(seir_skel), 
      params = seir_parm,
      initializer=init,

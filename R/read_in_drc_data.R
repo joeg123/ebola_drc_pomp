@@ -3,7 +3,6 @@
 ## Reads in data and prepares it for being added into the pomp model
 ############################
 
-
 ebola <- read.csv("data/Ebola_outbreak_DRC_data.csv")
 ebola$Date <- chron(as.character(ebola$Date), format=c(dates = "day mon year"))
 ebola$Cases[1] <- 0
@@ -24,9 +23,10 @@ drc <- drc %>%
   select(outbreak, date_infection) %>%
   mutate(date_infection = mdy(date_infection)) %>% 
   group_by(outbreak, date_infection) %>%
-  summarize(cases = n()) %>% 
+  summarize(cases = n()) %>%
+  pad() %>%
+  replace_na(replace = list(cases=0)) %>%
   mutate(times = as.numeric(date_infection - min(date_infection)))
-
 
 
 # drc %>%
