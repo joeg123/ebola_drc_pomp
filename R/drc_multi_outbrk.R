@@ -14,26 +14,55 @@ library(foreach)
 library(doMC)
 library(doParallel)
 library(padr)
+library(reshape2)
+library(dplyr)
+library(knitr)
+library(DT)
+library(xtable)
 
-sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/ss_test_script.R"), source)
+
+
+
+sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/main_functions.R"), source)
 
 outbrk_list <- c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende")
+multi_drc <- function(outbrk_list,dat) {
 
-multi_drc <- function(outbrk_list,dat,mif2=FALSE,log_prof=FALSE) {
+mif2_results <- matrix(0,6,6)
+i <- 1
 
 for (outbreak in outbrk_list) {
-  if (mif2 == TRUE) {
+    i
+    mif2_results
+    print(outbreak)
     ss_seir_pomp <- ebola_ss_model(outbreak,dat)
-    t_match_func(ss_seir_pomp)
-    #mif2_run(ss_seir_pomp)
-  }
-  if (log_prof == TRUE) {
-    prof_lik_run(ss_seir_pomp)
-  }
-  return(t_match)
+    ss_seir_pomp
+    par <- mif2_run(ss_seir_pomp,outbreak)
+    bounds <- prof_lik_run(ss_seir_pomp, outbreak,par[2],par[1])
+    p_out <- paste0(round(par[1], digits = 2)," (",bounds[3],"-",bounds[4], ")")
+    beta_out <- paste0(round(par[2], digits = 2)," (",bounds[1],"-",bounds[2], ")")
+    
+    sim_study(ss_seir_pomp,outbreak,par[2],par[1])
+    
+    mif2_results[i,1] <- p_out
+    mif2_results[i,2] <- beta_out
+    mif2_results[i,3] <- round(par[3], digits = 2)
+    mif2_results[i,4] <- round(par[4], digits = 2)
+    mif2_results[i,5] <- round(par[5], digits = 2)
+    mif2_results[i,6] <- round(par[6], digits = 2)
+    i <- i + 1
+    break
+
 }
+return(mif2_results)
+
 }
 
+max_mif2 <- multi_drc(outbrk_list,drc)
 
-multi_drc(outbrk_list,drc,mif2 = TRUE)
+dimnames(max_mif2) <- list(outbrk_list,c('p','B_0','R_0', 'CV', 'k', 'LL'))
+
+as.data.frame(max_mif2) %>% xtable(display = c("s","s","s", "fg", "fg", "fg", "fg"))
+
+
 

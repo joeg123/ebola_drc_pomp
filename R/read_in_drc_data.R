@@ -24,9 +24,12 @@ drc <- drc %>%
   mutate(date_infection = mdy(date_infection)) %>% 
   group_by(outbreak, date_infection) %>%
   summarize(cases = n()) %>%
-  pad() %>%
-  replace_na(replace = list(cases=0)) %>%
-  mutate(times = as.numeric(date_infection - min(date_infection)))
+  #pad() %>%
+  #replace_na(replace = list(cases=0)) %>%
+  mutate(times = as.numeric((date_infection - (min(date_infection)))+1))
+  
+  
+
 
 
 # drc %>%
