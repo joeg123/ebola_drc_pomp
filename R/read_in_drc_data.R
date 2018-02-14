@@ -17,20 +17,17 @@ data$times <- as.numeric(data$times)
 drc <- read_csv("data/elife-09015-supp1-v1.csv")
 
 drc <- drc %>% 
-  mutate(date_infection = if_else(!is.na(Date_of_onset_symp), Date_of_onset_symp, if_else(!is.na(Date_of_Hospitalisation), Date_of_Hospitalisation, Date_of_notification)),
-         outbreak = Outbreak) %>% 
+  mutate_at(vars(Date_of_onset_symp, Date_of_Hospitalisation, Date_of_notification, Date_hospital_discharge, Date_disease_ended, Date_of_Death), .funs = mdy) %>% 
+  mutate(date_infection = pmin(Date_of_onset_symp, Date_of_Hospitalisation, Date_of_notification, Date_hospital_discharge, Date_disease_ended, Date_of_Death, na.rm=T),
+         outbreak=Outbreak) %>% 
+  # mutate(# date_used = if_else(!is.na(Date_of_onset_symp), "Symptom Onset", if_else(!is.na(Date_of_Hospitalisation), "Hospitalization", "Notification")),
+         # date_infection = if_else(!is.na(Date_of_onset_symp), Date_of_onset_symp, if_else(!is.na(Date_of_Hospitalisation), Date_of_Hospitalisation, Date_of_notification)),
+         # outbreak = Outbreak) %>% 
   filter(!is.na(date_infection)) %>% 
   select(outbreak, date_infection) %>%
-  mutate(date_infection = mdy(date_infection)) %>% 
   group_by(outbreak, date_infection) %>%
   summarize(cases = n()) %>%
   #pad() %>%
   #replace_na(replace = list(cases=0)) %>%
-  mutate(times = as.numeric((date_infection - (min(date_infection)))+1))
-  
-  
-
-
-
-# drc %>%
-#   ggplot(aes(times, cases)) + facet_wrap(~outbreak, scales="free_y", nrow=6) + geom_bar(stat="identity")
+  mutate(times = as.numeric((date_infection - (min(date_infection)))+1)) %>% 
+  filter(times < 500) ## Removes the single case that is in kikwit from 1996 notification date
