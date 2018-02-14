@@ -3,8 +3,8 @@
 ####
 
 calc_interval <- function(val) {
-  lower_lim <- 0
-  upper_lim <- val*2.5
+  lower_lim <- val/5
+  upper_lim <- val*5
   lims <- c(lower_lim, upper_lim)
   return(lims)
 }
@@ -78,34 +78,43 @@ calc_cv <- function(fit_parms){
 }
 
 
-mif2_run <- function(ss_seir_pomp, outbreak, graph_mif2 = TRUE) {
-  ss_seir_pomp <<- ss_seir_pomp
+mif2_run <- function(pomp_obj, outbreak, settings) {
   
-  calc_cv
-  calc_rnot
-  traj.match(ss_seir_pomp, 
+  parallel_vars <- new.env()
+  assign("pomp_obj", pomp_obj, envir= parallel_vars)
+  assign("num_particle1", settings[2], envir= parallel_vars)
+  assign("num_mif", settings[3], envir= parallel_vars)
+  
+  
+  traj.match(pomp_obj, 
              method = c("Nelder-Mead"),
              est=c("beta0","p0"),
              transform=TRUE) -> t_match
-
+  assign("t_match", t_match, envir= parallel_vars)
   
-  mcopts <- list(set.seed=TRUE)
+  seir_parm <- sub_parms(ref_parms = t_match@params)
+  seir_parm <- get_parms(seir_parm)
+  assign("seir_parm", seir_parm, envir= parallel_vars)
   
-  outbrk <- outbreak
+  dest <- paste0("/", outbreak, "_mif_seir.rda")
   
-  dest <- paste0("/", outbrk, "_mif_seir.rda")
   
-  registerDoMC(cores=2)
+  # Np and Nmif Suggestion
+  # Np=10000
+  # Nmif=500
+  
+  cl <- makeCluster(settings[1])
+  clusterExport(cl,c("pomp_obj","t_match","seir_parm","num_particle1","num_mif"), envir = parallel_vars)
+  registerDoParallel(cl)
 
   stew(file=paste0("data_produced/outbreak_rda", dest),{
     t_local <- system.time({
-      mifs_global <- foreach(i=1:10,.packages='pomp', .combine=c, .options.multicore='mcopts') %dopar% {
-        seir_parm <- sub_parms(ref_parms = t_match@params)
+      mifs_global <- foreach(i=1:10,.packages='pomp', .combine=c, .options.multicore=list(set.seed=TRUE)) %dopar% {
         mif2(
-          ss_seir_pomp,
-          start=get_parms(seir_parm),
-          Np=10000,
-          Nmif=500,
+          pomp_obj,
+          start=seir_parm,
+          Np=num_particle1,
+          Nmif=num_mif,
           cooling.type="geometric",
           cooling.fraction.50=0.6,
           transform=TRUE,
@@ -117,22 +126,38 @@ mif2_run <- function(ss_seir_pomp, outbreak, graph_mif2 = TRUE) {
     })
   },seed=80101,kind="L'Ecuyer")
   
-  mifs_global <<- mifs_global
-  
-  #plot(mifs_global)
+  stopCluster(cl)
+  stopImplicitCluster()
 
-  dest <- paste0("/", outbrk, "_mif_pf.rda")
+  dest <- paste0("/", outbreak, "_mif_pf.rda")
+  
+  parallel_vars <- new.env()
+  assign("mifs_global", mifs_global, envir = parallel_vars)
+  assign("pomp_obj", pomp_obj, envir= parallel_vars)
+  assign("num_particle2", settings[4], envir= parallel_vars)
+    
+  cl <- makeCluster(settings[1])
+  clusterExport(cl,c("pomp_obj","mifs_global", "num_particle2"), envir = parallel_vars)
+  registerDoParallel(cl)
+  
+  # Np Suggestion
+  # Np = 2000
   
   stew(file=paste0("data_produced/outbreak_rda", dest),{
     t_local_eval <- system.time({
       liks_global <- foreach(i=1:10,.packages='pomp',.combine=rbind) %dopar% {
-        evals <- replicate(10, logLik(pfilter(ss_seir_pomp,params=coef(mifs_global[[i]]),Np=2000)))
+        evals <- replicate(10, logLik(pfilter(pomp_obj,params=coef(mifs_global[[i]]),Np=num_particle2)))
         logmeanexp(evals, se=TRUE)
       }
     })
   },seed=900242057,kind="L'Ecuyer")
   
-  liks_global
+  stopCluster(cl)
+  stopImplicitCluster()
+  closeAllConnections()
+  
+  
+  plot(mifs_global)
   
   mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
   
@@ -141,64 +166,62 @@ mif2_run <- function(ss_seir_pomp, outbreak, graph_mif2 = TRUE) {
   cv <- calc_cv(mif2_best_match$params)
   r_0 <- calc_rnot(mif2_best_match$params)
   k <- calc_k(mif2_best_match$params)
-  #print(k)
   out_par <- ((mif2_best_match$params))
   out_par <- c(unname(out_par['p0']),unname(out_par['beta0']), r_0, cv, k, LL)
-  
   return(out_par)
 
 }
 
-sim_study <- function(ss_seir_pomp, outbrk,beta0,p0) {
-  ss_seir_pomp <- ss_seir_pomp
-  b <- beta0
-  p <- p0
-  sims <- simulate(ss_seir_pomp,params=c(beta0 = b , p0=p, sigma = 1/9.312799, 
-                   gamma = 1/7.411374, ff = 49/69),
-                   nsim=40,as.data.frame=TRUE,include.data=TRUE)
-  print(sims)
+prof_lik_run <- function(pomp_obj, outbreak, pars, settings) {
   
-}
+  prof_file <- paste0(outbreak, "_prof_lik.rda")
+  
+  parallel_vars <- new.env()
+  assign("pomp_obj", pomp_obj, envir= parallel_vars)
+  assign("num_particle1", settings[5], envir= parallel_vars)
+  
+  p <- pars[1]
+  b <- pars[2]
 
-
-prof_lik_run <- function(ss_seir_pomp, outbrk, beta0, p0) {
-  outbrk
-  ss_seir_pomp
-  conf_int_find
-  b <- beta0
-  p <- p0
-  prof_file <- paste0(outbrk, "_prof_lik.rda")
-  #b0 = 1.464, p0=.0642080 
-  b_lims <- calc_interval(b)
   p_lims <- calc_interval(p)
-  
+  b_lims <- calc_interval(b)
+
   if (file.exists(prof_file)) {
     load(file = prof_file)
   } else {
   sliceDesign(
     center=c(beta0 = b , p0=p, sigma = 1/9.312799, 
              gamma = 1/7.411374, ff = 49/69),
-    beta0=rep(seq(from=b_lims[1],to=b_lims[2],length=250),each=100),
-    p0=rep(seq(from=p_lims[1],to=p_lims[2],length=250),each=100)
+    beta0=rep(seq(from=b_lims[1],to=b_lims[2],length=settings[6]),each=settings[7]),
+    p0=rep(seq(from=p_lims[1],to=p_lims[2],length=settings[6]),each=settings[7])
   ) -> p
   
-  # length = 80
-  # each = 150
+  #Length Used for current SS and SEIR prof lik 
+  # length = 250
+  # each = 100
+  # issue: prof lik is very jagged for some outbreaks
   
-  registerDoParallel()
+  cl <- makeCluster(settings[1])
+  clusterExport(cl,c("pomp_obj", "num_particle1"), envir = parallel_vars)
+  registerDoParallel(cl)
+  
   set.seed(108028909,kind="L'Ecuyer")
   
-  foreach (theta=iter(p,"row"),.combine = rbind,
+  foreach (theta=iter(p,"row"),.packages = 'pomp',.combine = rbind,
            .inorder = FALSE,
            .options.multicore=list(set.seed=TRUE)
   ) %dopar% {
-    pfilter(ss_seir_pomp,params=unlist(theta),Np=1000) -> pf
+    pfilter(pomp_obj,params=unlist(theta),Np=num_particle1) -> pf
     theta$loglik <- logLik(pf)
     theta
   } -> prof_lik
   prof_lik
   save(prof_lik, file = prof_file)
+  stopCluster(cl)
+  stopImplicitCluster()
+  closeAllConnections()
   }
+
   
   prof_lik %>% group_by(beta0, p0, slice)  %>%
     summarize(loglik = mean(loglik)) %>%
@@ -208,7 +231,7 @@ prof_lik_run <- function(ss_seir_pomp, outbrk, beta0, p0) {
     filter(slice == key, loglik > -10) %>%
     filter(slice == "beta0") -> spline_dat_beta0
   
-  beta_results <- conf_int_find(spline_dat_beta0$value,spline_dat_beta0$loglik,-1.92)
+  #beta_results <- conf_int_find(spline_dat_beta0$value,spline_dat_beta0$loglik,-1.92)
   
   prof_lik %>% group_by(beta0, p0, slice)  %>%
     summarize(loglik = mean(loglik)) %>%
@@ -218,10 +241,10 @@ prof_lik_run <- function(ss_seir_pomp, outbrk, beta0, p0) {
     filter(slice == key, loglik > -10) %>%
     filter(slice == "p0") -> spline_dat_p0
   
-  p_results <- conf_int_find(spline_dat_p0$value,spline_dat_p0$loglik,-1.92)
+  #p_results <- conf_int_find(spline_dat_p0$value,spline_dat_p0$loglik,-1.92)
   
-  prof_out <- c(round(beta_results[1],digits = 2),round(beta_results[2], digits = 2),
-                round(p_results[1], digits = 2),round(p_results[2], digits = 2))
+  #prof_out <- c(round(beta_results[1],digits = 2),round(beta_results[2], digits = 2),
+  #              round(p_results[1], digits = 2),round(p_results[2], digits = 2))
   
   prof_lik %>% group_by(beta0, p0, slice)  %>%
     summarize(loglik = mean(loglik)) %>%
@@ -234,8 +257,8 @@ prof_lik_run <- function(ss_seir_pomp, outbrk, beta0, p0) {
     facet_wrap(~key, scales = "free_x") +
     geom_hline(yintercept = -1.92, lty=2)
   
-  file_name <- paste0(outbrk,".pdf")
-
+  file_name <- paste0(outbreak,".pdf")
+  prof_out <- c(1,2,3,4)
   ggsave(file_name)
   rm(prof_file)
   return(prof_out)

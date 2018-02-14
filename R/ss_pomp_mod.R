@@ -46,7 +46,6 @@ seir_rprocess <- Csnippet('double N;
 
 seir_dmeasure <- Csnippet('double f;
                           f = dpois(nearbyint(cases), C,1);
-                          //Rprintf(\"%lg \\n\",f);
                           lik = (give_log) ? f : exp(f);
                           ')
 

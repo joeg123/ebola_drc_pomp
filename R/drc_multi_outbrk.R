@@ -31,18 +31,32 @@ multi_drc <- function(outbrk_list,dat) {
 mif2_results <- matrix(0,6,6)
 i <- 1
 
+########
+# Settings
+# 1: Number of cores
+# 2: MIF2 Np
+# 3: MIF2 Nmif
+# 4: Log Lik Np
+# 5: Profile Likelihood Np
+# 6: Slice Length
+# 7: Slice Each
+########
+
+settings <- c(2,
+              10000, 500,
+              1000, 1000,
+              250, 150)
+
 for (outbreak in outbrk_list) {
     i
     mif2_results
     print(outbreak)
     ss_seir_pomp <- ebola_ss_model(outbreak,dat)
-    ss_seir_pomp
-    par <- mif2_run(ss_seir_pomp,outbreak)
-    bounds <- prof_lik_run(ss_seir_pomp, outbreak,par[2],par[1])
+    par <- mif2_run(ss_seir_pomp,outbreak,settings)
+    bounds <- prof_lik_run(ss_seir_pomp, outbreak,par,settings)
+    break
     p_out <- paste0(round(par[1], digits = 2)," (",bounds[3],"-",bounds[4], ")")
     beta_out <- paste0(round(par[2], digits = 2)," (",bounds[1],"-",bounds[2], ")")
-    
-    sim_study(ss_seir_pomp,outbreak,par[2],par[1])
     
     mif2_results[i,1] <- p_out
     mif2_results[i,2] <- beta_out
@@ -51,7 +65,7 @@ for (outbreak in outbrk_list) {
     mif2_results[i,5] <- round(par[5], digits = 2)
     mif2_results[i,6] <- round(par[6], digits = 2)
     i <- i + 1
-    break
+
 
 }
 return(mif2_results)
