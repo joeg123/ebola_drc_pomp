@@ -84,13 +84,9 @@ sim_study <- function(num_sims) {
     out_file <- paste0("sim_", j)
     pomp_mod <- sim_ss_model(sim_data[[j]])
     par <- mif2_run(pomp_mod,out_file,settings)
-    #bounds <- prof_lik_run(ss_mod, out_file,par,settings)
-  break
+    bounds <- prof_lik_run(pomp_mod, out_file,par,settings)
 }
 }
-
-
-
 
 sim_study(20)
 

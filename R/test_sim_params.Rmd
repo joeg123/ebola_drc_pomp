@@ -6,11 +6,12 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-knitr::opts_knit$set(root.dir = '../' )
+knitr::opts_knit$set(root.dir = './R' )
 ```
 
 
 ```{r setup, include=FALSE}
+
 
 library(deSolve)
 library(mvtnorm)
@@ -29,6 +30,8 @@ library(knitr)
 library(DT)
 library(xtable)
 library(here)
+
+setwd("/Users/Joseph/Desktop/Epi Lab/ebola_drc_pomp/")
 
 sapply(c("R/read_in_drc_data.R", "R/ss_pomp_mod.R", "R/main_functions.R"), source)
 ```
