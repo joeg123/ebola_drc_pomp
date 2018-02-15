@@ -31,7 +31,7 @@ outbrk_list <- c("Yambuku","Mweka2007","Mweka2008","Isiro","Boende")
 ########
 
 settings <- c(2,
-              10000, 500,
+              100, 50,
               100, 100,
               150, 100)
 
@@ -49,79 +49,50 @@ create_data <- function(size) {
   data <- data.frame(times=times,cases=cases)
 }
 
-sim_seir_model <- function(times,outbreak="Yambuku") {
+sim_seir_model <- function(times) {
   dat <- create_data(times)
   source("R/seir_pomp_mod.R")
-  seir_model <- ebola_seir_model(outbreak,dat,TRUE)
+  seir_model <- ebola_seir_model("Yambuku",dat,TRUE)
 }
 
-sim_ss_model <- function(times,outbreak="Yambuku") {
-  dat <- create_data(times)
+sim_ss_model <- function(dat) {
   source("R/ss_pomp_mod.R")
-  seir_model <- ebola_seir_model(outbreak,dat,TRUE)
+  ss_model <- ebola_ss_model("Yambuku",dat)
 }
 
-
-sim_data_gen <- function(seir_model,num_sims) {
-  sim_keep <- data.frame(times=numeric(0),cases=numeric(0))
+threshold_sim_gen <- function(pomp_mod, case_threshold){
   while (TRUE) {
-  sims <- simulation_generator(seir_model,10)
-  sims %>% mutate(times=time) %>% group_by(sim) %>%
-    filter(sum(cases) >= 30) -> sim_temp
-    if (length(sim_keep) < 20) {
-      sim_keep <- cbind(sim_keep,sim_temp)
-    } else {break}
+    sims <- simulation_generator(pomp_mod,1)
+    if (sum(sims$cases) >= case_threshold) {
+      sims <- sims %>% select(times=time, cases)
+      return(sims)
+    }
   }
-  sim_keep <- as.data.frame(sim_keep)
-  View(sim_keep)
 }
 
-sim_study <- function(sims, ss_model) {
+sim_data_gen <- function(pomp_mod,num_sims, case_threshold) {
+  sim_keep <- vector("list", num_sims)
+  for(i in 1:num_sims){
+    sim_keep[[i]] <- threshold_sim_gen(pomp_mod, case_threshold)
+  }
+  return(sim_keep)
+}
+
+sim_study <- function(num_sims) {
+  sim_data <- sim_data_gen(sim_seir_model(200),num_sims,30)
   for (j in 1:num_sims) {
     out_file <- paste0("sim_", j)
-    sims %>% filter(sim==j) -> data
-    #par <- mif2_run(ss_mod,out_file,settings)
+    pomp_mod <- sim_ss_model(sim_data[[j]])
+    par <- mif2_run(pomp_mod,out_file,settings)
     #bounds <- prof_lik_run(ss_mod, out_file,par,settings)
   break
 }
 }
 
 
-#seir_mod <- sim_seir_model(200)
-sim_data <- sim_data_gen(sim_seir_model(200),20)
-ss_model <- sim_ss_model(200)
-sim_study(sim_data,ss_model)
 
 
-
-
-
-sim_study_wrong <- function(outbrk_list,dat) {
-  num_sims <- 1
-  for (outbreak in outbrk_list) {
-    source("R/seir_pomp_mod.R")
-    seir_model <- ebola_seir_model(outbreak,drc)
-    seir_model@params["beta0"] <- unname(1.5 * seir_model@params["gamma"])
-    sims <- simulation_generator(seir_model,num_sims)
-    sims %>% mutate(times=time) %>% select(times,cases,sim) %>% 
-      group_by(cases, times) -> sims
-    sims %>% group_by(sim) %>% 
-      summarise(outbreak_size = sum(cases)) %>% 
-      ggplot(aes(outbreak_size)) + geom_histogram()
-    
-    for (j in 1:num_sims) {
-      source("R/ss_pomp_mod.R")
-      out_file <- paste0(outbreak, "_sim_", j)
-      sims %>% filter(sim==j) -> data
-      data <- as.data.frame(data)
-      ss_seir_mod <- ebola_ss_model(outbreak,data)
-      #par <- mif2_run(ss_seir_mod,out_file,settings)
-      #bounds <- prof_lik_run(ss_seir_mod, out_file,par,settings)
-      break
-    }
-    break
-  }
-}
+sim_study(20)
 
 
 

@@ -47,7 +47,7 @@ settings <- c(2,
               1000, 1000,
               250, 150)
 
-for (outbreak in outbrk_list) {
+for (outbreak in "Isiro") {
     i
     mif2_results
     print(outbreak)
