@@ -54,7 +54,7 @@ untrans <- Csnippet('
                     ')
 
 ebola_seir_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
-                            data = NULL) {
+                            data = NULL, sim=FALSE) {
   
   # populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)
   outbrk <- match.arg(outbreak)
@@ -76,13 +76,19 @@ ebola_seir_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka20
                    D = 0.0;
                    C = 1.0;
                    ")
-  
+  if (sim==FALSE) {
   seir_parm <- c(
     sigma = 1/9.312799, 
     gamma = 1/7.411374, 
     ff = plogis(49/69),
     beta0 = 2
-    )
+    )} else {
+  seir_parm <- c(
+    sigma = 1/9.312799, 
+    gamma = 1/7.411374, 
+    ff = plogis(49/69),
+    beta0 =   1.5 * (1/7.411374)
+  )}
   
   names_seir <- c("S","E","I", "R", "D", "C")
   

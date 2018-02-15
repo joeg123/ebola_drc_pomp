@@ -43,7 +43,7 @@ i <- 1
 ########
 
 settings <- c(2,
-              10000, 500,
+              2000, 200,
               1000, 1000,
               250, 150)
 
@@ -54,10 +54,8 @@ for (outbreak in outbrk_list) {
     ss_seir_pomp <- ebola_ss_model(outbreak,dat)
     par <- mif2_run(ss_seir_pomp,outbreak,settings)
     bounds <- prof_lik_run(ss_seir_pomp, outbreak,par,settings)
-    break
     p_out <- paste0(round(par[1], digits = 2)," (",bounds[3],"-",bounds[4], ")")
     beta_out <- paste0(round(par[2], digits = 2)," (",bounds[1],"-",bounds[2], ")")
-    
     mif2_results[i,1] <- p_out
     mif2_results[i,2] <- beta_out
     mif2_results[i,3] <- round(par[3], digits = 2)

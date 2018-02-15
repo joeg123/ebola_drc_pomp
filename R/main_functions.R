@@ -157,7 +157,7 @@ mif2_run <- function(pomp_obj, outbreak, settings) {
   closeAllConnections()
   
   
-  plot(mifs_global)
+  #plot(mifs_global)
   
   mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
   

@@ -43,7 +43,60 @@ simulation_generator <- function(model,num_sims) {
   return(sims)
 }
 
-sim_study <- function(outbrk_list,dat) {
+create_data <- function(size) {
+  times <- seq(1,size,1)
+  cases <- integer(size)
+  data <- data.frame(times=times,cases=cases)
+}
+
+sim_seir_model <- function(times,outbreak="Yambuku") {
+  dat <- create_data(times)
+  source("R/seir_pomp_mod.R")
+  seir_model <- ebola_seir_model(outbreak,dat,TRUE)
+}
+
+sim_ss_model <- function(times,outbreak="Yambuku") {
+  dat <- create_data(times)
+  source("R/ss_pomp_mod.R")
+  seir_model <- ebola_seir_model(outbreak,dat,TRUE)
+}
+
+
+sim_data_gen <- function(seir_model,num_sims) {
+  sim_keep <- data.frame(times=numeric(0),cases=numeric(0))
+  while (TRUE) {
+  sims <- simulation_generator(seir_model,10)
+  sims %>% mutate(times=time) %>% group_by(sim) %>%
+    filter(sum(cases) >= 30) -> sim_temp
+    if (length(sim_keep) < 20) {
+      sim_keep <- cbind(sim_keep,sim_temp)
+    } else {break}
+  }
+  sim_keep <- as.data.frame(sim_keep)
+  View(sim_keep)
+}
+
+sim_study <- function(sims, ss_model) {
+  for (j in 1:num_sims) {
+    out_file <- paste0("sim_", j)
+    sims %>% filter(sim==j) -> data
+    #par <- mif2_run(ss_mod,out_file,settings)
+    #bounds <- prof_lik_run(ss_mod, out_file,par,settings)
+  break
+}
+}
+
+
+#seir_mod <- sim_seir_model(200)
+sim_data <- sim_data_gen(sim_seir_model(200),20)
+ss_model <- sim_ss_model(200)
+sim_study(sim_data,ss_model)
+
+
+
+
+
+sim_study_wrong <- function(outbrk_list,dat) {
   num_sims <- 1
   for (outbreak in outbrk_list) {
     source("R/seir_pomp_mod.R")
@@ -52,7 +105,6 @@ sim_study <- function(outbrk_list,dat) {
     sims <- simulation_generator(seir_model,num_sims)
     sims %>% mutate(times=time) %>% select(times,cases,sim) %>% 
       group_by(cases, times) -> sims
-    browser()
     sims %>% group_by(sim) %>% 
       summarise(outbreak_size = sum(cases)) %>% 
       ggplot(aes(outbreak_size)) + geom_histogram()
@@ -71,7 +123,6 @@ sim_study <- function(outbrk_list,dat) {
   }
 }
 
-sim_study(outbrk_list,drc)
 
 
 
