@@ -1,0 +1,98 @@
+---
+title: "Identifying the parameters to be used for simulation"
+author: "Spencer Fox"
+date: "2/15/2018"
+output: html_document
+---
+
+```{r, include=FALSE}
+knitr::opts_knit$set(root.dir = '../' )
+```
+
+
+```{r setup, include=FALSE}
+
+library(deSolve)
+library(mvtnorm)
+library(pomp)
+library(chron)
+library(lubridate)
+library(tidyverse)
+library(cowplot)
+library(foreach)
+library(doMC)
+library(doParallel)
+library(padr)
+library(reshape2)
+library(dplyr)
+library(knitr)
+library(DT)
+library(xtable)
+library(here)
+
+sapply(c("R/read_in_drc_data.R", "R/ss_pomp_mod.R", "R/main_functions.R"), source)
+```
+
+## Introduction
+This is a document that was used to determine the parameters used for the simulation fitting scenario. In this scenario we would like to test that our superspreading (SEIIR) model can correctly identify parameter estmates for outbreaks with and without superspreading. The goal is to find parameter values that give rise to outbreaks similar to the ones from our data, so here are the case totales from the data:
+
+```{r}
+drc %>% 
+  summarize(total = sum(cases)) 
+```
+
+
+## Parameters for no superspreading
+First let's figure out what the `beta0` parameter should be for simulating outbreaks in the SEIR model (`p0=1`). Simulating data where the R0 is 0.95 seems to give a nice distribution similar to our data. 
+
+```{r, cache=TRUE}
+pomp_mod <- ebola_ss_model("Kikwit", drc)
+pomp_mod@params["p0"] <- 1
+pomp_mod@params["beta0"] <- pomp_mod@params["gamma"] * 0.95
+
+simulate(pomp_mod, nsim = 500, as.data.frame=T) %>% 
+  group_by(sim) %>% 
+  summarize(total = sum(C)) %>% 
+  ggplot(aes(total)) + geom_histogram()
+
+```
+
+We can keep only those outbreaks that have more than 30 cases and have a nice distribution.
+
+
+## Parameters with superspreading
+Now let's figure out what the `beta0` and `p0` parameters should be for simulating outbreaks in the superspreading (SEIIR) model. We'll plan to have R0=0.95 as in above, but play with the amount of superspreading (i.e. how much p0 diverges from 1).
+
+```{r, cache=TRUE}
+pomp_mod <- ebola_ss_model("Kikwit", drc)
+p0 <- 0.1
+pomp_mod@params["p0"] <- p0
+pomp_mod@params["beta0"] <- pomp_mod@params["gamma"] * 0.95 / p0
+
+simulate(pomp_mod, nsim = 500, as.data.frame=T) %>% 
+  group_by(sim) %>% 
+  summarize(total = sum(C)) %>% 
+  ggplot(aes(total)) + geom_histogram()
+
+```
+
+Looks okay, but some outbreaks get very large, so let's keep only those that are greater than 30 and less than 500.
+
+So to summarize to get realistic looking outbreaks let's use the following parameters:
+
+```{r, echo = FALSE, results = 'asis'}
+knitr::kable(
+  data_frame(
+    Scenario = c("Superspreading", "No superspreading"),
+    R0 = c(0.95, 0.95),
+    Beta0 = c(0.1281814, 1.2818136),
+    p0 = c(1, 0.1),
+    Min_Outbreak = c(30,30),
+    Max_Outbreak = c(500,500)
+  )
+)
+```
+
+
+
+
