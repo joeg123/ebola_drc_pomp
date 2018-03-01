@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r, include=FALSE}
-knitr::opts_knit$set(root.dir = './R' )
+knitr::opts_knit$set(root.dir = '../' )
 ```
 
 
