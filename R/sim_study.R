@@ -32,8 +32,8 @@ outbrk_list <- c("Yambuku","Mweka2007","Mweka2008","Isiro","Boende")
 
 settings <- c(2,
               100, 50,
-              100, 100,
-              150, 100)
+              50, 50,
+              50, 80)
 
 
 simulation_generator <- function(model,num_sims) {
@@ -57,38 +57,41 @@ sim_seir_model <- function(times) {
 
 sim_ss_model <- function(dat) {
   source("R/ss_pomp_mod.R")
-  ss_model <- ebola_ss_model("Yambuku",dat)
+  ss_model <- ebola_ss_model("Yambuku",dat,TRUE)
 }
 
-threshold_sim_gen <- function(pomp_mod, case_threshold){
+threshold_sim_gen <- function(pomp_mod, case_threshold_low, case_threshold_hi){
   while (TRUE) {
     sims <- simulation_generator(pomp_mod,1)
-    if (sum(sims$cases) >= case_threshold) {
+    if ((sum(sims$cases) >= case_threshold_low)&(sum(sims$cases) <= case_threshold_hi)) {
       sims <- sims %>% select(times=time, cases)
       return(sims)
     }
   }
 }
 
-sim_data_gen <- function(pomp_mod,num_sims, case_threshold) {
+sim_data_gen <- function(pomp_mod,num_sims, case_threshold_low,case_threshold_hi) {
   sim_keep <- vector("list", num_sims)
   for(i in 1:num_sims){
-    sim_keep[[i]] <- threshold_sim_gen(pomp_mod, case_threshold)
+    sim_keep[[i]] <- threshold_sim_gen(pomp_mod, case_threshold_low,case_threshold_hi)
   }
   return(sim_keep)
 }
 
 sim_study <- function(num_sims) {
-  sim_data <- sim_data_gen(sim_seir_model(200),num_sims,30)
+  sim_data <- sim_data_gen(sim_seir_model(200),num_sims,30,500)
   for (j in 1:num_sims) {
     out_file <- paste0("sim_", j)
     pomp_mod <- sim_ss_model(sim_data[[j]])
     par <- mif2_run(pomp_mod,out_file,settings)
     bounds <- prof_lik_run(pomp_mod, out_file,par,settings)
+
 }
 }
 
-sim_study(20)
+sim_study(1)
+
+
 
 
 

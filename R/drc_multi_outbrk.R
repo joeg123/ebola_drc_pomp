@@ -26,6 +26,7 @@ library(xtable)
 sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/main_functions.R"), source)
 
 outbrk_list <- c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende")
+
 multi_drc <- function(outbrk_list,dat) {
 
 mif2_results <- matrix(0,6,6)
@@ -43,11 +44,11 @@ i <- 1
 ########
 
 settings <- c(2,
-              2000, 200,
-              1000, 1000,
+              100, 100,
+              200, 200,
               250, 150)
 
-for (outbreak in "Isiro") {
+for (outbreak in outbrk_list) {
     i
     mif2_results
     print(outbreak)
@@ -72,9 +73,11 @@ return(mif2_results)
 
 max_mif2 <- multi_drc(outbrk_list,drc)
 
-dimnames(max_mif2) <- list(outbrk_list,c('p','B_0','R_0', 'CV', 'k', 'LL'))
+save(max_mif2, file = "mif2_results.rda")
 
-as.data.frame(max_mif2) %>% xtable(display = c("s","s","s", "fg", "fg", "fg", "fg"))
+
+
+
 
 
 

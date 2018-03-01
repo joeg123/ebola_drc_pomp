@@ -96,7 +96,7 @@ mif2_run <- function(pomp_obj, outbreak, settings) {
   seir_parm <- get_parms(seir_parm)
   assign("seir_parm", seir_parm, envir= parallel_vars)
   
-  dest <- paste0("/", outbreak, "_mif_seir.rda")
+  dest <- paste0("/", outbreak, "_mif.rda")
   
   
   # Np and Nmif Suggestion
@@ -155,9 +155,6 @@ mif2_run <- function(pomp_obj, outbreak, settings) {
   stopCluster(cl)
   stopImplicitCluster()
   closeAllConnections()
-  
-  
-  #plot(mifs_global)
   
   mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
   
@@ -231,7 +228,7 @@ prof_lik_run <- function(pomp_obj, outbreak, pars, settings) {
     filter(slice == key, loglik > -10) %>%
     filter(slice == "beta0") -> spline_dat_beta0
   
-  #beta_results <- conf_int_find(spline_dat_beta0$value,spline_dat_beta0$loglik,-1.92)
+  beta_results <- conf_int_find(spline_dat_beta0$value,spline_dat_beta0$loglik,-1.92)
   
   prof_lik %>% group_by(beta0, p0, slice)  %>%
     summarize(loglik = mean(loglik)) %>%
@@ -241,25 +238,11 @@ prof_lik_run <- function(pomp_obj, outbreak, pars, settings) {
     filter(slice == key, loglik > -10) %>%
     filter(slice == "p0") -> spline_dat_p0
   
-  #p_results <- conf_int_find(spline_dat_p0$value,spline_dat_p0$loglik,-1.92)
+  p_results <- conf_int_find(spline_dat_p0$value,spline_dat_p0$loglik,-1.92)
   
-  #prof_out <- c(round(beta_results[1],digits = 2),round(beta_results[2], digits = 2),
-  #              round(p_results[1], digits = 2),round(p_results[2], digits = 2))
+  prof_out <- c(round(beta_results[1],digits = 2),round(beta_results[2], digits = 2),
+                round(p_results[1], digits = 2),round(p_results[2], digits = 2))
   
-  prof_lik %>% group_by(beta0, p0, slice)  %>%
-    summarize(loglik = mean(loglik)) %>%
-    ungroup() %>%
-    mutate(loglik = loglik - max(loglik)) %>%
-    gather(key, value, beta0:p0) %>%
-    filter(slice == key, loglik > -10) %>%    
-    ggplot(aes(x=value,y=loglik))+
-    geom_point()+ geom_line() +
-    facet_wrap(~key, scales = "free_x") +
-    geom_hline(yintercept = -1.92, lty=2)
-  
-  file_name <- paste0(outbreak,".pdf")
-  prof_out <- c(1,2,3,4)
-  ggsave(file_name)
   rm(prof_file)
   return(prof_out)
   

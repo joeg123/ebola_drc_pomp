@@ -87,7 +87,7 @@ ebola_seir_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka20
     sigma = 1/9.312799, 
     gamma = 1/7.411374, 
     ff = plogis(49/69),
-    beta0 =   1.5 * (1/7.411374)
+    beta0 = .1281814
   )}
   
   names_seir <- c("S","E","I", "R", "D", "C")

@@ -125,13 +125,13 @@ mif2_run_seir <- function(seir_pomp, outbreak, graph_mif2 = TRUE) {
   
   
   mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
-  print(mif2_best_match$loglik)
+  log_mif <- mif2_best_match$loglik
   
   cv <- calc_cv(mif2_best_match$params)
   r_0 <- calc_rnot(mif2_best_match$params)
   
   out_par <- ((mif2_best_match$params))
-  out_par <- c(unname(out_par['beta0']), r_0, cv)
+  out_par <- c(unname(out_par['beta0']), r_0, cv,log_mif)
   
   return(out_par)
   
