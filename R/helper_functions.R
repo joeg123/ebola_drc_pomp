@@ -43,13 +43,12 @@ randomize_parms <- function(pomp_obj, model_used){
 
 mif2_single_run <- function(parms,
                             pomp_obj, 
-                            settings,
-                            parms_sd) {
+                            settings) {
   ## Function to run single mif
   ## With the specified parameters
   
-  num_particles <- settings[2]
-  num_mif_iterations <- settings[3]
+  num_particles <- settings$mif_nparticles
+  num_mif_iterations <- settings$mif_niter
   
   mif2(pomp_obj,
        start=parms,
@@ -58,32 +57,27 @@ mif2_single_run <- function(parms,
        cooling.type="geometric",
        cooling.fraction.50=0.6,
        transform=TRUE,
-       rw.sd= parms_sd)
+       rw.sd= settings$parms_sd)
 }
 
 mif2_multirun <- function(pomp_obj, 
                           settings,
-                          est_parms, 
-                          parms_sd,
-                          outbreak, 
-                          model_used,
                           refresh = FALSE,
                           n = 10){
   ## Function to run multiple mifs
   
   ## First setup the location for the .rda file
-  dest <- paste0("data_produced/outbreak_rda/", model_used,"_", outbreak, "_mif.rda")
+  dest <- paste0("data_produced/outbreak_rda/", settings$model_used,"_", settings$outbreak, "_mif.rda")
   
   ## Generate list of parms for running models
-  parm_list <- n %>% rerun(randomize_parms(pomp_obj, model_used))
+  parm_list <- n %>% rerun(randomize_parms(pomp_obj, settings$model_used))
   # parm_list <- n %>% rerun(coef(pomp_obj))
   if(file.exists(dest) & refresh == FALSE){
     load(dest)
   } else{
     mifs_global <- parm_list %>% map(mif2_single_run, 
                                      pomp_obj=pomp_obj, 
-                                     settings=settings,
-                                     parms_sd=parms_sd)
+                                     settings=settings)
     mifs_global <- as(mifs_global, "mif2List")
     save(mifs_global, file = dest)
   }
@@ -119,14 +113,16 @@ get_list_parm_bounds <- function(parms, mif2_obj){
 }
 
 get_parm_slice_input <- function(parm, parm_bounds, settings){
-  rep(seq(from=parm_bounds[[parm]][1], to=parm_bounds[[parm]][[2]], length=settings[6]), each=settings[7])
+  rep(seq(from=parm_bounds[[parm]][1], to=parm_bounds[[parm]][[2]], length=settings$slice_length), each=settings$slice_reps)
 }
 
-get_lik_slice <- function(mif2_obj, settings, est_parms, model_used){
+get_lik_slice <- function(mif2_obj, settings){
   ## Gives the slice design used for the likelihood profile
+  est_parms <- settings$est_parms
+  model_used <-settings$model_used
   
   parm_bounds <- get_list_parm_bounds(est_parms, mif2_obj)
-  
+
   if(model_used == "combo"){
     sliceDesign(
       center=c(coef(mif2_obj)["beta0"],coef(mif2_obj)["p0"], 
@@ -162,20 +158,20 @@ get_single_lik <- function(pomp_obj, num_particles, ...){
   ## Completes the particle filtering for a certain set of parameters
   ## The parameters are specified by the ... and called through the prof_like_run function
   
-  pfilter(pomp_obj, params=unlist(list(...)), Np=num_particles)
+  pfilter(pomp_obj, params=unlist(list(...)), Np = num_particles)
 }
 
 prof_lik_run <- function(mif2_obj, est_parms, settings, outbreak, model_used, refresh=FALSE){
   ## This function calculates the likelihood profile for the MLE parameters, and
   ## Returns a data_frame with the results (and saves it for later)
   
-  dest <- paste0("data_produced/outbreak_rda/", model_used,"_", outbreak, "_prof.rda")
+  dest <- paste0("data_produced/outbreak_rda/", settings$model_used, "_", settings$outbreak, "_prof.rda")
   if(file.exists(dest) & refresh == FALSE){
     load(dest)
   } else{
-    parms <- get_lik_slice(mif2_obj, settings, est_parms, model_used) %>% as_data_frame
+    parms <- get_lik_slice(mif2_obj, settings) %>% as_data_frame
     slice_runs <- parms %>% 
-      pmap(.f = get_single_lik, mif2_obj, settings[5]) 
+      pmap(.f = get_single_lik, mif2_obj, settings$prof_lik_nparticles) 
     
     prof_lik <- parms %>% mutate(ll = map(slice_runs, logLik) %>% unlist)
     save(prof_lik, file = dest)
@@ -449,4 +445,68 @@ calc_cv <- function(fit_parms){
 #   upper_lim <- val * 5
 #   lims <- c(lower_lim, upper_lim)
 #   return(lims)
+# }
+# 
+# # None of this works well... I think maybe we should do it manually -------
+# 
+# 
+# 
+# ## Plot the likelihood profile
+# plot_prof_lik(prof_lik, est_parms)
+# 
+# 
+# find_scam_root <- function(df, lower = T){
+#   solver_fxn <- function(x, mod, mod_val_at_max){
+#     ## Add in the 1.96, because likelihoods are negative, and we need to find -1.96
+#     unname(predict(mod, data_frame(var = x))) - mod_val_at_max + 1.96
+#   }
+#   print(lower)
+#   if(lower){
+#     df <- df %>% filter(var <= df$var[which.max(df$rel_ll)] & rel_ll >= -100)  
+#     browser()
+#     mod <- scam(rel_ll ~ s(var, k = nrow(df), bs="mpd"), data = df)
+#     root <- try(uniroot(f = solver_fxn, 
+#                         interval = c(min(df$var), max(df$var)), 
+#                         mod = mod, 
+#                         mod_val_at_max = unname(predict(mod, data_frame(var = min(df$var))))))
+#     
+#   } else{
+#     df <- df %>% filter(var >= df$var[which.max(df$rel_ll)] & rel_ll >= -100)  
+#     mod <- scam(rel_ll ~ s(var, k = nrow(df), bs="mpd"), data = df)
+#     root <- try(uniroot(f = solver_fxn, 
+#                         interval = c(min(df$var), max(df$var)), 
+#                         mod = mod, 
+#                         mod_val_at_max = unname(predict(mod, data_frame(var = min(df$var))))))
+#   }
+#   
+#   if(class(root) == "try-error"){
+#     warning("May need to increase the range of parameters investigated, check plots")
+#     if_else(lower, 0, Inf)
+#   } else{
+#     root$root  
+#   }
+# }
+# 
+# calc_single_parm_ci <- function(parm, prof_lik){
+#   library(scam)
+#   ## First average across pfilter likelihoods, and find the relative ll
+#   df <- prof_lik %>% filter(slice==parm) %>% 
+#     group_by_at(vars(-slice, -ll)) %>% 
+#     summarize(avg_ll = mean(ll)) %>% 
+#     ungroup() %>% 
+#     mutate(rel_ll = avg_ll - max(avg_ll, na.rm=T)) %>% 
+#     select(var = parm, rel_ll)
+#   
+#   ## Now find the lowerbound
+#   lower <- find_scam_root(df, lower=TRUE)
+#   
+#   ## Now find upperbound
+#   upper <- find_scam_root(df, lower=FALSE)
+#   
+#   return(data_frame(parm=parm, lower = lower, upper = upper))
+# }
+# 
+# calc_all_parm_ci <- function(prof_lik, est_parms, outbreak, model_used){
+#   ## Calculates each parameters confidence interval from the prof_lik
+#   est_parms %>% map(calc_single_parm_ci, prof_lik) %>% bind_rows()
 # }
