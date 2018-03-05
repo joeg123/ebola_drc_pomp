@@ -37,9 +37,6 @@ logLik(t_match)
 
 t_match@params
 
-
-
-
 # Setup MIF settings ------------------------------------------------------
 
 # Settings
@@ -52,12 +49,9 @@ t_match@params
 # 7: Slice Each
 
 settings <- c(2,
-              2000, 
-              1000,
-              1000, 
-              1000,
-              250, 
-              150)
+              10, 10,
+              20, 20,
+              50, 50)
 
 
 # Running mif on all analysis ---------------------------------------------
@@ -65,124 +59,116 @@ settings <- c(2,
 outbrk_list <- c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende")
 
 
-mif2_run <- function(pomp_obj, 
-                     outbreak, 
-                     settings,
-                     est_parms, 
-                     parms_sd,
-                     model_used,
-                     refresh=FALSE) {
-  
-  
-  
-  parallel_vars <- new.env()
-  assign("pomp_obj", pomp_obj, envir= parallel_vars)
-  assign("num_particle1", settings[2], envir= parallel_vars)
-  assign("num_mif", settings[3], envir= parallel_vars)
-  
-  traj.match(pomp_obj, 
-             method = c("Nelder-Mead"),
-             est= est_parms,
-             transform=TRUE) -> t_match
-  assign("t_match", t_match, envir= parallel_vars)
-  
-  seir_parm <- sub_parms(ref_parms = t_match@params)
-  seir_parm <- get_parms(seir_parm)
-  assign("seir_parm", seir_parm, envir= parallel_vars)
-  
-  dest <- paste0("/", model_used,"_", outbreak, "_mif.rda")
-  
-  cl <- makeCluster(settings[1])
-  clusterExport(cl,c("pomp_obj","t_match","seir_parm","num_particle1","num_mif", "parms_sd"), envir = parallel_vars)
-  registerDoParallel(cl)
-  
 
-  # Run the global mif step to find the best fit parameters -----------------
-  if(refresh){
-    file.remove(paste0("data_produced/outbreak_rda", dest))
-  }
-  stew(file=paste0("data_produced/outbreak_rda", dest),{
-    t_local <- system.time({
-      mifs_global <- foreach(i=1:10,.packages='pomp', .combine=c, .options.multicore=list(set.seed=TRUE)) %dopar% {
-        mif2(
-          pomp_obj,
-          start=seir_parm,
-          Np=num_particle1,
-          Nmif=num_mif,
-          cooling.type="geometric",
-          cooling.fraction.50=0.6,
-          transform=TRUE,
-          rw.sd= parms_sd
-        )
-      }
-    })
-  },seed=80101,kind="L'Ecuyer")
-  
-  stopCluster(cl)
-  stopImplicitCluster()
-  
-  dest <- paste0("/", model_used,"_", outbreak, "_pf.rda")
-  
-  parallel_vars <- new.env()
-  assign("mifs_global", mifs_global, envir = parallel_vars)
-  assign("pomp_obj", pomp_obj, envir= parallel_vars)
-  assign("num_particle2", settings[4], envir= parallel_vars)
-  
-  cl <- makeCluster(settings[1])
-  clusterExport(cl,c("pomp_obj","mifs_global", "num_particle2"), envir = parallel_vars)
-  registerDoParallel(cl)
-  
-
-  # What is point of this section? ------------------------------------------
-
-  if(refresh){
-    file.remove(paste0("data_produced/outbreak_rda", dest))
-  }
-  stew(file=paste0("data_produced/outbreak_rda", dest),{
-    t_local_eval <- system.time({
-      liks_global <- foreach(i=1:10,.packages='pomp',.combine=rbind) %dopar% {
-        evals <- replicate(10, logLik(pfilter(pomp_obj, params=coef(mifs_global[[i]]),Np=num_particle2)))
-        logmeanexp(evals, se=TRUE)
-      }
-    })
-  },seed=900242057,kind="L'Ecuyer")
-  
-  stopCluster(cl)
-  stopImplicitCluster()
-  closeAllConnections()
-  
-  return(mifs_global)
-  
-  
-  # mif2_best_match <- mifs_global[[which.max(map(mifs_global, logLik) %>% flatten_dbl())]]
-  # LL <- mif2_best_match$loglik
-  # cv <- calc_cv(mif2_best_match$params)
-  # r_0 <- calc_rnot(mif2_best_match$params)
-  # k <- calc_k(mif2_best_match$params)
-  # out_par <- ((mif2_best_match$params))
-  # out_par <- c(unname(out_par['p0']),unname(out_par['beta0']), r_0, cv, k, LL)
-  # return(out_par)
-}
-
-
-pomp_mod <- generate_pomp_model("Boende", drc)
-
+outbreak <- "Boende"
+model_used <- "combo"
 est_parms <- c("beta0", "p0", "k", "tau1")
 parms_sd <- rw.sd(beta0=.1, p0=0.02, k=0.02, tau1=.1)
-model_used <- "combo"
-par <- mif2_run(pomp_obj = pomp_mod, 
-                outbreak = "Mweka2007", 
+
+## First generate the pomp model for the outbreak
+pomp_mod <- generate_pomp_model("Boende", drc)
+
+## Now iteratively filter to find MLE
+mif_runs <- mif2_multirun(pomp_obj = pomp_mod, 
+                outbreak = outbreak, 
                 settings = settings, 
                 est_parms = est_parms, 
                 parms_sd = parms_sd, 
                 model_used = model_used,
                 refresh = T)
 
+## Extract best fit model
+max_mif <- find_max_ll_mif(mif_runs)
+
+
+
+# None of this works well... I think maybe we should do it manually -------
+
+
+## For best fit parameter estimates, calculate the likelihood profile
+prof_lik <- prof_lik_run(mif2_obj = max_mif, 
+                         est_parms = est_parms, 
+                         outbreak = outbreak, 
+                         settings=settings, 
+                         model_used = model_used,
+                         refresh = T)
+
+## Plot the likelihood profile
+plot_prof_lik(prof_lik, est_parms)
+
+
+find_scam_root <- function(df, lower = T){
+  solver_fxn <- function(x, mod, mod_val_at_max){
+    ## Add in the 1.96, because likelihoods are negative, and we need to find -1.96
+    unname(predict(mod, data_frame(var = x))) - mod_val_at_max + 1.96
+  }
+  print(lower)
+  if(lower){
+    df <- df %>% filter(var <= df$var[which.max(df$rel_ll)] & rel_ll >= -100)  
+    browser()
+    mod <- scam(rel_ll ~ s(var, k = nrow(df), bs="mpd"), data = df)
+    root <- try(uniroot(f = solver_fxn, 
+                        interval = c(min(df$var), max(df$var)), 
+                        mod = mod, 
+                        mod_val_at_max = unname(predict(mod, data_frame(var = min(df$var))))))
+    
+  } else{
+    df <- df %>% filter(var >= df$var[which.max(df$rel_ll)] & rel_ll >= -100)  
+    mod <- scam(rel_ll ~ s(var, k = nrow(df), bs="mpd"), data = df)
+    root <- try(uniroot(f = solver_fxn, 
+                        interval = c(min(df$var), max(df$var)), 
+                        mod = mod, 
+                        mod_val_at_max = unname(predict(mod, data_frame(var = min(df$var))))))
+  }
   
+  if(class(root) == "try-error"){
+    warning("May need to increase the range of parameters investigated, check plots")
+    if_else(lower, 0, Inf)
+  } else{
+    root$root  
+  }
+}
 
-## Not looked at yet
+calc_single_parm_ci <- function(parm, prof_lik){
+  library(scam)
+  ## First average across pfilter likelihoods, and find the relative ll
+  df <- prof_lik %>% filter(slice==parm) %>% 
+    group_by_at(vars(-slice, -ll)) %>% 
+    summarize(avg_ll = mean(ll)) %>% 
+    ungroup() %>% 
+    mutate(rel_ll = avg_ll - max(avg_ll, na.rm=T)) %>% 
+    select(var = parm, rel_ll)
+  
+  ## Now find the lowerbound
+  lower <- find_scam_root(df, lower=TRUE)
+  
+  ## Now find upperbound
+  upper <- find_scam_root(df, lower=FALSE)
+  
+  return(data_frame(parm=parm, lower = lower, upper = upper))
+}
+
+calc_all_parm_ci <- function(prof_lik, est_parms, outbreak, model_used){
+  ## Calculates each parameters confidence interval from the prof_lik
+  est_parms %>% map(calc_single_parm_ci, prof_lik) %>% bind_rows()
+}
+
+calc_all_parm_ci(prof_lik, est_parms, outbreak, model_used)
 
 
+prof_lik %>% gather(key,val, est_parms) %>% 
+  filter(key == slice) %>% 
+  group_by(key, val) %>% 
+  summarize(avg_ll = mean(ll)) %>% 
+  mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
+  ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
+  geom_line() +
+  #  coord_cartesian(ylim = c(-100,0)) +
+  stat_smooth()
+
+
+
+# Not looked at yet -------------------------------------------------------
 run_fitting <- function(outbreak = c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"), 
                         dat) {
     pomp_mod <- generate_pomp_model("Mweka2007", drc)
