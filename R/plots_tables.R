@@ -44,9 +44,6 @@ for (outbreak in outbrk_list) {
 mif_data_name <- paste0(outbreak, "_mif.rda")
 mif_rda_data[[i]] <- load_obj(mif_data_name)
 
-mif_pf_data <- paste0(outbreak, "_mif_pf.rda")
-mif_pf_rda_data[[i]] <- load_obj(mif_pf_data)
-
 prof_data <- paste0(outbreak, "_prof_lik.rda")
 prof_rda_data[[i]] <- load_obj(prof_data)
 

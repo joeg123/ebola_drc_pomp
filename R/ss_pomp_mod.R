@@ -63,7 +63,7 @@ untrans <- Csnippet('
                     Tp0 = plogis(p0,0,1,1,0);
                     ')
 
-ebola_ss_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
+generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
                         data = NULL, sim=FALSE) {
 
   # populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)

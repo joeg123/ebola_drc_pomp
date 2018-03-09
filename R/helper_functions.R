@@ -18,10 +18,10 @@ randomize_parms <- function(pomp_obj, model_used){
   ## Randomizes parameters for mif2 starting iteration
   if(model_used == "combo"){
     parm_box <- rbind(
-      beta0 = c(1e-4, 10),
+      beta0 = c(1e-4, 5),
       p0 = c(1e-8, 1),
       k = c(1e-5, 1),
-      tau1 = c(1, max(pomp_mod@times))
+      tau1 = c(1, max(pomp_obj@times))
     )
   } else if (model_used == "ss"){
     parm_box <- rbind(
@@ -32,7 +32,7 @@ randomize_parms <- function(pomp_obj, model_used){
     parm_box <- rbind(
       beta0 = c(1e-4, 10),
       k = c(1e-5, 1),
-      tau1 = c(1, max(pomp_mod@times))
+      tau1 = c(1, max(pomp_obj@times))
     )
   } else{
     stop("Do not recognize the model_used parameter. Either a typo, or need to add new parameter randomization for new model")
@@ -72,6 +72,7 @@ mif2_multirun <- function(pomp_obj,
   ## Generate list of parms for running models
   parm_list <- n %>% rerun(randomize_parms(pomp_obj, settings$model_used))
   # parm_list <- n %>% rerun(coef(pomp_obj))
+
   if(file.exists(dest) & refresh == FALSE){
     load(dest)
   } else{
