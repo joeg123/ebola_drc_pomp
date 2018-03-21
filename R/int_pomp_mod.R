@@ -80,7 +80,7 @@ init <- Csnippet("
                  I = 1.0;
                  R = 0.0;
                  D = 0.0;
-                 C = 0.0;
+                 C = 1.0;
                  ")
 
 seir.init.state <- c(S.0= 999999, 
@@ -88,7 +88,7 @@ seir.init.state <- c(S.0= 999999,
                      I.0 = 1.0,
                      R.0 = 0.0,
                      D.0 = 0.0,
-                     C.0 = 0.0)
+                     C.0 = 1.0)
 
 seir_parm <- c(sigma = 1/9.312799, 
                gamma = 1/7.411374, 
@@ -107,8 +107,8 @@ generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mwek
 data <- pull_outbreak_data(outbreak,data)
 
 pomp(data = data,
-     times="times",
-     t0=0,
+     times = "times",
+     t0 = -1,
      skeleton = vectorfield(seir_skel), 
      params = seir_parm,
      initializer=init,
