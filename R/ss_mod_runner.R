@@ -22,7 +22,7 @@ library(xtable)
 
 sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/helper_functions.R"), source)
 
-outbrk_list <- c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro")
+outbrk_list <- c("Yambuku","Kikwit","Mweka2007","Mweka2008","Boende")
 
 mod_runner <- function(outbrk_list,dat) {
 
@@ -31,7 +31,7 @@ i <- 1
 
 # Setup MIF settings ------------------------------------------------------
 
-for (outbreak in outbrk_list) {
+for (outbreak in "Boende") {
   # Settings
   # 1: Number of cores
   # 2: MIF2 Np
@@ -60,7 +60,8 @@ for (outbreak in outbrk_list) {
   mif_runs <- mif2_multirun(pomp_obj = pomp_mod, 
                             settings = settings, 
                             refresh = F)
-
+  
+  plot(mif_runs)
   ## Extract best fit model
   max_mif <- find_max_ll_mif(mif_runs)
   
@@ -68,12 +69,14 @@ for (outbreak in outbrk_list) {
   print(max_mif@params)
   print(max_mif@loglik)
   
+  
   ## For best fit parameter estimates, calculate the likelihood profile
   prof_lik <- prof_lik_run(mif2_obj = max_mif,
                            settings=settings,
                            refresh = F)
   
-
+ plot_prof_lik(prof_lik, settings)
+  
 
   }
   return(max_mif)
@@ -82,15 +85,7 @@ for (outbreak in outbrk_list) {
 max_mif2 <- mod_runner(outbrk_list,drc)
 
 
-prof_lik %>% gather(key,val, settings$est_parms) %>% 
-  filter(key == slice) %>% 
-  group_by(key, val) %>% 
-  summarize(avg_ll = mean(ll)) %>% 
-  mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
-  ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
-  geom_line() +
-  coord_cartesian(ylim = c(-100,0)) +
-  stat_smooth()
+
 
 
 

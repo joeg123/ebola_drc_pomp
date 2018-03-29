@@ -171,6 +171,9 @@ prof_lik_run <- function(mif2_obj, est_parms, settings, outbreak, model_used, re
     load(dest)
   } else{
     parms <- get_lik_slice(mif2_obj, settings) %>% as_data_frame
+    
+
+    
     slice_runs <- parms %>% 
       pmap(.f = get_single_lik, mif2_obj, settings$prof_lik_nparticles) 
     
@@ -180,13 +183,18 @@ prof_lik_run <- function(mif2_obj, est_parms, settings, outbreak, model_used, re
   prof_lik
 }
 
-plot_prof_lik <- function(df, est_parms){
-  df %>% gather(key, value, est_parms) %>%
-    filter(key==slice) %>%
-    ggplot(aes(x=value, y=ll))+
-    geom_point()+
-    facet_wrap(~key, scales = "free_x") +
-    geom_smooth()
+plot_prof_lik <- function(df, settings){
+  df %>% gather(key,val, settings$est_parms) %>% 
+    filter(key == slice) %>% 
+    group_by(key, val) %>% 
+    summarize(avg_ll = mean(ll)) %>% 
+    mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
+    ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
+    geom_line() +
+    coord_cartesian(ylim = c(-10,0)) +
+    stat_smooth() -> pl_plot
+  paste0("figs/", settings$model_used, "_", settings$outbreak, "pl_plot.pdf") -> dest
+  save_plot(dest,pl_plot,base_height = 4, base_aspect_ratio = 1.4)
 }
 
 
@@ -250,6 +258,10 @@ calc_cv <- function(fit_parms){
   rnot <- calc_rnot(fit_parms)
   sqrt( (rnot * (2 / p - 1) + 1) / rnot)
 }
+
+
+
+
 
 
 

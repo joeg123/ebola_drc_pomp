@@ -74,15 +74,8 @@ mod_runner <- function(outbrk_list,dat) {
                              settings=settings,
                              refresh = F)
     
-    prof_lik %>% gather(key,val, settings$est_parms) %>% 
-      filter(key == slice) %>% 
-      group_by(key, val) %>% 
-      summarize(avg_ll = mean(ll)) %>% 
-      mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
-      ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
-      geom_line() +
-      coord_cartesian(ylim = c(-100,0)) +
-      stat_smooth()
+    plot_prof_lik(prof_lik, settings)
+
 
   }
   return(mif_runs)
@@ -91,8 +84,4 @@ mod_runner <- function(outbrk_list,dat) {
 max_mif2_alt <- mod_runner(outbrk_list,drc)
 
 
-
-#dimnames(max_mif2_alt) <- list(outbrk_list,c('B_0','R_0', 'CV', 'log'))
-
-#as.data.frame(max_mif2_alt) %>% xtable(display = c("fg","fg", "fg", "fg", "fg"))
 
