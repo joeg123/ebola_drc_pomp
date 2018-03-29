@@ -93,8 +93,14 @@ find_max_ll_mif <- function(mif2_list){
 
 
 get_parm_bounds <- function(parm, mif2_obj){
-  lower <- mif2_obj@params[parm] / 5
-  upper <- mif2_obj@params[parm] * 5
+  if(parm == "p0"){
+    lower <- mif2_obj@params[parm] / 5
+    upper <- 0.999
+  } else{
+    lower <- mif2_obj@params[parm] / 5
+    upper <- mif2_obj@params[parm] * 5  
+  }
+  
   # if(parm == "beta0"){
   #   c(0.1, 15)
   # } else if(parm == "k"){
