@@ -92,31 +92,36 @@ find_max_ll_mif <- function(mif2_list){
 }
 
 
-get_parm_bounds <- function(parm, mif2_obj){
-  if(parm == "p0"){
-    lower <- mif2_obj@params[parm] / 5
-    upper <- 0.999
-  } else{
-    lower <- mif2_obj@params[parm] / 5
-    upper <- mif2_obj@params[parm] * 5  
+get_parm_bounds <- function(parm, mif2_obj, settings){
+  if (settings$intensive==FALSE) {
+    if(parm == "p0"){
+      lower <- mif2_obj@params[parm] / 5
+      upper <- 0.999
+    } else{
+        lower <- mif2_obj@params[parm] / 5
+        upper <- mif2_obj@params[parm] * 5  
+        }
+  } else {
+    bounds <- unname(unlist(settings$bounds))
+    if (parm == "beta0") {
+      lower_ind = 1
+      upper_ind = 2
+    } else if (parm == "p0" | parm == "k") {
+      lower_ind = 3
+      upper_ind = 4
+    } else if (parm == "tau1") {
+      lower_ind = 5
+      upper_ind = 6
+    }
+    lower = bounds[lower_ind]
+    upper = bounds[upper_ind]
   }
-  
-  # if(parm == "beta0"){
-  #   c(0.1, 15)
-  # } else if(parm == "k"){
-  #   c(0, 5)
-  # }else if(parm == "p0"){
-  #   c(1e-4, 0.99)
-  # } else if(parm == "tau1"){
-  #   c(0, 200)
-  # } else{
-  #   stop("Parameter not recognized, please check est_parms for accuracy")
-  # }
+
   c(lower, upper)
 }
 
-get_list_parm_bounds <- function(parms, mif2_obj){
-  parms %>% map(get_parm_bounds, mif2_obj=mif2_obj) %>% setNames(parms)
+get_list_parm_bounds <- function(parms, mif2_obj, settings){
+  parms %>% map(get_parm_bounds, mif2_obj=mif2_obj, settings) %>% setNames(parms)
 }
 
 get_parm_slice_input <- function(parm, parm_bounds, settings){
@@ -128,7 +133,7 @@ get_lik_slice <- function(mif2_obj, settings){
   est_parms <- settings$est_parms
   model_used <-settings$model_used
   
-  parm_bounds <- get_list_parm_bounds(est_parms, mif2_obj)
+  parm_bounds <- get_list_parm_bounds(est_parms, mif2_obj, settings)
 
   if(model_used == "combo"){
     sliceDesign(
@@ -193,12 +198,12 @@ plot_prof_lik <- function(df, settings){
   df %>% gather(key,val, settings$est_parms) %>% 
     filter(key == slice) %>% 
     group_by(key, val) %>% 
-    summarize(avg_ll = mean(ll)) %>% 
-    mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
+    # summarize(avg_ll = mean(ll)) %>% 
+    #mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
+    mutate(avg_ll = ll-max(ll)) %>% 
     ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
-    geom_line() +
-    coord_cartesian(ylim = c(-10,0)) +
-    stat_smooth() -> pl_plot
+    geom_point(alpha=.1,size=.5) +
+    coord_cartesian(ylim = c(-30,0)) -> pl_plot
   paste0("figs/", settings$model_used, "_", settings$outbreak, "pl_plot.pdf") -> dest
   save_plot(dest,pl_plot,base_height = 4, base_aspect_ratio = 1.4)
 }
@@ -213,10 +218,35 @@ calc_k <- function(parms) {
   uniroot(f, lower=0.00000001, upper= 2)$root
 }
 
+conf_interval <- function(prof_lik, settings) {
+  prof_lik %>% 
+    gather(key,val, settings$est_parms) %>% 
+    filter(key == slice) %>% 
+    group_by(key, val) %>% 
+    summarize(avg_ll = mean(ll)) %>% 
+    mutate(avg_ll = avg_ll - max(avg_ll)) -> prof_lik
+  model_used <-settings$model_used
+  if (model_used == "ss") {
+    p_bounds <- conf_int_calc('p0', prof_lik, -1.96)
+    b_bounds <- conf_int_calc('beta0', prof_lik, -1.96)
+    bounds <- c(p_bounds,b_bounds)
+  }
+  else if (model_used == "int") {
+    b_bounds <- conf_int_calc('beta0', prof_lik, -1.96)
+    k_bounds <- conf_int_calc('k', prof_lik, -1.96)
+    t_bounds <- conf_int_calc('tau1', prof_lik, -1.96)
+    bounds <- c(b_bounds,k_bounds,t_bounds)
+  }
+  return(bounds)
+}
 
-conf_int_find <- function(x, y, log_val) {
+conf_int_calc <- function(param, df, log_val) {
   # beta0/p0 = x
   # loglik = y
+  df %>%
+    filter(key == param) -> df
+  y <- unname(unlist(df['avg_ll']))
+  x <- unname(unlist(df['val']))
   lower_bound <- 0
   upper_bound <- 0
   index <- length(y)
@@ -228,8 +258,8 @@ conf_int_find <- function(x, y, log_val) {
       x1 <- x[i-1]
       x2 <- x[i]
       lower_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
-    }
   }
+}
   
   for (i in max_log+1:index) {
     y1 <- y[i-1]
@@ -241,7 +271,11 @@ conf_int_find <- function(x, y, log_val) {
       upper_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
     }
   }
+  lower_name <- paste0(param, '_lower')
+  upper_name <- paste0(param, '_upper')
+  
   bounds <- c(lower_bound,upper_bound)
+  names(bounds) <- c(lower_name, upper_name)
   return(bounds)
 }
 
@@ -265,10 +299,16 @@ calc_cv <- function(fit_parms){
   sqrt( (rnot * (2 / p - 1) + 1) / rnot)
 }
 
+store_results <- function(max_mif, conf_int) {
+  pars <- max_mif@params
+  results <- c(pars, conf_int)
+  return(results)
+}
 
 
-
-
+x_table_maker <- function(results, outbrk_list) {
+  
+}
 
 
 
