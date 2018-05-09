@@ -36,10 +36,9 @@ bounds <- list(Yambuku=c(1,15,.001,.1),
                Isiro=c(.2,3,.001,.6))
 
 mod_runner <- function(outbrk_list,dat) {
-
-  results <- list()
-  i <- 1
-
+  
+  results_df <- data.frame()
+  
 # Setup MIF settings ------------------------------------------------------
 
   for (outbreak in outbrk_list) {
@@ -80,30 +79,31 @@ mod_runner <- function(outbrk_list,dat) {
 
   ## Extract best fit model
     max_mif <- find_max_ll_mif(mif_runs)
-    print(outbreak)
+    # print(outbreak)
   ## For best fit parameter estimates, calculate the likelihood profile
     prof_lik <- prof_lik_run(mif2_obj = max_mif,
                            settings=settings,
                            refresh = F)
 
-    plot_prof_lik(prof_lik, settings)
+    #plot_prof_lik(prof_lik, settings)
     conf_int <- conf_interval(prof_lik, settings)
-    results[[i]] <- store_results(max_mif, conf_int)
-    i <- i + 1
+    
+    #Store results in data frame
+    results_df <- rbind(results_df, ss_results(max_mif, conf_int))
 
-    }
-  return(results)
+  }
+  
+  names <- c("beta", "p", 
+             "p_lower", "p_upper",
+             "beta_lower", "beta_upper")
+  
+  colnames(results_df) <- names
+  
+  return(results_df)
   }
 
 ss_results <- mod_runner(outbrk_list,drc)
-ss_results
 
-
-
-
-
-
-
-
-
+# Write results out to CSV
+write.csv(ss_results, file = "SS_results.csv", row.names = outbrk_list)
 

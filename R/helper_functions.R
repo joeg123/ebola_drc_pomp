@@ -299,16 +299,23 @@ calc_cv <- function(fit_parms){
   sqrt( (rnot * (2 / p - 1) + 1) / rnot)
 }
 
-store_results <- function(max_mif, conf_int) {
+ss_results <- function(max_mif, conf_int) {
   pars <- max_mif@params
-  results <- c(pars, conf_int)
+  results <- c(unname(pars['beta0']), unname(pars['p0']), 
+               unname(conf_int['p0_lower']), unname(conf_int['p0_upper']),
+               unname(conf_int['beta0_lower']), unname(conf_int['beta0_upper']))
   return(results)
 }
 
-
-x_table_maker <- function(results, outbrk_list) {
-  
+int_results <- function(max_mif, conf_int) {
+  pars <- max_mif@params
+  results <- c(unname(pars['beta0']), unname(pars['k']), unname(pars['tau1']),
+               unname(conf_int['beta0_lower']), unname(conf_int['beta0_upper']),
+               unname(conf_int['k_lower']), unname(conf_int['k_upper']),
+               unname(conf_int['tau1_lower']), unname(conf_int['tau1_upper']))
+  return(results)
 }
+
 
 
 

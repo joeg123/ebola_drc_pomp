@@ -40,8 +40,7 @@ bounds <- list(Yambuku=c(.2,1.8,.08,.2,8,20),
 
 mod_runner <- function(outbrk_list,dat) {
   
-  results <- list()
-  i <- 1
+  results_df <- data.frame()
   
   for (outbreak in outbrk_list) {
     # Settings
@@ -93,18 +92,22 @@ mod_runner <- function(outbrk_list,dat) {
     #plot_prof_lik(prof_lik, settings)
 
     conf_int <- conf_interval(prof_lik, settings)
-    results[[i]] <- store_results(max_mif, conf_int, outbreak)
-    i <- i + 1
+    results_df <- rbind(results_df, int_results(max_mif, conf_int))
     
 
   }
-  return(results)
+  
+  names <- c("beta", "k", "tau",
+             "beta_lower", "beta_upper",
+             "k_lower", "k_upper",
+             "tau_lower", "tau_upper")
+  colnames(results_df) <- names
+  return(results_df)
+  
   }
 
 int_results <- mod_runner(outbrk_list,drc)
-int_results
 
-
-int_table <- x_table_maker(int_results, outbrk_list, est_parms)
-
+# Write results out to CSV
+write.csv(int_results, file = "Int_results.csv", row.names = outbrk_list)
 
