@@ -128,7 +128,13 @@ get_lik_slice <- function(mif2_obj, settings){
   est_parms <- settings$est_parms
   model_used <-settings$model_used
   
-  parm_bounds <- get_list_parm_bounds(est_parms, mif2_obj)
+  browser()
+  if(settings$intense_prof_lik == T){
+    parm_bounds <- get
+  } else{
+    parm_bounds <- get_list_parm_bounds(est_parms, mif2_obj)
+  }
+  
 
   if(model_used == "combo"){
     sliceDesign(
