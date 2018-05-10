@@ -92,22 +92,19 @@ mod_runner <- function(outbrk_list,dat) {
     #plot_prof_lik(prof_lik, settings)
 
     conf_int <- conf_interval(prof_lik, settings)
-    results_df <- rbind(results_df, int_results(max_mif, conf_int))
     
-
+    #Store results in data frame
+    results <- int_results(outbreak, max_mif, conf_int)
+    results_df <- rbind(results_df, results)
   }
-  
-  names <- c("beta", "k", "tau",
-             "beta_lower", "beta_upper",
-             "k_lower", "k_upper",
-             "tau_lower", "tau_upper")
-  colnames(results_df) <- names
   return(results_df)
   
   }
 
 int_results <- mod_runner(outbrk_list,drc)
 
-# Write results out to CSV
-write.csv(int_results, file = "Int_results.csv", row.names = outbrk_list)
+# Write results out to rda
+dest <- "data_produced/outbreak_rda/int_results.rda"
+save(int_results, file = dest)
 
+load("data_produced/outbreak_rda/int_results.rda")

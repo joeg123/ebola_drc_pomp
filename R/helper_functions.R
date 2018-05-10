@@ -240,6 +240,8 @@ conf_interval <- function(prof_lik, settings) {
   return(bounds)
 }
 
+
+# Main 2 point interpolation method
 conf_int_calc <- function(param, df, log_val) {
   # beta0/p0 = x
   # loglik = y
@@ -299,20 +301,25 @@ calc_cv <- function(fit_parms){
   sqrt( (rnot * (2 / p - 1) + 1) / rnot)
 }
 
-ss_results <- function(max_mif, conf_int) {
+ss_results <- function(outbreak, max_mif, conf_int) {
   pars <- max_mif@params
-  results <- c(unname(pars['beta0']), unname(pars['p0']), 
-               unname(conf_int['p0_lower']), unname(conf_int['p0_upper']),
-               unname(conf_int['beta0_lower']), unname(conf_int['beta0_upper']))
+  outbreak <- c(outbreak, outbreak)
+  parameter <- c('beta', 'p')
+  estimate <- c(unname(pars['beta0']), unname(pars['p0'])) 
+  lower <- c(unname(conf_int['beta0_lower']), unname(conf_int['p0_lower']))
+  upper <- c(unname(conf_int['beta0_upper']), unname(conf_int['p0_upper']))
+  results <- data_frame(outbreak, parameter, estimate, lower, upper)
   return(results)
 }
 
-int_results <- function(max_mif, conf_int) {
+int_results <- function(outbreak, max_mif, conf_int) {
   pars <- max_mif@params
-  results <- c(unname(pars['beta0']), unname(pars['k']), unname(pars['tau1']),
-               unname(conf_int['beta0_lower']), unname(conf_int['beta0_upper']),
-               unname(conf_int['k_lower']), unname(conf_int['k_upper']),
-               unname(conf_int['tau1_lower']), unname(conf_int['tau1_upper']))
+  outbreak <- c(outbreak, outbreak, outbreak)
+  parameter <- c('beta', 'k', 'tau')
+  estimate <- c(unname(pars['beta0']), unname(pars['k']), unname(pars['tau1']))
+  lower <- c(unname(conf_int['beta0_lower']), unname(conf_int['k_lower']), unname(conf_int['tau1_lower']))
+  upper <- c(unname(conf_int['beta0_upper']), unname(conf_int['k_upper']), unname(conf_int['tau1_upper']))
+  results <- data_frame(outbreak, parameter, estimate, lower, upper)
   return(results)
 }
 

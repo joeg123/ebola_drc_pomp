@@ -89,21 +89,15 @@ mod_runner <- function(outbrk_list,dat) {
     conf_int <- conf_interval(prof_lik, settings)
     
     #Store results in data frame
-    results_df <- rbind(results_df, ss_results(max_mif, conf_int))
-
+    results <- ss_results(outbreak, max_mif, conf_int)
+    results_df <- rbind(results_df, results)
   }
-  
-  names <- c("beta", "p", 
-             "p_lower", "p_upper",
-             "beta_lower", "beta_upper")
-  
-  colnames(results_df) <- names
-  
   return(results_df)
   }
 
 ss_results <- mod_runner(outbrk_list,drc)
 
-# Write results out to CSV
-write.csv(ss_results, file = "SS_results.csv", row.names = outbrk_list)
+# Write results out to rda
+dest <- "data_produced/outbreak_rda/ss_results.rda"
+save(ss_results, file = dest)
 

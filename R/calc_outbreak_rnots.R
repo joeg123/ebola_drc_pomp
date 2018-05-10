@@ -55,3 +55,21 @@ test %>%
 # Calculating our estimated R0 --------------------------------------------
 
 
+int_beta_calc <- function(outbreak) {
+  max_t <- max(data$times)
+  df <- data_frame(matrix(ncol = 3, nrows=max_t))
+  names(df) <- c("outbreak", "time", "r_not")
+  for (t in 1:max_t) {
+    if (t < tau1) {
+      beta = beta0
+    } else{
+      x = -k*(t-tau1)
+      beta = (beta0)*(exp(x))
+    }
+    r_not = beta/(1/7.411374)
+    df[t,] <- c(outbreak, t, r_not)
+    
+  }
+  return(df)
+}
+
