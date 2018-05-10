@@ -194,18 +194,24 @@ prof_lik_run <- function(mif2_obj, est_parms, settings, outbreak, model_used, re
   prof_lik
 }
 
-plot_prof_lik <- function(df, settings){
+plot_prof_lik <- function(df, max_mif, settings){
+  max_df <- as_data_frame(matrix(coef(max_mif)[settings$est_parms], ncol = length(settings$est_parms)))
+  names(max_df) <- settings$est_parms
+  max_df <- max_df %>% gather(key, val)
+  
   df %>% gather(key,val, settings$est_parms) %>% 
     filter(key == slice) %>% 
     group_by(key, val) %>% 
-    # summarize(avg_ll = mean(ll)) %>% 
-    #mutate(avg_ll = avg_ll - max(avg_ll)) %>% 
-    mutate(avg_ll = ll-max(ll)) %>% 
-    ggplot(aes(val, avg_ll)) + facet_wrap(~key, scales="free_x") + 
-    geom_point(alpha=.1,size=.5) +
-    coord_cartesian(ylim = c(-30,0)) -> pl_plot
-  paste0("figs/", settings$model_used, "_", settings$outbreak, "pl_plot.pdf") -> dest
-  save_plot(dest,pl_plot,base_height = 4, base_aspect_ratio = 1.4)
+    summarize(avg_ll = mean(ll)) %>%
+    mutate(avg_ll = avg_ll - max(avg_ll)) %>%
+    # mutate(avg_ll = ll-max(ll)) %>%
+    ggplot(aes(val, avg_ll)) + 
+    facet_wrap(~key, scales="free_x") + 
+    geom_point(alpha=1,size=.5) +
+    coord_cartesian(ylim = c(-30,0)) +
+    geom_vline(data=max_df, aes(xintercept=val), color = "darkred", lty=2) -> pl_plot
+  paste0("figs/", settings$model_used, "_", settings$outbreak, "_prof_plot.pdf") -> dest
+  save_plot(dest,pl_plot,base_height = 4, base_aspect_ratio = 1.6)
 }
 
 
@@ -219,6 +225,7 @@ calc_k <- function(parms) {
 }
 
 conf_interval <- function(prof_lik, settings) {
+  # browser()
   prof_lik %>% 
     gather(key,val, settings$est_parms) %>% 
     filter(key == slice) %>% 

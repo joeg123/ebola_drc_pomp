@@ -70,31 +70,32 @@ mod_runner <- function(outbrk_list,dat) {
                      intensive=TRUE,
                      bounds=bounds[outbreak])
     
-    
+    print("Generating the pomp model...")
     ## First generate the pomp model for the outbreak
     pomp_mod <- generate_pomp_model(outbreak, drc)
     
+    print("Fitting the model to the outbreak data...")
     ## Now iteratively filter to find MLE
     mif_runs <- mif2_multirun(pomp_obj = pomp_mod, 
                               settings = settings, 
                               refresh = F)
-
+    
+    print("Starting the profile likelihood...")
     ## Extract best fit model
     max_mif <- find_max_ll_mif(mif_runs)
-    
-    print(outbreak)
-
+    # print(outbreak)
     ## For best fit parameter estimates, calculate the likelihood profile
     prof_lik <- prof_lik_run(mif2_obj = max_mif,
                              settings=settings,
                              refresh = F)
     
-    #plot_prof_lik(prof_lik, settings)
-
+    print("Calculating the parameter confidence intervals...")
+    plot_prof_lik(prof_lik, max_mif, settings)
     conf_int <- conf_interval(prof_lik, settings)
+    
+    #Store results in data frame
     results_df <- rbind(results_df, int_results(max_mif, conf_int))
     
-
   }
   
   names <- c("beta", "k", "tau",
@@ -103,11 +104,9 @@ mod_runner <- function(outbrk_list,dat) {
              "tau_lower", "tau_upper")
   colnames(results_df) <- names
   return(results_df)
-  
-  }
+}
 
-int_results <- mod_runner(outbrk_list,drc)
+int_output <- mod_runner(outbrk_list,drc)
 
 # Write results out to CSV
-write.csv(int_results, file = "Int_results.csv", row.names = outbrk_list)
-
+write.csv(int_output, file = "Int_results.csv", row.names = outbrk_list)

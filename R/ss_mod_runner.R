@@ -39,58 +39,59 @@ mod_runner <- function(outbrk_list,dat) {
   
   results_df <- data.frame()
   
-# Setup MIF settings ------------------------------------------------------
-
   for (outbreak in outbrk_list) {
-  # Settings
-  # 1: Number of cores
-  # 2: MIF2 Np
-  # 3: MIF2 Nmif
-  # 4: Profile Likelihood Np
-  # 5: Slice Length
-  # 6: Slice Each
-  # 7: Outbreak
-  # 8: Model Used
-  # 9: Model Parameters
-  # 10: Parameter Standard Deviation
-  # 11: Intensive Profile Likelihood?
-  # 12: Bounds for the the Profile Likelihood when intensive
-  
+    # Settings
+    # 1: Number of cores
+    # 2: MIF2 Np
+    # 3: MIF2 Nmif
+    # 4: Profile Likelihood Np
+    # 5: Slice Length
+    # 6: Slice Each
+    # 7: Outbreak
+    # 8: Model Used
+    # 9: Model Parameters
+    # 10: Parameter Standard Deviation
+    # 11: Intensive Profile Likelihood?
+    # 12: Bounds for the the Profile Likelihood when intensive
+    print(outbreak)
     settings <- list(num_cores = 1,
-                   mif_nparticles = 2000, 
-                   mif_niter = 2000,
-                   prof_lik_nparticles = 1000,
-                   slice_length = 100, 
-                   slice_reps = 50,
-                   outbreak = outbreak,
-                   model_used = "ss",
-                   est_parms = c("beta0", "p0"),
-                   parms_sd = rw.sd(beta0=.1, p0=0.02),
-                   intensive = TRUE,
-                   bounds = bounds[outbreak])
-  
-  ## First generate the pomp model for the outbreak
+                     mif_nparticles = 2000, 
+                     mif_niter = 2000,
+                     prof_lik_nparticles = 1000,
+                     slice_length = 100, 
+                     slice_reps = 50,
+                     outbreak = outbreak,
+                     model_used = "ss",
+                     est_parms = c("beta0", "p0"),
+                     parms_sd = rw.sd(beta0=.1, p0=0.02),
+                     intensive = TRUE,
+                     bounds = bounds[outbreak])
+      
+    print("Generating the pomp model...")
+    ## First generate the pomp model for the outbreak
     pomp_mod <- generate_pomp_model(outbreak, drc)
-  
-  ## Now iteratively filter to find MLE
+      
+    print("Fitting the model to the outbreak data...")
+    ## Now iteratively filter to find MLE
     mif_runs <- mif2_multirun(pomp_obj = pomp_mod, 
-                            settings = settings, 
-                            refresh = F)
-
-  ## Extract best fit model
+                              settings = settings, 
+                              refresh = F)
+    
+    print("Starting the profile likelihood...")
+    ## Extract best fit model
     max_mif <- find_max_ll_mif(mif_runs)
     # print(outbreak)
-  ## For best fit parameter estimates, calculate the likelihood profile
+    ## For best fit parameter estimates, calculate the likelihood profile
     prof_lik <- prof_lik_run(mif2_obj = max_mif,
-                           settings=settings,
-                           refresh = F)
-
-    #plot_prof_lik(prof_lik, settings)
+                             settings=settings,
+                             refresh = F)
+    
+    print("Calculating the parameter confidence intervals...")
+    plot_prof_lik(prof_lik, max_mif, settings)
     conf_int <- conf_interval(prof_lik, settings)
     
     #Store results in data frame
     results_df <- rbind(results_df, ss_results(max_mif, conf_int))
-
   }
   
   names <- c("beta", "p", 
@@ -100,10 +101,10 @@ mod_runner <- function(outbrk_list,dat) {
   colnames(results_df) <- names
   
   return(results_df)
-  }
+}
 
-ss_results <- mod_runner(outbrk_list,drc)
+ss_output <- mod_runner(outbrk_list,drc)
 
 # Write results out to CSV
-write.csv(ss_results, file = "SS_results.csv", row.names = outbrk_list)
+write.csv(ss_output, file = "SS_results.csv", row.names = outbrk_list)
 
