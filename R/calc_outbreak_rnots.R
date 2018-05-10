@@ -35,7 +35,9 @@ calc_td_rnot <- function(outbreak_name, df){
 outbreaks <- unique(drc$outbreak)
 
 
-test <- outbreaks %>% map(calc_td_rnot, df = drc) %>% bind_rows()
+test <- outbreaks %>% 
+          map(calc_td_rnot, df = drc) %>% 
+          bind_rows()
 
 
 
