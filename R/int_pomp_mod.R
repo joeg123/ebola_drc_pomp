@@ -59,14 +59,14 @@ trans <- Csnippet('
                   Tbeta0 = log(beta0);
                   Tk = log(k);
                   Tff = qlogis(ff,0,1,1,0);
-                  //Ttau1 = log(tau1);
+                  Ttau1 = log(tau1);
                   ')
 
 untrans <- Csnippet('
                     Tbeta0 = exp(beta0);
                     Tk = exp(k);
                     Tff = plogis(ff,0,1,1,0);
-                    //Ttau1 = exp(tau1);
+                    Ttau1 = exp(tau1);
                     ')
 
 
