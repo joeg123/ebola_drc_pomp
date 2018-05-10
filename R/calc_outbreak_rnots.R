@@ -10,6 +10,9 @@ library(cowplot)
 source("R/read_in_drc_data.R")
 
 
+
+# Calculating the Observed R0 ---------------------------------------------
+
 calc_td_rnot <- function(outbreak_name, df){
   ## Function to calculate the time-dependent R0 for the Ebola outbreaks
   ## df is assumed to be the drc data_frame
@@ -17,7 +20,7 @@ calc_td_rnot <- function(outbreak_name, df){
   df <- df %>% filter(outbreak == outbreak_name)
   
   # serial interval of 15.3 days with a standard deviation of 9.3 days
-  ebola_gt <- generation.time(type = "weibull", val = c(15.3, 9.3))  
+  ebola_gt <- generation.time(type = "gamma", val = c(15.3, 9.3))  
   td_rnot <- est.R0.TD(epid =df$cases, t = df$date_infection, GT = ebola_gt, begin = 1, end = max(df$times), nsim = 10000)
   
   data_frame(outbreak = outbreak_name,
@@ -44,3 +47,9 @@ test %>%
     facet_wrap(~outbreak, ncol = 1) +
     geom_point() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper))
+
+
+
+# Calculating our estimated R0 --------------------------------------------
+
+
