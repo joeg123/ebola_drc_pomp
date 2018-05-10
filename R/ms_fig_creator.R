@@ -71,25 +71,6 @@ grid.arrange(k_plot, beta_plot, tau_plot, top="Intervention Model Estimated Para
 # compare distribution of Ro over time, raw data, int, and ss 
 # plot digitizer
 
-int_beta_calc <- function(outbreak, tau1, k, beta0) {
-  df <- data.frame(matrix(ncol = 3))
-  names(df) <- c("outbreak", "time", "r_naut")
-  total_time = 400
-  for (t in 1:total_time) {
-    if (t < tau1) {
-      beta = beta0
-    } else{
-      x = -k*(t-tau1)
-      beta = (beta0)*(exp(x))
-    }
-    r_naut = beta/1/7.411374
-    df_new <- data.frame(outbreak, t, r_naut)
-    names(df_new) <- c("outbreak", "time", "r_naut")
-    df <- rbind(df, df_new)
-  }
-  df <- na.omit(df)
-  return(df)
-}
 
 
 
