@@ -104,7 +104,5 @@ int_output <- mod_runner(outbrk_list,drc)
 
 
 # Write results out to rda
-dest <- "data_produced/outbreak_rda/int_results.rda"
-save(int_results, file = dest)
+save(int_output, file = "data_produced/outbreak_rda/parm_est_int.rda")
 
-load("data_produced/outbreak_rda/int_results.rda")

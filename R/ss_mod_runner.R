@@ -100,7 +100,6 @@ mod_runner <- function(outbrk_list,dat) {
 ss_output <- mod_runner(outbrk_list,drc)
 
 # Write results out to rda
-dest <- "data_produced/outbreak_rda/ss_results.rda"
-save(ss_results, file = dest)
+save(ss_output, file = "data_produced/outbreak_rda/parm_est_ss.rda")
 
 

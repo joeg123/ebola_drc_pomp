@@ -1,6 +1,11 @@
-# Basic workflow
+# Ebola transmission dynamics in the DRC
 
-To run the multi-outbreak parameter estimation procedure you simply need to run the `drc_multi_outbrk.R`.
+# File overview
+## Code
+ - This folder contains all of the code necessary to run the analyses for the paper... For the analysis we fit two different epidemiological models (intervention and superspreading) to multiple DRC outbreaks. We estimate the parameters from the models, and then
+## Data
+
+# Running the code
 
 This script uses the following scripts:
 1. 
