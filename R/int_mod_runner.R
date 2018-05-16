@@ -31,11 +31,11 @@ est_parms <- c("beta0", "k", "tau1")
 # beta_lower, beta_upper,k_lower, k_upper, tau_lower, tau_upper
 
 bounds <- list(Yambuku=c(.2,1.8,.08,.2,8,20),
-               Kikwit=c(.25,.75,.001,.02,15,45),
-               Mweka2007=c(.01,.5,.005,.013,0,20),
+               Kikwit=c(.25,.75,.06,.09,100,130),
+               Mweka2007=c(.1,.3, 0, 1,125,175),
                Mweka2008=c(.1,3,.01,.15,0,20),
                Boende=c(.1,1.8,.03,.15,.01,18),
-               Isiro=c(.05,.3,.001,.02,.001,50))
+               Isiro=c(.05,.45,.001,.02,.001,50))
 
 
 mod_runner <- function(outbrk_list,dat) {
@@ -56,7 +56,8 @@ mod_runner <- function(outbrk_list,dat) {
     # 10: Parameter Standard Deviation
     # 11: Intensive Profile Likelihood?
     # 12: Bounds for the the Profile Likelihood when intensive
-  
+    print(outbreak)
+    
     settings <- list(num_cores = 1,
                      mif_nparticles = 2000, 
                      mif_niter = 2000,
@@ -91,7 +92,7 @@ mod_runner <- function(outbrk_list,dat) {
     
     print("Calculating the parameter confidence intervals...")
     plot_prof_lik(prof_lik, max_mif, settings)
-    conf_int <- conf_interval(prof_lik, settings)
+    conf_int <- conf_interval(prof_lik, max_mif, settings)
 
     #Store results in data frame
     results <- int_results(outbreak, max_mif, conf_int)
@@ -102,7 +103,25 @@ mod_runner <- function(outbrk_list,dat) {
 
 int_output <- mod_runner(outbrk_list,drc)
 
-
 # Write results out to rda
 save(int_output, file = "data_produced/outbreak_rda/parm_est_int.rda")
 
+
+##extra code
+# testeroni <- mod_runner(c("Mweka2007", "Kikwit", "Mweka2008"), drc)
+# 
+# testeroni <- mod_runner(c("Mweka2007", "Isiro"), drc)
+# 
+# 
+# load("data_produced/outbreak_rda/int_Mweka2007_prof.rda")
+# prof_lik %>% gather(key,val, beta0, tau1, k) %>% 
+#   filter(key == slice) %>% 
+#   group_by(key, val) %>% 
+#   summarize(avg_ll = mean(ll)) %>%
+#   mutate(avg_ll = avg_ll - max(avg_ll)) %>%
+#   # mutate(avg_ll = ll-max(ll)) %>%
+#   ggplot(aes(val, avg_ll)) + 
+#   facet_wrap(~key, scales="free_x") + 
+#   geom_point(alpha=1,size=.5) +
+#   coord_cartesian(ylim = c(-30,0)) +
+#   geom_hline(yintercept=-1.96)

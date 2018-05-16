@@ -224,69 +224,98 @@ calc_k <- function(parms) {
   uniroot(f, lower=0.00000001, upper= 2)$root
 }
 
-conf_interval <- function(prof_lik, settings) {
-  # browser()
-  prof_lik %>% 
-    gather(key,val, settings$est_parms) %>% 
-    filter(key == slice) %>% 
-    group_by(key, val) %>% 
-    summarize(avg_ll = mean(ll)) %>% 
-    mutate(avg_ll = avg_ll - max(avg_ll)) -> prof_lik
-  model_used <-settings$model_used
-  if (model_used == "ss") {
-    p_bounds <- conf_int_calc('p0', prof_lik, -1.96)
-    b_bounds <- conf_int_calc('beta0', prof_lik, -1.96)
+conf_interval <- function(prof_lik, max_mif, settings) {
+  prof_lik %>%
+    gather(key,val, settings$est_parms) %>%
+    filter(key == slice) -> prof_lik
+  if (settings$model_used == "ss") {
+    p_bounds <- conf_int_calc('p0', coef(max_mif)["p0"], prof_lik, -1.96, settings)
+    b_bounds <- conf_int_calc('beta0', coef(max_mif)["beta0"], prof_lik, -1.96, settings)
     bounds <- c(p_bounds,b_bounds)
   }
-  else if (model_used == "int") {
-    b_bounds <- conf_int_calc('beta0', prof_lik, -1.96)
-    k_bounds <- conf_int_calc('k', prof_lik, -1.96)
-    t_bounds <- conf_int_calc('tau1', prof_lik, -1.96)
+  else {
+    b_bounds <- conf_int_calc('beta0', coef(max_mif)["beta0"], prof_lik, -1.96, settings)
+    k_bounds <- conf_int_calc('k', coef(max_mif)["k"], prof_lik, -1.96, settings)
+    t_bounds <- conf_int_calc('tau1', coef(max_mif)["tau1"], prof_lik, -1.96, settings)
     bounds <- c(b_bounds,k_bounds,t_bounds)
   }
   return(bounds)
 }
 
+conf_int_calc <- function(param, mle, df, likelihood_cutoff, settings) {
+  require(scam)
 
-# Main 2 point interpolation method
-conf_int_calc <- function(param, df, log_val) {
-  # beta0/p0 = x
-  # loglik = y
-  df %>%
-    filter(key == param) -> df
-  y <- unname(unlist(df['avg_ll']))
-  x <- unname(unlist(df['val']))
-  lower_bound <- 0
-  upper_bound <- 0
-  index <- length(y)
-  max_log <- which.max(y)
-  for (i in 2:max_log) {
-    y1 <- y[i-1]
-    y2 <- y[i]
-    if ((y2 > log_val) && (y1 < log_val)){
-      x1 <- x[i-1]
-      x2 <- x[i]
-      lower_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
-  }
-}
+  df <- df %>% filter(slice == param)
+  vals_to_consider <- df %>% group_by(val) %>% 
+    summarize(avg_ll = mean(ll)) %>% 
+    mutate(avg_ll = avg_ll - max(avg_ll) ) %>% 
+    filter(avg_ll > -30) %>% 
+    pull(val)
   
-  for (i in max_log+1:index) {
-    y1 <- y[i-1]
-    y2 <- y[i]
-    if (is.na(y1) | is.na(y2)) {break}
-    if ((y1 > log_val) && (y2 < log_val)){
-      x1 <- x[i-1]
-      x2 <- x[i]
-      upper_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
-    }
+  lower_df <- df %>% 
+    filter(val %in% vals_to_consider, 
+           val <= mle)
+  
+  upper_df <- df %>% 
+    filter(val %in% vals_to_consider, 
+           val >= mle)
+  
+  lower_mod <- scam(ll ~ s(val, bs = "mpi"), data = lower_df)
+  upper_mod <- scam(ll ~ s(val, bs = "mpd"), data = upper_df)
+  
+  if(sum(vals_to_consider < mle) < 2){
+    lower_bound = vals_to_consider[1]
+  } else{
+    lower_bound <- approx(lower_mod$fitted.values - max(lower_mod$fitted.values), 
+                              y = lower_df$val, 
+                              xout = likelihood_cutoff)$y
   }
+  
+  if(sum(vals_to_consider > mle) < 2){
+    upper_bound = vals_to_consider[length(vals_to_consider)]
+  } else{
+    upper_bound <- approx(upper_mod$fitted.values - max(upper_mod$fitted.values), 
+                          y = upper_df$val, 
+                          xout = likelihood_cutoff)$y  
+  }
+  
+  plot_scam_fit(lower_df, lower_mod, upper_df, upper_mod, param, settings)
+  
+  if(is.na(upper_bound)){
+    upper_bound <- max(upper_df$val)
+  }
+  if(is.na(lower_bound)){
+    lower_bound <- max(lower_df$val)
+  }
+  
   lower_name <- paste0(param, '_lower')
   upper_name <- paste0(param, '_upper')
   
   bounds <- c(lower_bound,upper_bound)
   names(bounds) <- c(lower_name, upper_name)
   return(bounds)
+  
+
 }
+
+
+
+plot_scam_fit <- function(df_lower, mod_lower, df_upper, mod_upper, param, settings) {
+  if(!dir.exists("figs/scam_fits")){
+    dir.create("figs/scam_fits")
+  }
+  
+  pdf(paste0("figs/scam_fits/", settings$model_used, "_", settings$outbreak,"_", param, "_scam_plot.pdf"), width = 8, height=4)
+  par(mfrow=c(1,2))
+  plot(df_lower$val, df_lower$ll, xlab = "Value", ylab = "Likelihood")
+  lines(df_lower$val, predict(mod_lower, newdata = data.frame(val=df_lower$val)), col = "red")
+  title(main = paste0(param, "_lower"))
+  plot(df_upper$val, df_upper$ll, xlab = "Value", ylab = "Likelihood")
+  lines(df_upper$val, predict(mod_upper, newdata = data.frame(val=df_upper$val)), col = "red")
+  title(main = paste0(param, "_upper"))
+  dev.off()
+}
+
 
 sub_parms <- function(sub_parms=NULL,
                       ref_parms) {
@@ -295,9 +324,6 @@ sub_parms <- function(sub_parms=NULL,
   }
   ref_parms 
 }
-
-
-
 calc_rnot <- function(fit_parms){
   unname(fit_parms["beta0"] * fit_parms["p0"] / fit_parms["gamma"])
 }
@@ -590,3 +616,45 @@ int_results <- function(outbreak, max_mif, conf_int) {
 #   ## Calculates each parameters confidence interval from the prof_lik
 #   est_parms %>% map(calc_single_parm_ci, prof_lik) %>% bind_rows()
 # }
+
+# 
+# y <- unname(unlist(df['avg_ll']))
+# x <- unname(unlist(df['val']))
+# lower_bound <- 0
+# upper_bound <- 0
+# index <- length(y)
+# max_log <- which.max(y)
+# if(max_log < 2){
+#   lower_bound <- x[max_log]
+# } else{
+#   for (i in 2:max_log) {
+#     y1 <- y[i-1]
+#     y2 <- y[i]
+#     if ((y2 > log_val) && (y1 < log_val)){
+#       x1 <- x[i-1]
+#       x2 <- x[i]
+#       lower_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
+#     }
+#   }  
+# }
+# 
+# if(max_log == index){
+#   upper_bound <- x[max_log]
+# } else{
+#   for (i in max_log+1:index) {
+#     y1 <- y[i-1]
+#     y2 <- y[i]
+#     if (is.na(y1) | is.na(y2)) {break}
+#     if ((y1 > log_val) && (y2 < log_val)){
+#       x1 <- x[i-1]
+#       x2 <- x[i]
+#       upper_bound <- x1 + abs((log_val - y1)*((x2-x1)/(y2-y1)))
+#     }
+#   }
+# }
+# lower_name <- paste0(param, '_lower')
+# upper_name <- paste0(param, '_upper')
+# 
+# bounds <- c(lower_bound,upper_bound)
+# names(bounds) <- c(lower_name, upper_name)
+# return(bounds)

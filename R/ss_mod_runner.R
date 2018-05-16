@@ -88,7 +88,7 @@ mod_runner <- function(outbrk_list,dat) {
     
     print("Calculating the parameter confidence intervals...")
     plot_prof_lik(prof_lik, max_mif, settings)
-    conf_int <- conf_interval(prof_lik, settings)
+    conf_int <- conf_interval(prof_lik, max_mif, settings)
     
     #Store results in data frame
     results <- ss_results(outbreak, max_mif, conf_int)
