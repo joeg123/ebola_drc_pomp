@@ -12,7 +12,8 @@
 # begin <- chron("26 Jul 2014", format=c(dates = "day mon year"))
 # data$times <- data$times - data$times[1]
 # data$times <- as.numeric(data$times)
-
+require(tidyverse)
+require(lubridate)
 
 
 drc <- read_csv("data/elife-09015-supp1-v1.csv")
