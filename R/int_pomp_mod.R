@@ -77,10 +77,10 @@ pop <- 1e6
 init <- Csnippet("
                  S= 999999; 
                  E = 0.0;
-                 I = 1.0;
+                 I = 5.0;
                  R = 0.0;
                  D = 0.0;
-                 C = 1.0;
+                 C = 5.0;
                  ")
 
 seir.init.state <- c(S.0= 999999, 

@@ -81,11 +81,11 @@ data <- as.data.frame(data)
 init <- Csnippet("
                  S = 999998;
                  E = 0.0;
-                 Il = 1.0;
+                 Il = 4.0;
                  Ih = 1.0;
                  R = 0.0;
                  D = 0.0;
-                 C = 2.0;
+                 C = 10.0;
                  ")
 
 
