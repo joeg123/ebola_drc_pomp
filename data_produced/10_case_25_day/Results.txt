@@ -1,0 +1,41 @@
+SS
+> boende@loglik
+[1] -81.19353
+
+Intervention
+> boende_result@loglik
+[1] -81.13093
+
+------------------------
+
+SS
+> Mweka_result@loglik
+[1] -34.05029
+
+Intervention
+> Mweka_result@loglik
+[1] -34.52104
+
+------------------------
+
+SS
+> Yambuku_result@loglik
+[1] -125.2524
+
+Intervention
+> Yambuku_result@loglik
+[1] -125.2997
+
+AIC=2p−2logL
+
+
+
+-125.25 -35.05 -81.19
+
+-125.30-34.52-81.13
+
+
+254.5+72.1+166.38
+
+
+256.6+75.04+168.26

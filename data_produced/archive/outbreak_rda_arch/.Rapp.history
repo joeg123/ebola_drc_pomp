@@ -1,0 +1,15 @@
+load("/Users/Joseph/Desktop/Epi Lab/ebola_drc_pomp/data_produced/outbreak_rda_save/Boende_alt_mif_pf.rda")
+ls()
+liks_global
+t_local_eval
+load("/Users/Joseph/Desktop/Epi Lab/ebola_drc_pomp/data_produced/outbreak_rda_save/Boende_mif_alt.rda")
+ls()
+mifs_global
+loglike(mifs_global)
+logLik(mifs_global)
+map(mifs_global, logLik)
+purrr::map(mifs_global, logLik)
+library(pomp)
+purrr::map(mifs_global, logLik)
+purrr::map(mifs_global, coef)
+plot(mifs_global)
