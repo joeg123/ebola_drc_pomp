@@ -17,6 +17,7 @@ library(knitr)
 library(DT)
 library(xtable)
 library(scam)
+library(doParallel)
 
 sapply(c("R/read_in_drc_data.R","R/ss_pomp_mod.R", "R/helper_functions.R"), source)
 
@@ -72,20 +73,30 @@ mod_runner <- function(outbreak,dat) {
     return(max_mif)
 }
 
-#### Boende Sensitivity Test
+#### Sensitivity Test
 
 outbrk <- "Boende"
 #outbreak <- "Boende"
 
-#10 Additional cases + 25 days
-shift <- 25
+#Shift defines the amount of days before the first discovered case
+shift <- c(1, 5, 10, 25)
 
-drc %>% filter(outbreak==outbrk) %>%
-  mutate(times=times+shift) %>%
-  ungroup() %>% 
-  add_row(outbreak=outbrk,
-          date_infection = min(drc$date_infection[drc$outbreak==outbrk])-shift,
-          cases = 5, times = 1, .before=1)-> df
+#Cases defines the amount of cases before the first discovered case
+num_cases <- c(1, 5, 10)
+
+
+registerDoParallel(cores = 6)
+foreach(c=num_cases, .combine='cbind') %:%
+  foreach(s=shift, .combine='c') %dopar% {
+      drc %>% filter(outbreak==outbrk) %>%
+      mutate(times=times+shift) %>%
+      ungroup() %>% 
+      add_row(outbreak=outbrk,
+              date_infection = min(drc$date_infection[drc$outbreak==outbrk])-s,
+              cases = c, times = 1, .before=1) -> df
+      params <- mod_runner(outbreak, df)
+      results <- params$loglik
+      } -> results
 
 #### Mweka2008 Sensitivity Test
 
