@@ -48,6 +48,12 @@ save(obs_rnots, file="data_produced/fig_results/obs_rnots.rda")
 calc_ss_rnot <- function(beta, p, times, gamma = 1/7.411374){
   rep(beta*p/gamma, length(times))
 }
+calc_ss_rnot_bounds <- function(beta, p, gamma = 1/7.411374){
+  df = data.frame(matrix(quantile(rgeom(1000000, prob = gamma / (beta+gamma)) * rbernoulli(1000000, p = p),
+                                  probs = c(0.025, 0.975)), nrow = 1))
+  names(df) <- c("rnot_lwr", "rnot_upr")
+  df
+}
 
 calc_outbreak_ss_rnot <- function(outbrk, parms_df, outbreak_df){
   o_df <- outbreak_df %>% filter(outbreak == outbrk)
@@ -55,7 +61,9 @@ calc_outbreak_ss_rnot <- function(outbrk, parms_df, outbreak_df){
   data_frame(outbreak = outbrk,
              date_infection = o_df$date_infection,
              times = o_df$times,
-             rnot = calc_ss_rnot(p_df$beta_estimate, p_df$p_estimate, o_df$times))
+             rnot = calc_ss_rnot(p_df$beta_estimate, p_df$p_estimate, o_df$times),
+             result = list(calc_ss_rnot_bounds(p_df$beta_estimate, p_df$p_estimate))) %>% 
+    unnest() 
 }
 
 load("data_produced/outbreak_rda/parm_est_ss.rda")
@@ -81,6 +89,13 @@ calc_int_rnot <- function(beta, k, tau, times, gamma = 1/7.411374){
   betas <- if_else(times < tau, beta, (beta)*(exp(-k*(times-tau))))
   betas/gamma
 }
+calc_int_rnot_bounds <- function(rnot, gamma = 1/7.411374){
+  beta = rnot * gamma
+  df = data.frame(matrix(quantile(rgeom(1000000, prob = gamma / (beta+gamma)),
+                                  probs = c(0.025, 0.975)), nrow = 1))
+  names(df) <- c("rnot_lwr", "rnot_upr")
+  df
+}
 
 calc_outbreak_int_rnot <- function(outbrk, parms_df, outbreak_df){
   o_df <- outbreak_df %>% filter(outbreak == outbrk)
@@ -88,7 +103,9 @@ calc_outbreak_int_rnot <- function(outbrk, parms_df, outbreak_df){
   data_frame(outbreak = outbrk,
              date_infection = o_df$date_infection,
              times = o_df$times,
-             rnot = calc_int_rnot(p_df$beta_estimate, p_df$k_estimate, p_df$tau_estimate, o_df$times))
+             rnot = calc_int_rnot(p_df$beta_estimate, p_df$k_estimate, p_df$tau_estimate, o_df$times)) %>% 
+    mutate(result = map(rnot, calc_int_rnot_bounds)) %>% 
+    unnest()
 }
 
 load("data_produced/outbreak_rda/parm_est_int.rda")
@@ -107,20 +124,31 @@ ss_rnots <- ss_rnots %>% mutate(model = "ss")
 int_rnots <- int_rnots %>% mutate(model = "int")
 mod_rnots <- bind_rows(ss_rnots, int_rnots)
 save(mod_rnots, file = "data_produced/fig_results/mod_rnots.rda")
+
+
 # Old code for bounds, tabled for now -------------------------------------
-# calc_ss_rnot_bounds <- function(beta, p, gamma = 1/7.411374){
-#   df = data.frame(matrix(quantile(rgeom(1000000, prob = gamma / (beta+gamma)) * rbernoulli(1000000, p = p), 
-#                                   probs = c(0.025, 0.975)), nrow = 1))
-#   names(df) <- c("rnot_lwr", "rnot_upr")
-#   df
-# }
-# 
+
+
+
+
+calc_ss_rnot_bounds(1.53, .0517)
+
+ss_parms %>% mutate(med_rnot = beta_estimate/(1/7.413374) * p_estimate) %>%
+  mutate(result = map2(beta_estimate, p_estimate, calc_ss_rnot_bounds)) %>%
+  unnest() 
+
+int_parms %>% mutate(med_rnot = beta_estimate/(1/7.413374) ) %>%
+  mutate(result = map(beta_estimate, calc_int_rnot_bounds)) %>%
+  unnest() 
+
+
+
 # calc_ss_rnot_bounds_stat <- function(interval, beta_estimate, beta_lower, beta_upper, p_estimate, p_lower, p_upper, gamma = 1/7.411374){
 #   var_p <- ((p_upper - p_lower) / 3.92)^2
 #   var_beta <- ((beta_upper - beta_lower) / 3.92)^2
 #   
 #   ## Equation assumes independence between variables...
-#   var_rnot <- beta_estimate^2 * var_p + p_estimate^2 * var_beta 
+#   var_rnot <- beta_estimate^2 * var_p + p_estimate^2 * var_beta
 #   
 #   med_rnot <- beta_estimate * p_estimate / gamma
 #   
@@ -130,9 +158,3 @@ save(mod_rnots, file = "data_produced/fig_results/mod_rnots.rda")
 #     med_rnot + 1.96 * sqrt(var_rnot)
 #   }
 # }
-# ss_parms <- ss_parms %>% mutate(med_rnot = calc_ss_rnot(beta_estimate, p_estimate)) %>% 
-#   mutate(result = map2(beta_estimate, p_estimate, calc_ss_rnot_bounds)) %>% 
-#   unnest() %>% 
-#   mutate(rnot_lwr_stat = calc_ss_rnot_bounds_stat("lower", beta_estimate, beta_lower, beta_upper, p_estimate, p_lower, p_upper),
-#          rnot_upr_stat = calc_ss_rnot_bounds_stat("upper", beta_estimate, beta_lower, beta_upper, p_estimate, p_lower, p_upper),
-#          outbreak = factor(outbreak, levels = outbreaks_by_type))

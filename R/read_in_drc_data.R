@@ -33,3 +33,20 @@ drc <- drc %>%
   #replace_na(replace = list(cases=0)) %>%
   mutate(times = as.numeric((date_infection - (min(date_infection)))+1)) %>% 
   filter(times < 500) ## Removes the single case that is in kikwit from 1996 notification date
+
+
+drc <- bind_rows(drc, read_csv("data/drc_2018_data.csv") %>% 
+  mutate(event_date = ymd(event_date),
+         report_date = ymd(report_date)) %>% 
+  group_by(event_date, health_zone) %>% 
+  filter(report_date == max(report_date, na.rm = T)) %>% 
+  group_by(event_date) %>% 
+  summarize(conf = sum(confirmed_cases, na.rm = T)) %>% 
+  mutate(cases = c(0, diff(conf)),
+         outbreak = "Equator",
+         times = as.numeric(event_date - min(event_date) + 1) ) %>% 
+  select(-conf) %>% 
+  rename(date_infection = event_date)
+) 
+
+
