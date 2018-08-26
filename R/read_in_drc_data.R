@@ -26,7 +26,7 @@ drc <- drc %>%
          # date_infection = if_else(!is.na(Date_of_onset_symp), Date_of_onset_symp, if_else(!is.na(Date_of_Hospitalisation), Date_of_Hospitalisation, Date_of_notification)),
          # outbreak = Outbreak) %>% 
   filter(!is.na(date_infection)) %>% 
-  select(outbreak, date_infection) %>%
+  dplyr::select(outbreak, date_infection) %>%
   group_by(outbreak, date_infection) %>%
   summarize(cases = n()) %>%
   #pad() %>%
@@ -43,9 +43,10 @@ drc <- bind_rows(drc, read_csv("data/drc_2018_data.csv") %>%
   group_by(event_date) %>% 
   summarize(conf = sum(confirmed_cases, na.rm = T)) %>% 
   mutate(cases = c(0, diff(conf)),
-         outbreak = "Equator",
-         times = as.numeric(event_date - min(event_date) + 1) ) %>% 
-  select(-conf) %>% 
+         outbreak = "Equator") %>% 
+  filter(cases !=0) %>% 
+  mutate(times = as.numeric(event_date - min(event_date) + 1) ) %>% 
+  dplyr::select(-conf) %>% 
   rename(date_infection = event_date)
 ) 
 

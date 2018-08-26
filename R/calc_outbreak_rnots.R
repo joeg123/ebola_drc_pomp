@@ -19,8 +19,9 @@ calc_td_rnot <- function(outbreak_name, df){
   ## Function to calculate the time-dependent R0 for the Ebola outbreaks
   ## df is assumed to be the drc data_frame
   ## outbreak should correspond to a single outbreak
-  df <- df %>% filter(outbreak == outbreak_name)
   
+  df <- df %>% filter(outbreak == outbreak_name)
+  # if(outbreak_name != "Equator") {browser()}
   # serial interval of 15.3 days with a standard deviation of 9.3 days
   ebola_gt <- generation.time(type = "gamma", val = c(15.3, 9.3))  
   td_rnot <- est.R0.TD(epid =df$cases, t = df$date_infection, GT = ebola_gt, begin = 1, end = max(df$times), nsim = 10000)

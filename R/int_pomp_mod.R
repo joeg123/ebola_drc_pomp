@@ -101,7 +101,7 @@ pomp_statenames= c("S","E","I","R", "D", "C")
 
 pomp_paramnames=c("tau1", "beta0","k", "sigma", "gamma", "ff")
 
-generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
+generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende", "Equator"),
                               data = NULL) {
   
 data <- pull_outbreak_data(outbreak,data)

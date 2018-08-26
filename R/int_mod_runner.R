@@ -23,7 +23,7 @@ library(xtable)
 
 sapply(c("R/read_in_drc_data.R","R/int_pomp_mod.R", "R/helper_functions.R"), source)
 
-outbrk_list <- c("Yambuku", "Kikwit", "Mweka2007", "Isiro", "Boende", "Mweka2008")
+outbrk_list <- c("Yambuku", "Kikwit", "Mweka2007", "Isiro", "Boende", "Mweka2008", "Equator")
 est_parms <- c("beta0", "k", "tau1")
 
 # Profile Likelihood Bounds
