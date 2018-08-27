@@ -24,6 +24,7 @@ library(xtable)
 sapply(c("R/read_in_drc_data.R","R/int_pomp_mod.R", "R/helper_functions.R"), source)
 
 outbrk_list <- c("Yambuku", "Kikwit", "Mweka2007", "Isiro", "Boende", "Mweka2008", "Equator")
+outbrk_list <- c( "Equator")
 est_parms <- c("beta0", "k", "tau1")
 
 # Profile Likelihood Bounds
@@ -35,7 +36,8 @@ bounds <- list(Yambuku=c(.2,1.8,.08,.2,8,20),
                Mweka2007=c(.1,.3, 0, 1,125,175),
                Mweka2008=c(.1,3,.01,.15,0,20),
                Boende=c(.1,1.8,.03,.15,.01,18),
-               Isiro=c(.05,.45,.001,.02,.001,50))
+               Isiro=c(.05,.45,.001,.02,.001,50),
+               Equator=c(.5,5,.001, 2.5, .001, 10))
 
 
 mod_runner <- function(outbrk_list,dat) {
@@ -85,6 +87,7 @@ mod_runner <- function(outbrk_list,dat) {
     ## Extract best fit model
     max_mif <- find_max_ll_mif(mif_runs)
     # print(outbreak)
+    # browser()
     ## For best fit parameter estimates, calculate the likelihood profile
     prof_lik <- prof_lik_run(mif2_obj = max_mif,
                              settings=settings,
