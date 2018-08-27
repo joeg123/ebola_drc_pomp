@@ -70,54 +70,64 @@ untrans <- Csnippet('
                     ')
 
 
-
-
-pop <- 1e6   
-
-init <- Csnippet("
-                 S= 999999; 
-                 E = 0.0;
-                 I = 1.0;
-                 R = 0.0;
-                 D = 0.0;
-                 C = 1.0;
-                 ")
-
-seir.init.state <- c(S.0= 999999, 
-                     E.0 = 0.0,
-                     I.0 = 1.0,
-                     R.0 = 0.0,
-                     D.0 = 0.0,
-                     C.0 = 1.0)
-
-seir_parm <- c(sigma = 1/9.312799, 
-               gamma = 1/7.411374, 
-               ff = plogis(49/69),
-               tau1 = 14.0,
-               beta0 = 0.4,
-               k = 1e-4)
-
-pomp_statenames= c("S","E","I","R", "D", "C")
-
-pomp_paramnames=c("tau1", "beta0","k", "sigma", "gamma", "ff")
-
 generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende", "Equator"),
-                              data = NULL) {
+                                 data = NULL) {
+  pop <- 1e6   
   
-data <- pull_outbreak_data(outbreak,data)
-
-pomp(data = data,
-     times = "times",
-     t0 = -1,
-     skeleton = vectorfield(seir_skel), 
-     params = seir_parm,
-     initializer=init,
-     statenames=pomp_statenames, 
-     paramnames=pomp_paramnames,
-     zeronames = c("C"),
-     fromEstimationScale = untrans,
-     toEstimationScale = trans,
-     dmeasure = seir_dmeasure,
-     rmeasure = seir_rmeasure,
-     rprocess = euler.sim(step.fun = seir_rprocess, delta.t = 1))
+  if(outbreak == "Equator"){
+    init <- Csnippet("
+                   S= 999998; 
+                   E = 0.0;
+                   I = 2.0;
+                   R = 0.0;
+                   D = 0.0;
+                   C = 2.0;
+                   ")
+  } else{
+    init <- Csnippet("
+                   S= 999999; 
+                   E = 0.0;
+                   I = 1.0;
+                   R = 0.0;
+                   D = 0.0;
+                   C = 1.0;
+                   ")  
+  }
+  
+  
+  seir.init.state <- c(S.0= 999999, 
+                       E.0 = 0.0,
+                       I.0 = 1.0,
+                       R.0 = 0.0,
+                       D.0 = 0.0,
+                       C.0 = 1.0)
+  
+  seir_parm <- c(sigma = 1/9.312799, 
+                 gamma = 1/7.411374, 
+                 ff = plogis(49/69),
+                 tau1 = 14.0,
+                 beta0 = 0.4,
+                 k = 1e-4)
+  
+  pomp_statenames= c("S","E","I","R", "D", "C")
+  
+  pomp_paramnames=c("tau1", "beta0","k", "sigma", "gamma", "ff")
+  
+    
+  data <- pull_outbreak_data(outbreak,data)
+  
+  pomp(data = data,
+       times = "times",
+       t0 = -1,
+       skeleton = vectorfield(seir_skel), 
+       params = seir_parm,
+       initializer=init,
+       statenames=pomp_statenames, 
+       paramnames=pomp_paramnames,
+       zeronames = c("C"),
+       fromEstimationScale = untrans,
+       toEstimationScale = trans,
+       dmeasure = seir_dmeasure,
+       rmeasure = seir_rmeasure,
+       rprocess = euler.sim(step.fun = seir_rprocess, delta.t = 1))
 }

@@ -66,19 +66,20 @@ untrans <- Csnippet('
 generate_pomp_model <- function (outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende", "Equator"),
                         data = NULL, sim=FALSE) {
 
-  # populations <- c(Yambuku=275000,Kikwit=200000,Mweka2007=170000,Mweka2008=170000,Isiro=700000,Boende=250000)
-  outbrk <- match.arg(outbreak)
-  # pop <- unname(populations[outbrk])
+  data <- pull_outbreak_data(outbreak,data)
 
-  # browser()
-  data %>%
-    ungroup() %>%
-    filter(outbreak==outbrk) %>%
-    select(times,cases) -> data
-
-data <- as.data.frame(data)
-
-init <- Csnippet("
+  if(outbreak == "Equator"){
+    init <- Csnippet("
+                 S = 999997;
+                 E = 0.0;
+                 Il = 1.0;
+                 Ih = 2.0;
+                 R = 0.0;
+                 D = 0.0;
+                 C = 3.0;
+                 ")
+  } else{
+    init <- Csnippet("
                  S = 999998;
                  E = 0.0;
                  Il = 1.0;
@@ -86,16 +87,18 @@ init <- Csnippet("
                  R = 0.0;
                  D = 0.0;
                  C = 2.0;
-                 ")
+                 ") 
+  }
+  
 
 
-if (sim==FALSE) {
-  seir_parm <- c(
-    sigma = 1/9.312799, 
-    gamma = 1/7.411374, 
-    ff = plogis(49/69),
-    beta0 = 2,
-    p0 = 0.05
+  if (sim==FALSE) {
+    seir_parm <- c(
+      sigma = 1/9.312799, 
+      gamma = 1/7.411374, 
+      ff = plogis(49/69),
+      beta0 = 2,
+      p0 = 0.05
   )} else {
     seir_parm <- c(
       sigma = 1/9.312799, 
@@ -105,27 +108,27 @@ if (sim==FALSE) {
       p0 = .1
     )}
 
-names_seir <- c("S","E","Il", "Ih", "R", "D", "C")
-
-para_seir <- c("beta0","p0", "sigma", "gamma", "ff")
-
-
-pomp(data = data,
-     times="times",
-     t0=-1,
-     skeleton = vectorfield(seir_skel), 
-     params = seir_parm,
-     initializer=init,
-     statenames= names_seir, 
-     paramnames=para_seir,
-     zeronames = c("C"),
-     fromEstimationScale = untrans,
-     toEstimationScale = trans,
-     dmeasure = seir_dmeasure,
-     rmeasure = seir_rmeasure,
-     rprocess = euler.sim(step.fun = seir_rprocess, delta.t = 1)) -> ss_seir_pomp
-
- 
-return(ss_seir_pomp)
-  }
+  names_seir <- c("S","E","Il", "Ih", "R", "D", "C")
+  
+  para_seir <- c("beta0","p0", "sigma", "gamma", "ff")
+  
+  
+  pomp(data = data,
+       times="times",
+       t0=-1,
+       skeleton = vectorfield(seir_skel), 
+       params = seir_parm,
+       initializer=init,
+       statenames= names_seir, 
+       paramnames=para_seir,
+       zeronames = c("C"),
+       fromEstimationScale = untrans,
+       toEstimationScale = trans,
+       dmeasure = seir_dmeasure,
+       rmeasure = seir_rmeasure,
+       rprocess = euler.sim(step.fun = seir_rprocess, delta.t = 1)) -> ss_seir_pomp
+  
+   
+  return(ss_seir_pomp)
+}
 

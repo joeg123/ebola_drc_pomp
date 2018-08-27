@@ -2,7 +2,7 @@
 ### Functions that can be used by any pomp models
 ####
 
-pull_outbreak_data <- function(outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende"),
+pull_outbreak_data <- function(outbreak=c("Yambuku","Kikwit","Mweka2007","Mweka2008","Isiro","Boende", "Equator"),
                                data = NULL){
   ## Sets up the data based on the given outbreak name
   outbrk <- match.arg(outbreak)
