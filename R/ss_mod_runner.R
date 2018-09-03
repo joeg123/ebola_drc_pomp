@@ -75,7 +75,7 @@ mod_runner <- function(outbrk_list,dat) {
     ## Now iteratively filter to find MLE
     mif_runs <- mif2_multirun(pomp_obj = pomp_mod, 
                               settings = settings, 
-                              refresh = F)
+                              refresh = T)
     
     print("Starting the profile likelihood...")
     ## Extract best fit model
